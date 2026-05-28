@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
 function LocationIcon() {
@@ -81,7 +84,7 @@ const infoLinks = [
     icon: <LocationIcon />,
   },
   {
-    label: "Email",
+    label: "luthfi.efata@gmail.com",
     href: "mailto:luthfi.efata@gmail.com",
     icon: <MailIcon />,
   },
@@ -97,7 +100,9 @@ const infoLinks = [
   },
 ];
 
-function InfoPill({
+const typingTexts = ["Full-Stack Developer", "ML Engineer"];
+
+function InfoLink({
   label,
   href,
   icon,
@@ -107,15 +112,23 @@ function InfoPill({
   icon: ReactNode;
 }) {
   const className =
-    "inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/85 px-3.5 py-2 text-sm text-slate-500 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:text-slate-950 dark:border-zinc-800 dark:bg-white/5 dark:text-zinc-400 dark:hover:border-zinc-700 dark:hover:bg-white/10 dark:hover:text-white";
+    "group inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition duration-300 hover:-translate-y-0.5 hover:text-slate-950 dark:text-zinc-400 dark:hover:text-white";
+
+  const content = (
+    <>
+      <span className="transition duration-300 group-hover:scale-110">
+        {icon}
+      </span>
+
+      <span className="relative">
+        {label}
+        <span className="absolute -bottom-1 left-0 h-px w-0 bg-slate-950 transition-all duration-300 group-hover:w-full dark:bg-white" />
+      </span>
+    </>
+  );
 
   if (!href) {
-    return (
-      <div className={className}>
-        {icon}
-        <span>{label}</span>
-      </div>
-    );
+    return <div className={className}>{content}</div>;
   }
 
   return (
@@ -125,9 +138,58 @@ function InfoPill({
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       className={className}
     >
-      {icon}
-      <span>{label}</span>
+      {content}
     </a>
+  );
+}
+
+function TypewriterText() {
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = typingTexts[textIndex];
+    const typingSpeed = isDeleting ? 45 : 95;
+    const pauseTime = 1200;
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting && displayedText.length < currentText.length) {
+          setDisplayedText(currentText.slice(0, displayedText.length + 1));
+          return;
+        }
+
+        if (!isDeleting && displayedText.length === currentText.length) {
+          setIsDeleting(true);
+          return;
+        }
+
+        if (isDeleting && displayedText.length > 0) {
+          setDisplayedText(currentText.slice(0, displayedText.length - 1));
+          return;
+        }
+
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % typingTexts.length);
+      },
+      !isDeleting && displayedText.length === currentText.length
+        ? pauseTime
+        : typingSpeed
+    );
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, textIndex]);
+
+  return (
+    <p className="mt-4 min-h-8 text-lg font-medium text-slate-950 dark:text-zinc-200 sm:text-xl md:text-2xl">
+      <span className="bg-linear-to-r from-slate-700 to-slate-400 bg-clip-text text-transparent dark:from-zinc-100 dark:to-zinc-500">
+        {displayedText}
+      </span>
+      <span className="ml-1 inline-block animate-pulse text-slate-400 dark:text-zinc-500">
+        |
+      </span>
+    </p>
   );
 }
 
@@ -137,21 +199,23 @@ export default function HeroSection() {
       id="hero"
       className="mx-auto flex min-h-[84vh] w-full max-w-6xl items-center px-4 pb-16 pt-10 sm:px-6 sm:pt-14 md:pt-16 lg:px-8"
     >
-      <div className="grid w-full items-center gap-12 lg:grid-cols-[1.12fr_0.88fr]">
-        <div className="order-2 text-center lg:order-1 lg:text-left">
+      <div className="grid w-full items-center gap-10 lg:grid-cols-[1.55fr_0.45fr] xl:grid-cols-[1.6fr_0.4fr]">
+        <div className="order-2 w-full max-w-5xl text-center lg:order-1 lg:text-left">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-zinc-500">
             Portfolio
           </p>
 
-          <h1 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl lg:mx-0 lg:text-7xl">
+          <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl lg:mx-0 lg:whitespace-nowrap lg:text-6xl xl:text-7xl">
             <span className="bg-linear-to-r from-slate-950 via-slate-700 to-slate-500 bg-clip-text text-transparent dark:from-white dark:via-zinc-200 dark:to-zinc-500">
-              Luthfi Emillulfata
+              LUTHFI EMILLULFATA
             </span>
           </h1>
 
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
+          <TypewriterText />
+
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 lg:justify-start">
             {infoLinks.map((item) => (
-              <InfoPill
+              <InfoLink
                 key={item.label}
                 label={item.label}
                 href={item.href}
@@ -160,11 +224,13 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-zinc-300 sm:text-lg lg:mx-0">
-            Driven Informatics graduate with expertise spanning full-stack
-            development and machine learning. Skilled in translating complex
-            requirements into efficient, scalable software solutions while
-            combining analytical thinking with user-centric web design.
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-zinc-300 sm:text-lg lg:mx-0">
+            Fresh Graduate in Informatics with a strong interest in Full-Stack
+            Development and Machine Learning. Experienced in building web-based
+            solutions and translating business requirements into functional,
+            scalable, and user-focused applications. Able to collaborate in Agile environments, 
+            work effectively within cross-functional teams, and contribute to the delivery of secure, 
+            reliable, and user-oriented digital solutions.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
@@ -186,24 +252,24 @@ export default function HeroSection() {
         </div>
 
         <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative w-68 rotate-2 transition duration-500 hover:rotate-0 sm:w-[20rem] md:w-88 lg:w-[24rem]">
-                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/40 via-indigo-100/30 to-purple-200/40 blur-2xl dark:from-blue-500/10 dark:via-indigo-500/5 dark:to-purple-500/10" />
+          <div className="relative w-64 rotate-2 transition duration-500 hover:rotate-0 sm:w-[18rem] md:w-[20rem] lg:w-[22rem] xl:w-[23rem]">
+            <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/35 via-indigo-100/25 to-purple-200/35 blur-2xl dark:from-blue-500/8 dark:via-indigo-500/5 dark:to-purple-500/8" />
 
-                <div className="relative scale-90 transition duration-500">
-                <div className="relative overflow-hidden rounded-4xl border border-white/60 bg-white/40 p-px shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-white/10 dark:shadow-black/40">
-                    <div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-transparent">
-                    <Image
-                        src="/assets/profil/luthfata.png"
-                        alt="Luthfi Emillulfata"
-                        fill
-                        priority
-                        className="object-cover object-center"
-                        sizes="(max-width: 640px) 272px, (max-width: 768px) 320px, (max-width: 1024px) 352px, 384px"
-                    />
-                    </div>
+            <div className="relative scale-[0.8] transition duration-500">
+              <div className="relative overflow-hidden rounded-4xl border border-white/50 bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-white/[0.03] dark:shadow-black/35">
+                <div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-transparent">
+                  <Image
+                    src="/assets/profil/luthfata.png"
+                    alt="Luthfi Emillulfata"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 368px"
+                  />
                 </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </section>

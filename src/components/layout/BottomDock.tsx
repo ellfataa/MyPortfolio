@@ -15,22 +15,22 @@ import { useEffect, useState } from "react";
 const dockItems = [
   {
     label: "About",
-    href: "#hero",
+    href: "/#hero",
     icon: User,
   },
   {
     label: "Projects",
-    href: "#projects",
+    href: "/projects",
     icon: FolderGit2,
   },
   {
     label: "Certificates",
-    href: "#certificates",
+    href: "/certificates",
     icon: Award,
   },
   {
     label: "Contact",
-    href: "#contact",
+    href: "/contact",
     icon: Mail,
   },
   {
