@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 const dockItems = [
   {
     label: "About",
-    href: "#about",
+    href: "#hero",
     icon: User,
   },
   {
@@ -95,7 +95,7 @@ export default function BottomDock() {
   };
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-[60] w-full -translate-x-1/2 px-3 sm:bottom-6 md:bottom-8">
+    <div className="fixed bottom-5 left-1/2 z-60 w-full -translate-x-1/2 px-3 sm:bottom-6 md:bottom-8">
       <div className="mx-auto flex w-fit max-w-[calc(100vw-1.5rem)] items-center justify-center rounded-[1.7rem] border border-slate-200/80 bg-white/90 px-2.5 py-2 shadow-[0_14px_45px_rgba(15,23,42,0.13)] backdrop-blur-xl dark:border-zinc-800/90 dark:bg-black/90 dark:shadow-[0_14px_45px_rgba(0,0,0,0.48)] sm:px-3 sm:py-2.5">
         <div className="flex items-center gap-1 sm:gap-1.5">
           {dockItems.map((item) => {

@@ -12,7 +12,7 @@ export default function AboutSection() {
       className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 sm:p-8">
+        <div className="rounded-4xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 sm:p-8">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-zinc-500">
             About
           </p>
@@ -29,7 +29,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 sm:p-8">
+        <div className="rounded-4xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 sm:p-8">
           <h3 className="text-xl font-bold text-slate-950 dark:text-white">
             What I Do
           </h3>
