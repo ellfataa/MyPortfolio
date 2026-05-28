@@ -72,6 +72,8 @@ function saveChatLimit(count: number) {
 }
 
 export default function Chatbot() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
@@ -87,6 +89,18 @@ export default function Chatbot() {
     const limit = getChatLimit();
     saveChatLimit(limit.count);
     setRemaining(DAILY_LIMIT - limit.count);
+  }, []);
+
+  useEffect(() => {
+    const handleToggleChatbot = () => {
+      setIsOpen((prev) => !prev);
+    };
+
+    window.addEventListener("toggle-chatbot", handleToggleChatbot);
+
+    return () => {
+      window.removeEventListener("toggle-chatbot", handleToggleChatbot);
+    };
   }, []);
 
   const sendMessage = async (customMessage?: string) => {
@@ -163,21 +177,31 @@ export default function Chatbot() {
     }
   };
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <section className="fixed bottom-4 right-4 z-50 w-[92vw] max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-white p-4">
+    <section
+      id="ai-chat"
+      className="fixed bottom-24 right-4 z-50 w-[92vw] max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div className="flex items-center justify-between border-b border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
         <div>
-          <h2 className="text-sm font-semibold text-slate-900">
+          <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
             AI Portfolio Assistant
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-500 dark:text-slate-400">
             Sisa pertanyaan hari ini: {remaining}/{DAILY_LIMIT}
           </p>
         </div>
 
-        <div className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
-          AI
-        </div>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="rounded-full px-3 py-1 text-sm text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white"
+        >
+          ✕
+        </button>
       </div>
 
       <div className="h-80 space-y-3 overflow-y-auto p-4">
@@ -186,8 +210,8 @@ export default function Chatbot() {
             key={index}
             className={`rounded-xl p-3 text-sm leading-6 ${
               message.role === "user"
-                ? "ml-8 bg-slate-900 text-white"
-                : "mr-8 bg-slate-100 text-slate-800"
+                ? "ml-8 bg-slate-900 text-white dark:bg-white dark:text-slate-900"
+                : "mr-8 bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100"
             }`}
           >
             {message.text}
@@ -201,7 +225,7 @@ export default function Chatbot() {
                 key={question}
                 onClick={() => sendMessage(question)}
                 disabled={loading || remaining <= 0}
-                className="block rounded-full border border-slate-200 bg-white px-4 py-2 text-left text-xs text-slate-600 transition hover:border-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
+                className="block rounded-full border border-slate-200 bg-white px-4 py-2 text-left text-xs text-slate-600 transition hover:border-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               >
                 ✨ {question}
               </button>
@@ -210,19 +234,19 @@ export default function Chatbot() {
         )}
 
         {loading && (
-          <div className="mr-8 rounded-xl bg-slate-100 p-3 text-sm text-slate-500">
+          <div className="mr-8 rounded-xl bg-slate-100 p-3 text-sm text-slate-500 dark:bg-slate-800 dark:text-slate-400">
             Sedang mengetik...
           </div>
         )}
 
         {remaining <= 0 && (
-          <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-700">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-700 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-300">
             Limit pertanyaan hari ini sudah habis. Silakan coba lagi besok.
           </div>
         )}
       </div>
 
-      <div className="flex gap-2 border-t border-slate-200 p-3">
+      <div className="flex gap-2 border-t border-slate-200 p-3 dark:border-slate-800">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -237,13 +261,13 @@ export default function Chatbot() {
               ? "Limit hari ini sudah habis"
               : "Tulis pertanyaan..."
           }
-          className="flex-1 rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-900 disabled:bg-slate-100"
+          className="flex-1 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-900 disabled:bg-slate-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:border-white dark:disabled:bg-slate-800"
         />
 
         <button
           onClick={() => sendMessage()}
           disabled={loading || remaining <= 0}
-          className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:bg-slate-400"
+          className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:bg-slate-400 dark:bg-white dark:text-slate-900 dark:disabled:bg-slate-700 dark:disabled:text-slate-400"
         >
           Kirim
         </button>

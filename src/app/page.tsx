@@ -1,189 +1,36 @@
+import BottomDock from "@/components/layout/BottomDock";
+import Footer from "@/components/layout/footer";
+
+import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import EducationSection from "@/components/sections/EducationSection";
+import SkillsSection from "@/components/sections/SkillsSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import CertificatesSection from "@/components/sections/CertificatesSection";
+import ContactSection from "@/components/sections/ContactSection";
+
 import Chatbot from "@/components/chatbot";
-
-const projects = [
-  {
-    title: "Website Portfolio",
-    description:
-      "Website portfolio responsive menggunakan Next.js, Tailwind CSS, dan chatbot AI Gemini.",
-    tech: ["Next.js", "Tailwind", "Gemini AI"],
-  },
-  {
-    title: "Sistem Prediksi Konsumsi Listrik",
-    description:
-      "Sistem machine learning untuk memprediksi konsumsi listrik menggunakan beberapa model regresi.",
-    tech: ["Python", "Machine Learning", "Regression"],
-  },
-  {
-    title: "Aplikasi Web Magang",
-    description:
-      "Project website yang dikembangkan saat magang dengan integrasi frontend dan backend.",
-    tech: ["React", "API", "Ngrok"],
-  },
-];
-
-const skills = [
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "JavaScript",
-  "TypeScript",
-  "Python",
-  "Machine Learning",
-  "Firebase",
-  "Laravel",
-  "GitHub",
-];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <nav className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <h1 className="text-lg font-bold">Luthfi Portfolio</h1>
+    <main className="relative min-h-screen overflow-hidden bg-[#f8fafc] pb-32 text-slate-950 transition-colors duration-300 dark:bg-black dark:text-white">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_32%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.10),transparent_28%),linear-gradient(to_bottom,#ffffff,#f8fafc)] dark:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_30%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.12),transparent_28%),linear-gradient(to_bottom,#020617,#000000)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)]" />
+      </div>
 
-          <div className="hidden gap-6 text-sm font-medium md:flex">
-            <a href="#about" className="hover:text-slate-500">
-              About
-            </a>
-            <a href="#skills" className="hover:text-slate-500">
-              Skills
-            </a>
-            <a href="#projects" className="hover:text-slate-500">
-              Projects
-            </a>
-            <a href="#contact" className="hover:text-slate-500">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <EducationSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <CertificatesSection />
+      <ContactSection />
 
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-2 md:py-28">
-        <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-slate-500">
-            Informatics Engineering Graduate
-          </p>
-
-          <h2 className="text-4xl font-bold leading-tight md:text-6xl">
-            Hi, I&apos;m Luthfi. I build modern web experiences.
-          </h2>
-
-          <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 md:text-lg">
-            Saya adalah fresh graduate Teknik Informatika yang memiliki minat
-            pada pengembangan web, frontend engineering, dan implementasi AI
-            sederhana untuk aplikasi modern.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#projects"
-              className="rounded-xl bg-slate-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-slate-700"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="#contact"
-              className="rounded-xl border border-slate-300 px-6 py-3 text-center text-sm font-semibold hover:bg-white"
-            >
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
-          <div className="aspect-square rounded-2xl bg-gradient-to-br from-slate-200 to-slate-400" />
-          <p className="mt-4 text-center text-sm text-slate-500">
-            Replace this area with your profile photo.
-          </p>
-        </div>
-      </section>
-
-      <section id="about" className="mx-auto max-w-6xl px-4 py-16">
-        <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
-          <h2 className="text-3xl font-bold">About Me</h2>
-          <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-            Saya memiliki ketertarikan pada pengembangan aplikasi web yang
-            clean, responsive, dan user-friendly. Saya juga terbiasa mempelajari
-            teknologi baru seperti integrasi AI, machine learning, dan deployment
-            aplikasi ke cloud platform.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl font-bold">Skills</h2>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section id="projects" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl font-bold">Projects</h2>
-
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <h3 className="text-xl font-bold">{project.title}</h3>
-
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                {project.description}
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tech.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="contact" className="mx-auto max-w-6xl px-4 py-16 pb-40">
-        <div className="rounded-3xl bg-slate-900 p-8 text-white md:p-12">
-          <h2 className="text-3xl font-bold">Let&apos;s Work Together</h2>
-
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Tertarik berdiskusi atau melihat project saya lebih lanjut? Silakan
-            hubungi saya melalui email atau LinkedIn.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="mailto:luthfimillul@gmail.com"
-              className="rounded-xl bg-white px-6 py-3 text-center text-sm font-semibold text-slate-900"
-            >
-              Email Me
-            </a>
-
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              className="rounded-xl border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
+      <Footer />
+      <BottomDock />
       <Chatbot />
     </main>
   );
