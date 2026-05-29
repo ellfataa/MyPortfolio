@@ -52,7 +52,7 @@ const experiences: Experience[] = [
     ],
   },
   {
-    company: "WESCLIC",
+    company: "WESCLIC TECHNOLOGY",
     role: "System Analyst Intern",
     period: "Aug 2025 - Dec 2025",
     logoSrc: "/assets/experience/logos/wesclic.jpg",

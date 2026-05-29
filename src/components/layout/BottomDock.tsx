@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
+
 import {
   Award,
   Bot,
@@ -33,52 +35,44 @@ const dockItems = [
     href: "/contact",
     icon: Mail,
   },
-  {
-    label: "AI Chat",
-    icon: Bot,
-    action: "chatbot",
-  },
 ];
 
 export default function BottomDock() {
   const [darkMode, setDarkMode] = useState(false);
-  const [language, setLanguage] = useState<"id" | "en">("id");
+  const { language, toggleLanguage } = useLanguage();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-        setDarkMode(true);
+      document.documentElement.classList.add("dark");
+      setDarkMode(true);
     } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-        setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDarkMode(false);
     }
-    }, []);
+  }, []);
 
-    const toggleTheme = () => {
+  const toggleTheme = () => {
     setDarkMode((prev) => {
-        const nextTheme = !prev;
+      const nextTheme = !prev;
 
-        if (nextTheme) {
+      if (nextTheme) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        } else {
+      } else {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        }
+      }
 
-        console.log("Theme changed:", nextTheme ? "dark" : "light");
-        console.log("HTML class:", document.documentElement.className);
-
-        return nextTheme;
+      return nextTheme;
     });
-    };
+  };
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "id" ? "en" : "id"));
+  const toggleChatbot = () => {
+    window.dispatchEvent(new Event("toggle-chatbot"));
   };
 
   const dockButtonClass =
@@ -95,35 +89,11 @@ export default function BottomDock() {
   };
 
   return (
-    <div className="fixed bottom-5 left-1/2 z-60 w-full -translate-x-1/2 px-3 sm:bottom-6 md:bottom-8">
-      <div className="mx-auto flex w-fit max-w-[calc(100vw-1.5rem)] items-center justify-center rounded-[1.7rem] border border-slate-200/80 bg-white/90 px-2.5 py-2 shadow-[0_14px_45px_rgba(15,23,42,0.13)] backdrop-blur-xl dark:border-zinc-800/90 dark:bg-black/90 dark:shadow-[0_14px_45px_rgba(0,0,0,0.48)] sm:px-3 sm:py-2.5">
+    <div className="pointer-events-none fixed inset-x-0 bottom-5 z-60 flex justify-center px-3 sm:bottom-6 md:bottom-8">
+      <div className="pointer-events-auto flex w-fit max-w-[calc(100vw-1.5rem)] items-center justify-center rounded-[1.7rem] border border-slate-200/80 bg-white/90 px-2.5 py-2 shadow-[0_14px_45px_rgba(15,23,42,0.13)] backdrop-blur-xl dark:border-zinc-800/90 dark:bg-black/90 dark:shadow-[0_14px_45px_rgba(0,0,0,0.48)] sm:px-3 sm:py-2.5">
         <div className="flex items-center gap-1 sm:gap-1.5">
           {dockItems.map((item) => {
             const Icon = item.icon;
-
-            if (item.action === "chatbot") {
-              return (
-                <button
-                  key={item.label}
-                  type="button"
-                  title={item.label}
-                  aria-label={item.label}
-                  onMouseEnter={() => setHoveredItem(item.label)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                  onClick={() => {
-                    window.dispatchEvent(new Event("toggle-chatbot"));
-                  }}
-                  className={dockButtonClass}
-                >
-                  {renderTooltip(item.label)}
-                  <Icon
-                    size={18}
-                    strokeWidth={1.9}
-                    className="md:h-5 md:w-5"
-                  />
-                </button>
-              );
-            }
 
             return (
               <a
@@ -151,6 +121,24 @@ export default function BottomDock() {
         <div className="flex items-center gap-1 sm:gap-1.5">
           <button
             type="button"
+            onClick={toggleChatbot}
+            title="AI Chat"
+            aria-label="AI Chat"
+            onMouseEnter={() => setHoveredItem("AI Chat")}
+            onMouseLeave={() => setHoveredItem(null)}
+            className={dockButtonClass}
+          >
+            {renderTooltip("AI Chat")}
+
+            <Bot
+              size={18}
+              strokeWidth={1.9}
+              className="md:h-5 md:w-5"
+            />
+          </button>
+
+          <button
+            type="button"
             onClick={toggleLanguage}
             title="Change Language"
             aria-label="Change Language"
@@ -159,6 +147,7 @@ export default function BottomDock() {
             className={dockButtonClass}
           >
             {renderTooltip("Language")}
+
             <Languages
               size={18}
               strokeWidth={1.9}
@@ -180,6 +169,7 @@ export default function BottomDock() {
             className={dockButtonClass}
           >
             {renderTooltip("Theme")}
+
             {darkMode ? (
               <Sun
                 size={18}

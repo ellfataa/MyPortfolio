@@ -1,6 +1,8 @@
 import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 
+import Chatbot from "@/components/chatbot";
+
 import HeroSection from "@/components/sections/HeroSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import EducationSection from "@/components/sections/EducationSection";
@@ -9,61 +11,45 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import CertificatesSection from "@/components/sections/CertificatesSection";
 import ContactSection from "@/components/sections/ContactSection";
 
-import Chatbot from "@/components/chatbot";
+function SectionDivider() {
+  return (
+    <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden pb-32 transition-colors duration-300">
-    <div className="animated-blue-orb" />
+    <main className="relative min-h-screen overflow-hidden pb-2 transition-colors duration-300">
+      <div className="animated-blue-orb" />
 
-    <div className="relative z-10">
-      <HeroSection />
+      <div className="relative z-10">
+        <HeroSection />
+        <SectionDivider />
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+        <ExperienceSection />
+        <SectionDivider />
+
+        <EducationSection />
+        <SectionDivider />
+
+        <SkillsSection />
+        <SectionDivider />
+
+        <ProjectsSection />
+        <SectionDivider />
+
+        <CertificatesSection />
+        <SectionDivider />
+
+        <ContactSection />
+
+        <Footer />
       </div>
 
-      <ExperienceSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-
-      <EducationSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-
-      <SkillsSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-
-      <ProjectsSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-
-      <CertificatesSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-
-      <ContactSection />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
-      </div>
-      
-      <Footer />
-    </div>
-
-    <BottomDock />
-    <Chatbot />
-  </main>
+      <BottomDock />
+      <Chatbot />
+    </main>
   );
 }

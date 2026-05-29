@@ -1,58 +1,421 @@
-const projects = [
+"use client";
+
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+type ProjectTech = {
+  name: string;
+  iconSrc: string;
+  iconAlt: string;
+};
+
+type Project = {
+  title: string;
+  period: string;
+  company: string;
+  role: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  visibility: "Private" | "Public";
+  isInternal?: boolean;
+  technologies: ProjectTech[];
+};
+
+const projects: Project[] = [
   {
-    title: "Website Portfolio",
+    title: "WBS Public - Whistleblowing System",
+    period: "Dec 2025 - Apr 2026",
+    company: "Telkomsigma",
+    role: "Frontend Engineer",
     description:
-      "Website portfolio responsive menggunakan Next.js, Tailwind CSS, dan chatbot AI Gemini.",
-    tech: ["Next.js", "Tailwind CSS", "Gemini AI"],
+      "A public WBS that enables external users to securely submit reports with flexible identity options and track their submission status.",
+    imageSrc: "/assets/projects/wbs-public.jpg",
+    imageAlt: "WBS Public Project Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/nextjs.png",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/typescript.png",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.png",
+        iconAlt: "Tailwind CSS Logo",
+      },
+    ],
   },
   {
-    title: "Sistem Prediksi Konsumsi Listrik",
+    title: "WBS Internal - Whistleblowing System",
+    period: "Dec 2025 - Apr 2026",
+    company: "Telkomsigma",
+    role: "Frontend Engineer",
     description:
-      "Sistem machine learning untuk memprediksi konsumsi listrik menggunakan beberapa model regresi.",
-    tech: ["Python", "Machine Learning", "Regression"],
+      "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
+    imageSrc: "/assets/projects/wbs-internal.jpg",
+    imageAlt: "WBS Internal Project Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/nextjs.png",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/typescript.png",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.png",
+        iconAlt: "Tailwind CSS Logo",
+      },
+    ],
   },
   {
-    title: "Aplikasi Web saat Magang",
+    title: "PLUSTIX - Pertamina",
+    period: "Feb 2026 - Mar 2026",
+    company: "Telkomsigma",
+    role: "Frontend Engineer",
     description:
-      "Pengembangan aplikasi web dengan pengalaman menggunakan ngrok untuk kebutuhan testing atau tunneling.",
-    tech: ["Web Development", "API", "Ngrok"],
+      "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
+    imageSrc: "/assets/projects/plustix.jpg",
+    imageAlt: "PLUSTIX Project Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/nextjs.png",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/typescript.png",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.png",
+        iconAlt: "Tailwind CSS Logo",
+      },
+    ],
+  },
+  {
+    title: "Electricity Consumption Prediction",
+    period: "2025",
+    company: "Final Thesis",
+    role: "ML Engineer",
+    description:
+      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
+    imageSrc: "/assets/projects/electricity-prediction.jpg",
+    imageAlt: "Electricity Consumption Prediction Project Preview",
+    visibility: "Public",
+    technologies: [
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.png",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Scikit-learn",
+        iconSrc: "/assets/skills/scikit-learn.png",
+        iconAlt: "Scikit-learn Logo",
+      },
+      {
+        name: "Pandas",
+        iconSrc: "/assets/skills/pandas.png",
+        iconAlt: "Pandas Logo",
+      },
+    ],
+  },
+  {
+    title: "Personal Portfolio Website",
+    period: "2026",
+    company: "Personal Project",
+    role: "Full-Stack Developer",
+    description:
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/portfolio.jpg",
+    imageAlt: "Portfolio Website Project Preview",
+    visibility: "Public",
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/nextjs.png",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/typescript.png",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.png",
+        iconAlt: "Tailwind CSS Logo",
+      },
+    ],
   },
 ];
 
+function getCurrentVisibleCards() {
+  if (typeof window === "undefined") return 3;
+
+  if (window.innerWidth < 640) return 1;
+  if (window.innerWidth < 1024) return 2;
+
+  return 3;
+}
+
 export default function ProjectsSection() {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
+
+  const maxIndex = Math.max(projects.length - visibleCards, 0);
+  const totalDots = Math.max(projects.length - visibleCards + 1, 1);
+
+  const scrollToProject = useCallback(
+    (index: number) => {
+      if (!scrollRef.current) return;
+
+      const safeIndex = Math.min(Math.max(index, 0), maxIndex);
+      const container = scrollRef.current;
+      const card = container.children[safeIndex] as HTMLElement | undefined;
+
+      if (!card) return;
+
+      container.scrollTo({
+        left: card.offsetLeft,
+        behavior: "smooth",
+      });
+
+      setActiveIndex(safeIndex);
+    },
+    [maxIndex]
+  );
+
+  const scrollProjects = useCallback(
+    (direction: "left" | "right") => {
+      setActiveIndex((prev) => {
+        const nextIndex =
+          direction === "left"
+            ? prev <= 0
+              ? maxIndex
+              : prev - 1
+            : prev >= maxIndex
+              ? 0
+              : prev + 1;
+
+        requestAnimationFrame(() => {
+          scrollToProject(nextIndex);
+        });
+
+        return nextIndex;
+      });
+    },
+    [maxIndex, scrollToProject]
+  );
+
+  const startAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    intervalRef.current = setInterval(() => {
+      scrollProjects("right");
+    }, 4000);
+  }, [scrollProjects]);
+
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      const nextVisibleCards = getCurrentVisibleCards();
+
+      setVisibleCards(nextVisibleCards);
+      setActiveIndex((prev) =>
+        Math.min(prev, Math.max(projects.length - nextVisibleCards, 0))
+      );
+    };
+
+    updateVisibleCards();
+
+    window.addEventListener("resize", updateVisibleCards);
+
+    return () => {
+      window.removeEventListener("resize", updateVisibleCards);
+    };
+  }, []);
+
+  useEffect(() => {
+    scrollToProject(activeIndex);
+  }, [activeIndex, visibleCards, scrollToProject]);
+
+  useEffect(() => {
+    startAutoScroll();
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [startAutoScroll]);
+
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 py-24">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-slate-500">
-        Projects
-      </p>
+    <section
+      id="projects"
+      className="mx-auto w-full max-w-6xl px-4 py-3 sm:px-6 sm:py-6 md:py-10 lg:px-8"
+    >
+      <div className="mb-6">
+        <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
+          Projects
+        </h2>
 
-      <h2 className="text-3xl font-bold md:text-4xl">Featured Projects</h2>
+        <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
+          A showcase of my work in web development and machine learning.
+        </p>
+      </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
-          >
-            <h3 className="text-xl font-bold">{project.title}</h3>
+      <div className="relative lg:px-14">
+        <button
+          type="button"
+          onClick={() => {
+            scrollProjects("left");
+            startAutoScroll();
+          }}
+          aria-label="Scroll projects left"
+          className="absolute left-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white/90 text-xl text-slate-500 shadow-sm backdrop-blur transition hover:bg-white hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-950/90 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white lg:flex"
+        >
+          ‹
+        </button>
 
-            <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-              {project.description}
-            </p>
+        <div
+          ref={scrollRef}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
+        >
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="group min-w-full snap-start overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md dark:border-zinc-800 dark:bg-white/4 dark:hover:border-zinc-700 dark:hover:bg-white/6 sm:min-w-[calc(50%-0.5rem)] lg:min-w-[calc(33.333%-0.7rem)]"
+            >
+              <div className="relative aspect-16/8 overflow-hidden bg-slate-100 dark:bg-zinc-900">
+                <Image
+                  src={project.imageSrc}
+                  alt={project.imageAlt}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 31vw"
+                />
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.tech.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </article>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/15 to-transparent opacity-80" />
+
+                {project.isInternal && (
+                  <div className="absolute right-3 top-3 rotate-45 rounded-md bg-amber-400 px-7 py-1 text-[9px] font-bold uppercase tracking-wider text-amber-950 shadow-sm">
+                    Internal
+                  </div>
+                )}
+
+                <div className="absolute bottom-3 right-3">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-amber-300/60 bg-amber-100/80 px-3 py-1 text-xs font-medium text-amber-700 backdrop-blur dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
+                    🔒 {project.visibility}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-4">
+                <h3 className="line-clamp-1 text-sm font-bold tracking-tight text-slate-950 dark:text-white sm:text-base">
+                  {project.title}
+                </h3>
+
+                <p className="mt-2 text-xs font-medium text-slate-500 dark:text-zinc-400">
+                  {project.period}
+                </p>
+
+                <p className="mt-1 text-xs italic text-slate-500 dark:text-zinc-500">
+                  {project.company}
+                </p>
+
+                <div className="mt-3">
+                  <span className="rounded-md border border-sky-300 bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300">
+                    {project.role}
+                  </span>
+                </div>
+
+                <p className="mt-4 line-clamp-4 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-sm">
+                  {project.description}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.technologies.map((technology) => (
+                    <div
+                      key={technology.name}
+                      className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+                      title={technology.name}
+                    >
+                      <Image
+                        src={technology.iconSrc}
+                        alt={technology.iconAlt}
+                        fill
+                        className="object-contain p-1.5"
+                        sizes="32px"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => {
+            scrollProjects("right");
+            startAutoScroll();
+          }}
+          aria-label="Scroll projects right"
+          className="absolute right-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white/90 text-xl text-slate-500 shadow-sm backdrop-blur transition hover:bg-white hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-950/90 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white lg:flex"
+        >
+          ›
+        </button>
+      </div>
+
+      <div className="mt-1 flex justify-center gap-2">
+        {Array.from({ length: totalDots }).map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => {
+              scrollToProject(index);
+              startAutoScroll();
+            }}
+            aria-label={`Go to project slide ${index + 1}`}
+            className={`h-2 cursor-pointer rounded-full transition ${
+              activeIndex === index
+                ? "w-6 bg-slate-950 dark:bg-white"
+                : "w-2 bg-slate-300 dark:bg-zinc-700"
+            }`}
+          />
         ))}
       </div>
+
+      <a
+        href="/projects"
+        className="mt-6 inline-flex items-center gap-2 text-base font-medium text-slate-950 transition hover:gap-3 dark:text-white"
+      >
+        See All Projects <span>→</span>
+      </a>
     </section>
   );
 }

@@ -258,7 +258,7 @@ export default function HeroSection() {
 
             <div className="relative scale-[0.8] transition duration-500">
               <div className="relative overflow-hidden rounded-4xl bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:bg-white/3 dark:shadow-black/35">
-                <div className="relative aspect-4/5 overflow-hidden rounded-4xl border-4 border-white bg-transparent">
+                <div className="relative aspect-4/5 overflow-hidden rounded-4xl border-4 border-white dark:border-zinc-900 bg-transparent">
                   <Image
                     src="/assets/profil/luthfata.png"
                     alt="Luthfi Emillulfata"
