@@ -30,11 +30,35 @@ export default function Home() {
       </div>
 
       <EducationSection />
+
+      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+      </div>
+
       <SkillsSection />
+
+      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+      </div>
+
       <ProjectsSection />
+
+      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+      </div>
+
       <CertificatesSection />
+
+      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+      </div>
+
       <ContactSection />
 
+      <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="h-px w-full rounded-full bg-slate-200 dark:bg-zinc-800" />
+      </div>
+      
       <Footer />
     </div>
 

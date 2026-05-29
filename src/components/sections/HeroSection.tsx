@@ -245,7 +245,7 @@ export default function HeroSection() {
             <a
               href="/assets/cv/cv-luthfi.pdf"
               download
-              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-zinc-800 dark:bg-white/[0.05] dark:text-zinc-200 dark:hover:bg-white/[0.1]"
+              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-zinc-800 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
             >
               Download CV
             </a>
@@ -253,12 +253,12 @@ export default function HeroSection() {
         </div>
 
         <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-          <div className="relative w-64 rotate-2 transition duration-500 hover:rotate-0 sm:w-[18rem] md:w-[20rem] lg:w-[22rem] xl:w-[23rem]">
-            <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/35 via-indigo-100/25 to-purple-200/35 blur-2xl dark:from-blue-500/[0.08] dark:via-indigo-500/[0.05] dark:to-purple-500/[0.08]" />
+          <div className="relative w-64 rotate-3 transition duration-500 hover:rotate-0 sm:w-[18rem] md:w-[20rem] lg:w-88 xl:w-92">
+            <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/35 via-indigo-100/25 to-purple-200/35 blur-2xl dark:from-blue-500/8 dark:via-indigo-500/5 dark:to-purple-500/8" />
 
             <div className="relative scale-[0.8] transition duration-500">
-              <div className="relative overflow-hidden rounded-4xl border border-white/50 bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-white/[0.03] dark:shadow-black/35">
-                <div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-transparent">
+              <div className="relative overflow-hidden rounded-4xl bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:bg-white/3 dark:shadow-black/35">
+                <div className="relative aspect-4/5 overflow-hidden rounded-4xl border-4 border-white bg-transparent">
                   <Image
                     src="/assets/profil/luthfata.png"
                     alt="Luthfi Emillulfata"

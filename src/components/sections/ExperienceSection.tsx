@@ -226,7 +226,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-10 md:py-14 lg:px-8"
+      className="mx-auto w-full max-w-6xl px-4 py-3 sm:px-6 sm:py-6 md:py-10 lg:px-8"
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
@@ -246,7 +246,7 @@ export default function ExperienceSection() {
                 className="flex w-full cursor-pointer flex-col gap-4 text-left transition duration-300 sm:flex-row sm:items-start sm:justify-between"
               >
                 <div className="flex min-w-0 gap-4">
-                  <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 group-hover:-translate-y-0.5 group-hover:border-slate-300 dark:border-zinc-800 dark:bg-white/[0.04] dark:group-hover:border-zinc-700">
+                  <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 group-hover:-translate-y-0.5 group-hover:border-slate-300 dark:border-zinc-800 dark:bg-white/4 dark:group-hover:border-zinc-700">
                     <Image
                       src={experience.logoSrc}
                       alt={experience.logoAlt}
@@ -273,7 +273,7 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                <div className="ml-16 w-fit rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-white/[0.04] dark:text-zinc-400 sm:ml-0">
+                <div className="ml-16 w-fit rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-slate-500 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-white/4 dark:text-zinc-400 sm:ml-0">
                   {experience.period}
                 </div>
               </button>
@@ -286,8 +286,8 @@ export default function ExperienceSection() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="ml-0 mt-5 sm:ml-16">
-                    <ul className="space-y-4 text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
+                  <div className="ml-0 mt-3 sm:ml-16">
+                    <ul className="space-y-2 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-sm">
                       {experience.details.map((detail) => (
                         <li key={detail} className="flex gap-3">
                           <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-slate-400 dark:bg-zinc-500" />
@@ -308,9 +308,10 @@ export default function ExperienceSection() {
                                 image,
                               })
                             }
+                            aria-label={`Open ${image.title} image`}
                             className="group/image relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400/40 dark:border-zinc-800 dark:bg-zinc-950"
                           >
-                            <div className="relative aspect-[16/8.5] overflow-hidden">
+                            <div className="relative aspect-16/8.5 overflow-hidden">
                               <Image
                                 src={image.src}
                                 alt={image.title}
@@ -345,14 +346,14 @@ export default function ExperienceSection() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-80 flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
           onClick={closeModal}
         >
           <div
             className="relative grid max-h-[90vh] w-full max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950 lg:grid-cols-[1.5fr_1fr]"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[260px] bg-slate-100 dark:bg-zinc-900 sm:min-h-[420px] lg:min-h-[560px]">
+            <div className="relative min-h-65 bg-slate-100 dark:bg-zinc-900 sm:min-h-105 lg:min-h-140">
               <Image
                 src={selectedImage.image.src}
                 alt={selectedImage.image.title}
@@ -367,7 +368,7 @@ export default function ExperienceSection() {
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute right-5 top-5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-xl text-slate-500 shadow-sm transition hover:bg-slate-100 hover:text-slate-950 dark:border-zinc-800 dark:bg-white/[0.06] dark:text-zinc-400 dark:hover:bg-white/[0.1] dark:hover:text-white"
+                className="absolute right-5 top-5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-xl text-slate-500 shadow-sm transition hover:bg-slate-100 hover:text-slate-950 dark:border-zinc-800 dark:bg-white/6 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white"
                 aria-label="Close image popup"
               >
                 ×
