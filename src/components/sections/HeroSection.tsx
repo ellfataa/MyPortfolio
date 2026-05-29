@@ -182,7 +182,7 @@ function TypewriterText() {
   }, [displayedText, isDeleting, textIndex]);
 
   return (
-    <p className="mt-4 min-h-8 text-lg font-medium text-slate-950 dark:text-zinc-200 sm:text-xl md:text-2xl">
+    <p className="mt-4 min-h-8 text-lg font-semibold text-slate-950 dark:text-zinc-200 sm:text-xl md:text-2xl">
       <span className="bg-linear-to-r from-slate-700 to-slate-400 bg-clip-text text-transparent dark:from-zinc-100 dark:to-zinc-500">
         {displayedText}
       </span>
@@ -197,7 +197,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-[84vh] w-full max-w-6xl items-center px-4 pb-16 pt-10 sm:px-6 sm:pt-14 md:pt-16 lg:px-8"
+      className="mx-auto flex min-h-[82vh] w-full max-w-6xl items-center px-4 py-6 sm:px-6 sm:py-10 md:py-14 lg:px-8"
     >
       <div className="grid w-full items-center gap-10 lg:grid-cols-[1.55fr_0.45fr] xl:grid-cols-[1.6fr_0.4fr]">
         <div className="order-2 w-full max-w-5xl text-center lg:order-1 lg:text-left">
@@ -228,9 +228,10 @@ export default function HeroSection() {
             Fresh Graduate in Informatics with a strong interest in Full-Stack
             Development and Machine Learning. Experienced in building web-based
             solutions and translating business requirements into functional,
-            scalable, and user-focused applications. Able to collaborate in Agile environments, 
-            work effectively within cross-functional teams, and contribute to the delivery of secure, 
-            reliable, and user-oriented digital solutions.
+            scalable, and user-focused applications. Able to collaborate in
+            Agile environments, work effectively within cross-functional teams,
+            and contribute to the delivery of secure, reliable, and
+            user-oriented digital solutions.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
@@ -244,7 +245,7 @@ export default function HeroSection() {
             <a
               href="/assets/cv/cv-luthfi.pdf"
               download
-              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-zinc-800 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-zinc-800 dark:bg-white/[0.05] dark:text-zinc-200 dark:hover:bg-white/[0.1]"
             >
               Download CV
             </a>
@@ -252,11 +253,11 @@ export default function HeroSection() {
         </div>
 
         <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-          <div className="relative w-64 rotate-2 transition duration-500 hover:rotate-0 sm:w-[18rem] md:w-[20rem] lg:w-88 xl:w-92">
-            <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/35 via-indigo-100/25 to-purple-200/35 blur-2xl dark:from-blue-500/8 dark:via-indigo-500/5 dark:to-purple-500/8" />
+          <div className="relative w-64 rotate-2 transition duration-500 hover:rotate-0 sm:w-[18rem] md:w-[20rem] lg:w-[22rem] xl:w-[23rem]">
+            <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-blue-200/35 via-indigo-100/25 to-purple-200/35 blur-2xl dark:from-blue-500/[0.08] dark:via-indigo-500/[0.05] dark:to-purple-500/[0.08]" />
 
             <div className="relative scale-[0.8] transition duration-500">
-              <div className="relative overflow-hidden rounded-4xl border border-white/50 bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-white/3 dark:shadow-black/35">
+              <div className="relative overflow-hidden rounded-4xl border border-white/50 bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-white/[0.03] dark:shadow-black/35">
                 <div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-transparent">
                   <Image
                     src="/assets/profil/luthfata.png"
