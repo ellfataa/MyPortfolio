@@ -17,42 +17,62 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
+        iconSrc: "/assets/skills/ts.svg",
         iconAlt: "TypeScript Logo",
       },
       {
         name: "JavaScript",
-        iconSrc: "/assets/skills/javascript.png",
+        iconSrc: "/assets/skills/js.svg",
         iconAlt: "JavaScript Logo",
       },
       {
         name: "Python",
-        iconSrc: "/assets/skills/python.png",
+        iconSrc: "/assets/skills/python.svg",
         iconAlt: "Python Logo",
       },
       {
         name: "PHP",
-        iconSrc: "/assets/skills/php.png",
+        iconSrc: "/assets/skills/php.svg",
         iconAlt: "PHP Logo",
       },
       {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "C#",
+        iconSrc: "/assets/skills/csharp.svg",
+        iconAlt: "C# Logo",
+      },
+      {
         name: "Java",
-        iconSrc: "/assets/skills/java.png",
+        iconSrc: "/assets/skills/java.svg",
         iconAlt: "Java Logo",
       },
       {
-        name: "C++",
-        iconSrc: "/assets/skills/cpp.png",
-        iconAlt: "C++ Logo",
+        name: "Dart",
+        iconSrc: "/assets/skills/dart.svg",
+        iconAlt: "Dart Logo",
+      },
+      {
+        name: "C",
+        iconSrc: "/assets/skills/C.svg",
+        iconAlt: "C Logo",
+      },
+      {
+        name: "Bash",
+        iconSrc: "/assets/skills/bash.svg",
+        iconAlt: "Bash Logo",
       },
       {
         name: "HTML",
-        iconSrc: "/assets/skills/html.png",
+        iconSrc: "/assets/skills/html.svg",
         iconAlt: "HTML Logo",
       },
       {
         name: "CSS",
-        iconSrc: "/assets/skills/css.png",
+        iconSrc: "/assets/skills/css.svg",
         iconAlt: "CSS Logo",
       },
     ],
@@ -62,48 +82,53 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "React.js",
-        iconSrc: "/assets/skills/react.png",
+        iconSrc: "/assets/skills/react.svg",
         iconAlt: "React Logo",
       },
       {
         name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
+        iconSrc: "/assets/skills/next.svg",
         iconAlt: "Next.js Logo",
       },
       {
         name: "Vue.js",
-        iconSrc: "/assets/skills/vue.png",
+        iconSrc: "/assets/skills/vue.svg",
         iconAlt: "Vue.js Logo",
       },
       {
-        name: "Nuxt.js",
-        iconSrc: "/assets/skills/nuxt.png",
-        iconAlt: "Nuxt.js Logo",
-      },
-      {
         name: "Laravel",
-        iconSrc: "/assets/skills/laravel.png",
+        iconSrc: "/assets/skills/laravel.svg",
         iconAlt: "Laravel Logo",
       },
       {
-        name: "Express.js",
-        iconSrc: "/assets/skills/express.png",
-        iconAlt: "Express.js Logo",
-      },
-      {
         name: "Flutter",
-        iconSrc: "/assets/skills/flutter.png",
+        iconSrc: "/assets/skills/flutter.svg",
         iconAlt: "Flutter Logo",
       },
       {
+        name: "Flask",
+        iconSrc: "/assets/skills/flask.svg",
+        iconAlt: "Flask Logo",
+      },
+      {
         name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
+        iconSrc: "/assets/skills/tailwind.svg",
         iconAlt: "Tailwind CSS Logo",
       },
       {
         name: "Bootstrap",
-        iconSrc: "/assets/skills/bootstrap.png",
+        iconSrc: "/assets/skills/bootstrap.svg",
         iconAlt: "Bootstrap Logo",
+      },
+      {
+        name: ".NET",
+        iconSrc: "/assets/skills/net.svg",
+        iconAlt: ".NET Logo",
+      },
+      {
+        name: "Streamlit",
+        iconSrc: "/assets/skills/streamlit.svg",
+        iconAlt: "Streamlit Logo",
       },
     ],
   },
@@ -111,34 +136,24 @@ const skillCategories: SkillCategory[] = [
     title: "Databases & ORM",
     skills: [
       {
-        name: "PostgreSQL",
-        iconSrc: "/assets/skills/postgresql.png",
-        iconAlt: "PostgreSQL Logo",
-      },
-      {
         name: "MySQL",
-        iconSrc: "/assets/skills/mysql.png",
+        iconSrc: "/assets/skills/mysql.svg",
         iconAlt: "MySQL Logo",
       },
       {
-        name: "MongoDB",
-        iconSrc: "/assets/skills/mongodb.png",
-        iconAlt: "MongoDB Logo",
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
       },
       {
         name: "Supabase",
-        iconSrc: "/assets/skills/supabase.png",
+        iconSrc: "/assets/skills/supabase.svg",
         iconAlt: "Supabase Logo",
       },
       {
         name: "Firebase",
-        iconSrc: "/assets/skills/firebase.png",
+        iconSrc: "/assets/skills/firebase.svg",
         iconAlt: "Firebase Logo",
-      },
-      {
-        name: "Prisma",
-        iconSrc: "/assets/skills/prisma.png",
-        iconAlt: "Prisma Logo",
       },
     ],
   },
@@ -147,47 +162,42 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Node.js",
-        iconSrc: "/assets/skills/nodejs.png",
+        iconSrc: "/assets/skills/node.svg",
         iconAlt: "Node.js Logo",
       },
       {
         name: "Git",
-        iconSrc: "/assets/skills/git.png",
+        iconSrc: "/assets/skills/git.svg",
         iconAlt: "Git Logo",
       },
       {
         name: "GitHub",
-        iconSrc: "/assets/skills/github.png",
+        iconSrc: "/assets/skills/github.svg",
         iconAlt: "GitHub Logo",
       },
       {
-        name: "Docker",
-        iconSrc: "/assets/skills/docker.png",
-        iconAlt: "Docker Logo",
-      },
-      {
         name: "Vercel",
-        iconSrc: "/assets/skills/vercel.png",
+        iconSrc: "/assets/skills/vercel.svg",
         iconAlt: "Vercel Logo",
       },
       {
-        name: "Google Cloud",
-        iconSrc: "/assets/skills/gcp.png",
-        iconAlt: "Google Cloud Logo",
+        name: "Google Colab",
+        iconSrc: "/assets/skills/gcolab.png",
+        iconAlt: "Google Colab Logo",
       },
       {
         name: "Postman",
-        iconSrc: "/assets/skills/postman.png",
+        iconSrc: "/assets/skills/postman.svg",
         iconAlt: "Postman Logo",
       },
       {
         name: "VS Code",
-        iconSrc: "/assets/skills/vscode.png",
+        iconSrc: "/assets/skills/vscode.svg",
         iconAlt: "VS Code Logo",
       },
       {
         name: "Figma",
-        iconSrc: "/assets/skills/figma.png",
+        iconSrc: "/assets/skills/figma.svg",
         iconAlt: "Figma Logo",
       },
     ],
@@ -231,7 +241,7 @@ export default function SkillsSection() {
                     />
                   </div>
 
-                  <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 opacity-0 shadow-sm transition duration-300 group-hover:opacity-100 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300">
+                  <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 -translate-x-1/2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 opacity-0 shadow-sm transition duration-300 group-hover:opacity-100 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300">
                     {skill.name}
                   </div>
                 </div>

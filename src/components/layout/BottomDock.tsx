@@ -41,6 +41,7 @@ export default function BottomDock() {
   const [darkMode, setDarkMode] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -53,6 +54,23 @@ export default function BottomDock() {
       localStorage.setItem("theme", "light");
       setDarkMode(false);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleChatbotStateChange = (event: Event) => {
+      const chatbotEvent = event as CustomEvent<{ isOpen: boolean }>;
+
+      setIsChatbotOpen(chatbotEvent.detail.isOpen);
+    };
+
+    window.addEventListener("chatbot-state-change", handleChatbotStateChange);
+
+    return () => {
+      window.removeEventListener(
+        "chatbot-state-change",
+        handleChatbotStateChange
+      );
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -89,7 +107,11 @@ export default function BottomDock() {
   };
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-5 z-60 flex justify-center px-3 sm:bottom-6 md:bottom-8">
+    <div
+      className={`pointer-events-none fixed inset-x-0 bottom-5 z-60 justify-center px-3 sm:bottom-6 md:bottom-8 ${
+        isChatbotOpen ? "hidden md:flex" : "flex"
+      }`}
+    >
       <div className="pointer-events-auto flex w-fit max-w-[calc(100vw-1.5rem)] items-center justify-center rounded-[1.7rem] border border-slate-200/80 bg-white/90 px-2.5 py-2 shadow-[0_14px_45px_rgba(15,23,42,0.13)] backdrop-blur-xl dark:border-zinc-800/90 dark:bg-black/90 dark:shadow-[0_14px_45px_rgba(0,0,0,0.48)] sm:px-3 sm:py-2.5">
         <div className="flex items-center gap-1 sm:gap-1.5">
           {dockItems.map((item) => {
@@ -106,6 +128,7 @@ export default function BottomDock() {
                 className={dockButtonClass}
               >
                 {renderTooltip(item.label)}
+
                 <Icon
                   size={18}
                   strokeWidth={1.9}

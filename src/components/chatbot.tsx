@@ -124,6 +124,16 @@ function saveChatLimit(count: number) {
   );
 }
 
+function dispatchChatbotState(isOpen: boolean) {
+  window.dispatchEvent(
+    new CustomEvent("chatbot-state-change", {
+      detail: {
+        isOpen,
+      },
+    })
+  );
+}
+
 export default function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -138,6 +148,14 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [remaining, setRemaining] = useState(DAILY_LIMIT);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    dispatchChatbotState(isOpen);
+
+    return () => {
+      dispatchChatbotState(false);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const limit = getChatLimit();
