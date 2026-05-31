@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect ,useState } from "react";
+import { useEffect, useState } from "react";
 
 type EducationImage = {
   src: string;
@@ -141,43 +141,45 @@ export default function EducationSection() {
               </ul>
 
               {education.images && education.images.length > 0 && (
-                <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {education.images.map((image) => (
-                    <button
-                      key={image.src}
-                      type="button"
-                      onClick={() =>
-                        setSelectedImage({
-                          institution: education.institution,
-                          image,
-                        })
-                      }
-                      aria-label={`Open ${image.title} image`}
-                      className="group/image relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400/40 dark:border-zinc-800 dark:bg-zinc-950"
-                    >
-                      <div className="relative aspect-16/8.5 overflow-hidden">
-                        <Image
-                          src={image.src}
-                          alt={image.title}
-                          fill
-                          className="object-cover transition duration-500 group-hover/image:scale-105"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
+                <div className="mt-5">
+                  <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] scrollbar-none sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
+                    {education.images.map((image) => (
+                      <button
+                        key={image.src}
+                        type="button"
+                        onClick={() =>
+                          setSelectedImage({
+                            institution: education.institution,
+                            image,
+                          })
+                        }
+                        aria-label={`Open ${image.title} image`}
+                        className="group/image relative min-w-[82%] snap-start cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400/40 dark:border-zinc-800 dark:bg-zinc-950 sm:min-w-0"
+                      >
+                        <div className="relative aspect-16/8.5 overflow-hidden">
+                          <Image
+                            src={image.src}
+                            alt={image.title}
+                            fill
+                            className="object-cover transition duration-500 group-hover/image:scale-105"
+                            sizes="(max-width: 640px) 82vw, (max-width: 1024px) 50vw, 33vw"
+                          />
 
-                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/35 to-transparent" />
+                          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/35 to-transparent" />
 
-                        <div className="absolute inset-x-0 bottom-0 p-4 text-left">
-                          <h4 className="line-clamp-1 text-sm font-bold tracking-tight text-white sm:text-base">
-                            {image.title}
-                          </h4>
+                          <div className="absolute inset-x-0 bottom-0 p-4 text-left">
+                            <h4 className="line-clamp-1 text-sm font-bold tracking-tight text-white sm:text-base">
+                              {image.title}
+                            </h4>
 
-                          <p className="mt-1 line-clamp-2 text-xs leading-5 text-white/80 sm:text-sm">
-                            {image.shortDescription}
-                          </p>
+                            <p className="mt-1 line-clamp-2 text-xs leading-5 text-white/80 sm:text-sm">
+                              {image.shortDescription}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                  ))}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

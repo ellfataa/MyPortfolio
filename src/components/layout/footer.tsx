@@ -140,7 +140,7 @@ const socialLinks: SocialLink[] = [
 export default function Footer() {
   return (
     <footer className="w-full border-t-2 border-slate-200/80 dark:border-zinc-800">
-      <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-8 sm:px-6 sm:pt-10 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 pb-24 pt-8 sm:px-6 sm:pb-16 sm:pt-10 md:pb-10 lg:px-8">
         <div className="flex flex-col items-center">
           <a
             href="#hero"
