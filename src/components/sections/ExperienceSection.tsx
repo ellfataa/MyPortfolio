@@ -28,9 +28,10 @@ const experiences: Experience[] = [
     logoSrc: "/assets/experience/logos/idtelkom.jpg",
     logoAlt: "Telkom Indonesia Logo",
     details: [
-      "Develop enterprise-level web applications by translating business requirements into scalable and maintainable digital solutions.",
-      "Collaborate with cross-functional teams in an Agile environment to deliver secure, reliable, and user-focused application features.",
-      "Work with modern frontend and backend technologies to support system development, integration, and continuous improvement.",
+      "Led the development of a Telkom product promotional website to support commercial and marketing initiatives.",
+      "Maintained the company news portal with 20+ content uploads, ensuring up-to-date information dissemination.",
+      "Verified and cross-referenced 1500+ customer product data entries for database accuracy and consistency.",
+      "Executed network infrastructure audits and PMR assessments across Purwokerto, Banjarnegara, Cilacap, and Purbalingga branches.",
     ],
     images: [
       {
@@ -52,14 +53,16 @@ const experiences: Experience[] = [
     ],
   },
   {
-    company: "WESCLIC TECHNOLOGY",
+    company: "WESCLIC NEOTECH INDONESIA",
     role: "System Analyst Intern",
     period: "Aug 2025 - Dec 2025",
     logoSrc: "/assets/experience/logos/wesclic.jpg",
     logoAlt: "Wesclic Logo",
     details: [
-      "Participated in system analysis activities by identifying requirements, documenting workflows, and supporting feature planning.",
-      "Collaborated with development teams to translate user needs into structured system requirements and functional documentation.",
+      "Analyzed and documented system requirements for 5 concurrent projects across various business domains.",
+      "Developed 30+ comprehensive system flow diagrams including use case, sequence, class diagrams, and ERDs.",
+      "Created 4 Product Requirement Documents (PRD) and 5 Software Requirement Specifications (SRS) to guide development teams.",
+      "Produced user manuals and technical documentation to support project implementation and end-user adoption.",
     ],
     images: [
       {
@@ -79,9 +82,9 @@ const experiences: Experience[] = [
     logoSrc: "/assets/experience/logos/pdambms.jpg",
     logoAlt: "PDAM Banyumas Logo",
     details: [
-      "Developed responsive web application features and helped build user-focused interfaces for internal operational needs.",
-      "Implemented frontend and backend functionality while maintaining readable, scalable, and maintainable code structure.",
-      "Worked with stakeholders to understand requirements and support digital transformation through practical web-based solutions.",
+      "Built a customer registration portal with Laravel and Midtrans, covering 306 villages across 27 sub-districts.",
+      "Created comprehensive system documentation including use case, sequence, activity, and class diagrams.",
+      "Presented project progress and technical updates to field supervisors throughout the development lifecycle.",
     ],
     images: [
       {
@@ -96,7 +99,7 @@ const experiences: Experience[] = [
   },
   {
     company: "INFORMATICS LABORATORY",
-    role: "Practicum Assistant",
+    role: "Laboratory Assistant",
     period: "Aug 2023 - Jun 2026",
     logoSrc: "/assets/experience/logos/iflab.jpg",
     logoAlt: "Informatics Laboratory Logo",
@@ -134,13 +137,14 @@ const experiences: Experience[] = [
   },
   {
     company: "BEM UNSOED",
-    role: "Data Analyst Staff",
+    role: "Data Analysis Division Staff",
     period: "Feb 2024 - Dec 2024",
     logoSrc: "/assets/experience/logos/bemu.jpg",
     logoAlt: "BEM UNSOED Logo",
     details: [
-      "Managed and analyzed organizational data to support decision-making, reporting, and internal evaluation.",
-      "Prepared structured data insights and contributed to documentation for organizational programs and activities.",
+      "Conducted quantitative research and surveys to support executive ministries and deliver strategic insights for the university's student body.",
+      "Spearheaded large-scale survey data processing for the Data Analysis Directorate, handling key initiatives such as ‘Super Survey’ (749 respondents) and ‘Ekspektasi Mahasiswa Baru 2024’ (1519 respondents).",
+      "Analyzed raw survey data to create comprehensive PDF reports and collaborated on visual data presentations.",
     ],
     images: [
       {
@@ -171,13 +175,14 @@ const experiences: Experience[] = [
   },
   {
     company: "HMIF UNSOED",
-    role: "Education Staff",
+    role: "Education Division Staff",
     period: "Mar 2024 - Dec 2024",
     logoSrc: "/assets/experience/logos/hmifunsoed.png",
     logoAlt: "HMIF UNSOED Logo",
     details: [
-      "Supported educational programs, academic activities, and student development initiatives within the Informatics student association.",
-      "Collaborated with team members to organize learning-related activities and improve student engagement.",
+      "Enhanced student academic potential through structured programs, including the ‘Mahasiswa Berprestasi’ initiative.",
+      "Led the ‘Simpul Pintar’ Question Bank program, organizing 74 study materials and 148 exam questions for academic assessments.",
+      "Built 2 centralized data repositories utilizing Excel PivotTables to streamline internship and vendor management systems.",
     ],
     images: [
       {

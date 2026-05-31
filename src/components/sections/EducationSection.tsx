@@ -30,8 +30,8 @@ const educations: Education[] = [
     logoSrc: "/assets/education/logos/unsoed.png",
     logoAlt: "Universitas Jenderal Soedirman Logo",
     details: [
-      "Relevant coursework: Software Engineering, Web Development, Mobile Development, Database Systems, Computer Networks, Operating Systems, Data Mining, Machine Learning, Artificial Intelligence, and UI/UX Design.",
-      "Final Thesis: Electricity Consumption Prediction System using Ensemble Machine Learning and Advanced Feature Engineering.",
+      "Relevant coursework: Web Development, Mobile Development, Database Systems, Computer Networks, Operating Systems, Data Mining, Machine Learning, Artificial Intelligence, and Embedded Systems.",
+      "Final Thesis: Implementation of a Hybrid Weighting System Based on the Integration of ROC, Random Forest, and TOPSIS in a Decision Support System for Selecting The Best Interns at PT Wesclic Neotech Indonesia.",
     ],
     images: [
       {
