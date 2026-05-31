@@ -104,9 +104,9 @@ const experiences: Experience[] = [
     logoSrc: "/assets/experience/logos/iflab.jpg",
     logoAlt: "Informatics Laboratory Logo",
     details: [
-      "Assisted practicum activities by guiding students in understanding technical materials and completing practical assignments.",
-      "Supported laboratory learning sessions, prepared practicum materials, and helped evaluate student work.",
-      "Collaborated with other assistants to ensure practicum activities ran effectively and aligned with learning objectives.",
+      "Instructed and mentored 110+ students across multiple shifts, delivering comprehensive hands-on guidance in Embedded Systems, Operating Systems, and Databases.",
+      "Resolved 55+ technical issues covering system processes, memory management, and SQL queries, while demonstrating end-to-end practical assemblies for lab modules.",
+      "Designed and evaluated 20+ assessment metrics, including practical assignments, quizzes, and a final IoT project, managing the end-to-end grading process to ensure student competency.",
     ],
     images: [
       {
