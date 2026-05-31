@@ -216,7 +216,7 @@ export default function SkillsSection() {
         </h2>
 
         <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
-          A collection of technologies, programming languages, frameworks, and 
+          A collection of technologies, programming languages, frameworks, and
           platforms that support me in developing digital solutions.
         </p>
       </div>

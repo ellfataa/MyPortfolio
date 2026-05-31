@@ -110,7 +110,7 @@ const footerLinks: FooterLink[] = [
   },
   {
     label: "Contact",
-    href: "#contact",
+    href: "/contact",
   },
 ];
 

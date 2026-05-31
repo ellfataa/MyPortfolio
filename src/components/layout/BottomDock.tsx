@@ -113,7 +113,7 @@ export default function BottomDock() {
       }`}
     >
       <div className="pointer-events-auto flex w-fit max-w-[calc(100vw-1.5rem)] items-center justify-center rounded-[1.7rem] border border-slate-200/80 bg-white/90 px-2.5 py-2 shadow-[0_14px_45px_rgba(15,23,42,0.13)] backdrop-blur-xl dark:border-zinc-800/90 dark:bg-black/90 dark:shadow-[0_14px_45px_rgba(0,0,0,0.48)] sm:px-3 sm:py-2.5">
-        <div className="flex items-center gap-1 sm:gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-2">
           {dockItems.map((item) => {
             const Icon = item.icon;
 
@@ -141,7 +141,7 @@ export default function BottomDock() {
 
         <div className="mx-2 h-7 w-px bg-slate-200 dark:bg-zinc-800 md:h-8" />
 
-        <div className="flex items-center gap-1 sm:gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-2">
           <button
             type="button"
             onClick={toggleChatbot}

@@ -68,7 +68,7 @@ export default function ContactSection() {
           <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-blue-200/25 blur-3xl dark:bg-blue-500/10" />
           <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-indigo-200/25 blur-3xl dark:bg-indigo-500/10" />
 
-          <div className="relative z-10 mx-auto flex min-h-85 max-w-2xl flex-col items-center justify-center sm:min-h-92.5 md:min-h100">
+          <div className="relative z-10 mx-auto flex min-h-85 max-w-2xl flex-col items-center justify-center sm:min-h-92.5 md:min-h-100">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-sm transition duration-300 group-hover:-translate-y-1 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
               <MailIcon />
             </div>

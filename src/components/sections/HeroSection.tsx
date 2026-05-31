@@ -186,6 +186,7 @@ function TypewriterText() {
       <span className="bg-linear-to-r from-slate-700 to-slate-400 bg-clip-text text-transparent dark:from-zinc-100 dark:to-zinc-500">
         {displayedText}
       </span>
+
       <span className="ml-1 inline-block animate-pulse text-slate-400 dark:text-zinc-500">
         |
       </span>
@@ -205,7 +206,7 @@ export default function HeroSection() {
             Portfolio
           </p>
 
-          <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl lg:mx-0 lg:whitespace-nowrap lg:text-6xl xl:text-7xl">
+          <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl lg:mx-0 lg:text-6xl xl:whitespace-nowrap xl:text-7xl">
             <span className="bg-linear-to-r from-slate-950 via-slate-700 to-slate-500 bg-clip-text text-transparent dark:from-white dark:via-zinc-200 dark:to-zinc-500">
               LUTHFI EMILLULFATA
             </span>
@@ -236,7 +237,7 @@ export default function HeroSection() {
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               Contact Me
@@ -258,7 +259,7 @@ export default function HeroSection() {
 
             <div className="relative scale-[0.8] transition duration-500">
               <div className="relative overflow-hidden rounded-4xl bg-white/25 p-px shadow-2xl shadow-slate-950/10 dark:bg-white/3 dark:shadow-black/35">
-                <div className="relative aspect-4/5 overflow-hidden rounded-4xl border-4 border-white dark:border-zinc-900 bg-transparent">
+                <div className="relative aspect-4/5 overflow-hidden rounded-4xl border-4 border-white bg-transparent dark:border-zinc-900">
                   <Image
                     src="/assets/profil/luthfata.png"
                     alt="Luthfi Emillulfata"

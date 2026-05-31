@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect ,useState } from "react";
 
 type EducationImage = {
   src: string;
@@ -71,6 +71,18 @@ export default function EducationSection() {
   const closeModal = () => {
     setSelectedImage(null);
   };
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const originalOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [selectedImage]);
 
   return (
     <section
