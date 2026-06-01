@@ -226,7 +226,7 @@ export default function ContactPage() {
 
                 <p className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-slate-950 dark:text-white sm:text-base">
                   <LocationIcon />
-                  Yogyakarta
+                  Purwokerto
                 </p>
               </div>
             </div>

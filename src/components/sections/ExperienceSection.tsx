@@ -88,7 +88,15 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/pdam-1.png",
+        src: "/assets/experience/pdam1.jpg",
+        title: "Internal Web Application",
+        shortDescription:
+          "Web application development for supporting internal operational needs...",
+        description:
+          "Web application development for supporting internal operational needs, including responsive interface implementation and backend functionality.",
+      },
+      {
+        src: "/assets/certificates/pdam.jpg",
         title: "Internal Web Application",
         shortDescription:
           "Web application development for supporting internal operational needs...",
@@ -110,7 +118,7 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/informatics-1.png",
+        src: "/assets/experience/aslab-1.jpeg",
         title: "Practicum Assistance",
         shortDescription:
           "Supporting students during practicum learning activities...",
@@ -118,20 +126,12 @@ const experiences: Experience[] = [
           "Supporting students during practicum learning activities by helping them understand technical concepts, solve practical problems, and complete assignments.",
       },
       {
-        src: "/assets/experience/informatics-2.png",
+        src: "/assets/experience/aslab-2.jpg",
         title: "Learning Support",
         shortDescription:
           "Assisting laboratory sessions and supporting academic activities...",
         description:
           "Assisting laboratory sessions and supporting academic activities through preparation, guidance, and evaluation of practicum materials.",
-      },
-      {
-        src: "/assets/experience/informatics-3.png",
-        title: "Technical Guidance",
-        shortDescription:
-          "Providing technical guidance during hands-on practicum sessions...",
-        description:
-          "Providing technical guidance during hands-on practicum sessions and helping improve student understanding through direct assistance.",
       },
     ],
   },
@@ -148,7 +148,7 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/bem-1.png",
+        src: "/assets/experience/bem-1.jpg",
         title: "Organizational Data Analysis",
         shortDescription:
           "Data analysis activities for organizational reporting and evaluation...",
@@ -156,7 +156,7 @@ const experiences: Experience[] = [
           "Data analysis activities used to support organizational decision-making, internal evaluation, and structured reporting for programs and activities.",
       },
       {
-        src: "/assets/experience/bem-2.png",
+        src: "/assets/experience/bem-2.jpg",
         title: "Program Evaluation",
         shortDescription:
           "Supporting internal evaluation using structured data insights...",
@@ -164,7 +164,7 @@ const experiences: Experience[] = [
           "Supporting internal evaluation using structured data insights to help improve organizational programs and decision-making processes.",
       },
       {
-        src: "/assets/experience/bem-3.png",
+        src: "/assets/certificates/bem.jpg",
         title: "Reporting Documentation",
         shortDescription:
           "Preparation of documentation and data-based organizational reports...",
@@ -186,7 +186,7 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/hmif-1.png",
+        src: "/assets/experience/hmif-1.jpg",
         title: "Education Program",
         shortDescription:
           "Supporting educational programs within the Informatics student association...",
@@ -194,7 +194,7 @@ const experiences: Experience[] = [
           "Supporting educational programs and academic initiatives within the Informatics student association to improve student learning engagement.",
       },
       {
-        src: "/assets/experience/hmif-2.png",
+        src: "/assets/experience/hmif-2.jpeg",
         title: "Student Development",
         shortDescription:
           "Student development activities focused on learning and engagement...",
@@ -202,7 +202,7 @@ const experiences: Experience[] = [
           "Student development activities focused on improving engagement, academic growth, and participation in educational initiatives.",
       },
       {
-        src: "/assets/experience/hmif-3.png",
+        src: "/assets/certificates/hmif.jpg",
         title: "Academic Activity",
         shortDescription:
           "Collaboration in organizing learning-related academic activities...",
