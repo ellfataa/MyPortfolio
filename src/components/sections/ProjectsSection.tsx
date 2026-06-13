@@ -24,38 +24,38 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "WBS Public - Whistleblowing System",
-    period: "Dec 2025 - Apr 2026",
-    company: "Telkomsigma",
-    role: "Frontend Engineer",
+    title: "Talentia",
+    period: "Agu 2025 - Dec 2025",
+    company: "Wesclic Neotech Indonesia - Internship",
+    role: "Full-Stack Engineer",
     description:
-      "A public WBS that enables external users to securely submit reports with flexible identity options and track their submission status.",
-    imageSrc: "/assets/projects/wbs-public.jpg",
-    imageAlt: "WBS Public Project Preview",
+      "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
+    imageSrc: "/assets/projects/talentia.jpg",
+    imageAlt: "Talentia Project Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
       {
-        name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
-        iconAlt: "Next.js Logo",
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
       },
       {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
-        iconAlt: "TypeScript Logo",
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
       },
       {
         name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
+        iconSrc: "/assets/skills/tailwind.svg",
         iconAlt: "Tailwind CSS Logo",
       },
     ],
   },
   {
-    title: "WBS Internal - Whistleblowing System",
-    period: "Dec 2025 - Apr 2026",
-    company: "Telkomsigma",
+    title: "TelkomBiz Plan",
+    period: "Dec 2025 - Feb 2026",
+    company: "Telkom Indonesia - Internship",
     role: "Frontend Engineer",
     description:
       "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
@@ -82,10 +82,10 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "PLUSTIX - Pertamina",
-    period: "Feb 2026 - Mar 2026",
-    company: "Telkomsigma",
-    role: "Frontend Engineer",
+    title: "Nautica",
+    period: "Mar 2026 - Apr 2026",
+    company: "ELF Std - Freelance Project",
+    role: "Full-Stack Engineer",
     description:
       "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
     imageSrc: "/assets/projects/plustix.jpg",
@@ -111,10 +111,10 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Electricity Consumption Prediction",
-    period: "2025",
-    company: "Final Thesis",
-    role: "ML Engineer",
+    title: "Veris",
+    period: "Feb 2026 - Apr 2026",
+    company: "Jenderal Soedirman University",
+    role: "Full-Stack Engineer",
     description:
       "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
     imageSrc: "/assets/projects/electricity-prediction.jpg",
@@ -139,10 +139,10 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Personal Portfolio Website",
-    period: "2026",
-    company: "Personal Project",
-    role: "Full-Stack Developer",
+    title: "Warmindo Modies",
+    period: "Feb 2026 - Mar 2026",
+    company: "ELF Std - Freelance Project",
+    role: "Frontend Engineer",
     description:
       "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
     imageSrc: "/assets/projects/portfolio.jpg",
@@ -163,6 +163,34 @@ const projects: Project[] = [
         name: "Tailwind CSS",
         iconSrc: "/assets/skills/tailwind.png",
         iconAlt: "Tailwind CSS Logo",
+      },
+    ],
+  },
+  {
+    title: "Anahata",
+    period: "Mar 2025 - Mei 2025",
+    company: "Jenderal Soedirman University",
+    role: "Full-Stack Engineer",
+    description:
+      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
+    imageSrc: "/assets/projects/anahata_jensoed.webp",
+    imageAlt: "Anahata Preview",
+    visibility: "Public",
+    technologies: [
+      {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
       },
     ],
   },
@@ -236,7 +264,7 @@ export default function ProjectsSection() {
 
     intervalRef.current = setInterval(() => {
       scrollProjects("right");
-    }, 4000);
+    }, 12000);
   }, [scrollProjects]);
 
   useEffect(() => {
@@ -328,7 +356,7 @@ export default function ProjectsSection() {
 
                 <div className="absolute bottom-3 right-3">
                   <span className="inline-flex items-center gap-1 rounded-full border border-amber-300/60 bg-amber-100/80 px-3 py-1 text-xs font-medium text-amber-700 backdrop-blur dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
-                    🔒 {project.visibility}
+                    {project.visibility}
                   </span>
                 </div>
               </div>

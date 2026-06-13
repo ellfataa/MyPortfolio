@@ -100,7 +100,7 @@ const infoLinks = [
   },
 ];
 
-const typingTexts = ["Full-Stack Developer", "ML Engineer"];
+const typingTexts = ["Software Engineer"];
 
 function InfoLink({
   label,
