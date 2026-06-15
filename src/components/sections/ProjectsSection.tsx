@@ -24,14 +24,14 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Talentia",
+    title: "Best Intern",
     period: "Agu 2025 - Dec 2025",
     company: "Wesclic Neotech Indonesia - Internship",
     role: "Full-Stack Engineer",
     description:
       "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
-    imageSrc: "/assets/projects/talentia.jpg",
-    imageAlt: "Talentia Project Preview",
+    imageSrc: "/assets/projects/best_intern.webp",
+    imageAlt: "Best Intern Project Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
@@ -59,8 +59,8 @@ const projects: Project[] = [
     role: "Frontend Engineer",
     description:
       "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
-    imageSrc: "/assets/projects/wbs-internal.jpg",
-    imageAlt: "WBS Internal Project Preview",
+    imageSrc: "/assets/projects/telkombiz.webp",
+    imageAlt: "TelkomBiz Plan Project Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
