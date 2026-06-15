@@ -88,8 +88,8 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
-    imageSrc: "/assets/projects/plustix.jpg",
-    imageAlt: "PLUSTIX Project Preview",
+    imageSrc: "/assets/projects/nautica.webp",
+    imageAlt: "Nautica Project Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
@@ -175,6 +175,34 @@ const projects: Project[] = [
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
     imageSrc: "/assets/projects/anahata_jensoed.webp",
     imageAlt: "Anahata Preview",
+    visibility: "Public",
+    technologies: [
+      {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "DemonWard",
+    period: "Mar 2024 - Mei 2024",
+    company: "Jenderal Soedirman University",
+    role: "Full-Stack Engineer",
+    description:
+      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
+    imageSrc: "/assets/projects/demonward.webp",
+    imageAlt: "DemonWard Preview",
     visibility: "Public",
     technologies: [
       {
