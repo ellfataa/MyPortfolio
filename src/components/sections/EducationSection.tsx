@@ -35,28 +35,28 @@ const educations: Education[] = [
     ],
     images: [
       {
-        src: "/assets/education/unsoed-1.jpg",
-        title: "Academic Journey",
+        src: "/assets/education/after graduate 1.jpeg",
+        title: "After Graduation Ceremony",
         shortDescription:
-          "Documentation of academic activities during my Informatics study...",
+          "A photo taken after the graduation ceremony, symbolizing...",
         description:
-          "Documentation of my academic journey as an Informatics student at Universitas Jenderal Soedirman, including learning activities, project development, and technical skill improvement.",
+          "A photo taken after the graduation ceremony, symbolizing the culmination of academic achievements and the transition to professional life.",
       },
       {
-        src: "/assets/education/unsoed-2.jpg",
-        title: "Campus Activity",
+        src: "/assets/education/after graduate 2.jpeg",
+        title: "Graduated with Cum Laude Honors",
         shortDescription:
-          "Learning and development activities in the university environment...",
+          "A snapshot of the graduation certificate highlighting the Cum Laude distinction...",
         description:
-          "Campus activities that supported my academic growth, collaboration, and practical understanding of software development and computer science topics.",
+          "A snapshot of the graduation certificate highlighting the Cum Laude distinction, representing academic excellence and dedication.",
       },
       {
-        src: "/assets/education/unsoed-3.jpg",
-        title: "Graduation Preparation",
+        src: "/assets/education/after graduate 3.jpeg",
+        title: "Graduation Day Celebration",
         shortDescription:
-          "A memorable moment during the academic completion process...",
+          "A celebratory moment during the graduation day, capturing the joy and pride...",
         description:
-          "A memorable moment representing the academic completion process, personal growth, and learning journey throughout my Informatics study.",
+          "A celebratory moment during the graduation day, capturing the joy and pride of completing the degree program.",
       },
     ],
   },

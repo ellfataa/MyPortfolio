@@ -19,19 +19,49 @@ type Project = {
   imageAlt: string;
   visibility: "Private" | "Public";
   isInternal?: boolean;
+  githubUrl?: string;
   technologies: ProjectTech[];
 };
 
 const projects: Project[] = [
   {
-    title: "Best Intern",
-    period: "Agu 2025 - Dec 2025",
-    company: "Wesclic Neotech Indonesia - Internship",
+    title: "SiBapas PWT",
+    period: "Jun 2026 - Jul 2026",
+    company: "ELF Std - Freelance Project",
+    role: "Full-Stack Engineer",
+    description:
+      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
+    imageSrc: "/assets/projects/SIBAPAS.png",
+    imageAlt: "SiBapas PWT Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "laravel Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Best Intern DSS",
+    period: "Dec 2025 - May 2026",
+    company: "Thesis",
     role: "Full-Stack Engineer",
     description:
       "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
-    imageSrc: "/assets/projects/best_intern.webp",
-    imageAlt: "Best Intern Project Preview",
+    imageSrc: "/assets/projects/BEST_INTERN.webp",
+    imageAlt: "Best Intern Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
@@ -56,28 +86,23 @@ const projects: Project[] = [
     title: "TelkomBiz Plan",
     period: "Dec 2025 - Feb 2026",
     company: "Telkom Indonesia - Internship",
-    role: "Frontend Engineer",
+    role: "Full-Stack Engineer",
     description:
       "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
-    imageSrc: "/assets/projects/telkombiz.webp",
-    imageAlt: "TelkomBiz Plan Project Preview",
+    imageSrc: "/assets/projects/TELKOMBIZ.webp",
+    imageAlt: "TelkomBiz Plan Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
       {
-        name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
-        iconAlt: "Next.js Logo",
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
       },
       {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
-        iconAlt: "TypeScript Logo",
-      },
-      {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
-        iconAlt: "Tailwind CSS Logo",
+        name: "Vue",
+        iconSrc: "/assets/skills/vue.svg",
+        iconAlt: "Vue Logo",
       },
     ],
   },
@@ -88,53 +113,49 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
-    imageSrc: "/assets/projects/nautica.webp",
-    imageAlt: "Nautica Project Preview",
+    imageSrc: "/assets/projects/NAUTICA.webp",
+    imageAlt: "Nautica Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
       {
-        name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
-        iconAlt: "Next.js Logo",
-      },
-      {
         name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
+        iconSrc: "/assets/skills/ts.svg",
         iconAlt: "TypeScript Logo",
       },
       {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
-        iconAlt: "Tailwind CSS Logo",
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
       },
     ],
   },
   {
-    title: "Veris",
-    period: "Feb 2026 - Apr 2026",
-    company: "Jenderal Soedirman University",
-    role: "Full-Stack Engineer",
+    title: "Webklik",
+    period: "Oct 2026 - Mar 2026",
+    company: "Wesclic - Internship",
+    role: "System Analyst",
     description:
-      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
-    imageSrc: "/assets/projects/electricity-prediction.jpg",
-    imageAlt: "Electricity Consumption Prediction Project Preview",
-    visibility: "Public",
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/WEBKLIK.webp",
+    imageAlt: "Webklik Preview",
+    visibility: "Private",
+    isInternal: true,
     technologies: [
       {
-        name: "Python",
-        iconSrc: "/assets/skills/python.png",
-        iconAlt: "Python Logo",
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
       },
       {
-        name: "Scikit-learn",
-        iconSrc: "/assets/skills/scikit-learn.png",
-        iconAlt: "Scikit-learn Logo",
+        name: "Next.js",
+        iconSrc: "/assets/skills/next.svg",
+        iconAlt: "Next.js Logo",
       },
       {
-        name: "Pandas",
-        iconSrc: "/assets/skills/pandas.png",
-        iconAlt: "Pandas Logo",
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
       },
     ],
   },
@@ -145,24 +166,20 @@ const projects: Project[] = [
     role: "Frontend Engineer",
     description:
       "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/portfolio.jpg",
-    imageAlt: "Portfolio Website Project Preview",
+    imageSrc: "/assets/projects/MODIES.webp",
+    imageAlt: "Modies Preview",
     visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/warmindo-modies",
     technologies: [
       {
         name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
+        iconSrc: "/assets/skills/next.svg",
         iconAlt: "Next.js Logo",
       },
       {
         name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
+        iconSrc: "/assets/skills/ts.svg",
         iconAlt: "TypeScript Logo",
-      },
-      {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
-        iconAlt: "Tailwind CSS Logo",
       },
     ],
   },
@@ -173,9 +190,10 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/anahata_jensoed.webp",
+    imageSrc: "/assets/projects/ANAHATA.webp",
     imageAlt: "Anahata Preview",
     visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
     technologies: [
       {
         name: "Golang",
@@ -195,30 +213,50 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "DemonWard",
-    period: "Mar 2024 - Mei 2024",
+    title: "Sylvair",
+    period: "Sept 2024 - Okt 2024",
     company: "Jenderal Soedirman University",
     role: "Full-Stack Engineer",
     description:
-      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/demonward.webp",
-    imageAlt: "DemonWard Preview",
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/SYLVAIR.webp",
+    imageAlt: "SylvairPreview",
     visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Sylvair",
     technologies: [
       {
-        name: "Golang",
-        iconSrc: "/assets/skills/golang.svg",
-        iconAlt: "Golang Logo",
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
       },
       {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.svg",
-        iconAlt: "Tailwind CSS Logo",
+        name: "Streamlit",
+        iconSrc: "/assets/skills/streamlit.svg",
+        iconAlt: "Streamlit Logo",
+      },
+    ],
+  },
+  {
+    title: "DemonWard",
+    period: "Mar 2024 - Mei 2024",
+    company: "Jenderal Soedirman University",
+    role: "Frontend Engineer",
+    description:
+      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
+    imageSrc: "/assets/projects/DEMONWARD.webp",
+    imageAlt: "DemonWard Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
       },
       {
-        name: "PostgreSQL",
-        iconSrc: "/assets/skills/postgre.svg",
-        iconAlt: "PostgreSQL Logo",
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
       },
     ],
   },
@@ -382,10 +420,33 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
-                <div className="absolute bottom-3 right-3">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-amber-300/60 bg-amber-100/80 px-3 py-1 text-xs font-medium text-amber-700 backdrop-blur dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
+                {/* Container Kanan Bawah untuk Visibility Badge dan Button Source */}
+                <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2">
+                  {/* Label Visibility (Public/Private) */}
+                  <span className="inline-flex items-center rounded-full border border-amber-300/60 bg-amber-100/80 px-2.5 py-0.5 text-[10px] font-medium text-amber-700 backdrop-blur dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
                     {project.visibility}
                   </span>
+
+                  {/* Tombol Source Link GitHub */}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded bg-slate-800/95 px-3 py-1.5 text-[11px] font-semibold tracking-wide text-white shadow-sm transition hover:bg-slate-900 dark:bg-zinc-800/95 dark:hover:bg-zinc-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                      </svg>
+                      Source
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -416,15 +477,15 @@ export default function ProjectsSection() {
                   {project.technologies.map((technology) => (
                     <div
                       key={technology.name}
-                      className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+                      className="relative flex h-10 w-10 items-center justify-center overflow-hidden"
                       title={technology.name}
                     >
                       <Image
                         src={technology.iconSrc}
                         alt={technology.iconAlt}
                         fill
-                        className="object-contain p-1.5"
-                        sizes="32px"
+                        className="object-contain p-1"
+                        sizes="40px"
                       />
                     </div>
                   ))}

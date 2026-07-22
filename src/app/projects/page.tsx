@@ -24,7 +24,9 @@ type Project = {
   description: string;
   imageSrc: string;
   imageAlt: string;
-  sourceUrl?: string;
+  visibility: "Private" | "Public";
+  isInternal?: boolean;
+  githubUrl?: string;
   demoUrl?: string;
   downloadUrl?: string;
   technologies: ProjectTech[];
@@ -32,185 +34,247 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Duwitku App",
-    period: "Oct 2025 - Dec 2025",
-    category: "Mobile",
-    role: "Mobile Developer",
-    company: "Personal Project",
-    description:
-      "A smart finance app built with Flutter to simplify expense tracking, receipt scanning, AI auto-categorization, seamless Supabase sync, and WhatsApp bot integration.",
-    imageSrc: "/assets/projects/duwitku.jpg",
-    imageAlt: "Duwitku App Preview",
-    sourceUrl: "https://github.com/ellfataa",
-    demoUrl: "#",
-    downloadUrl: "#",
-    technologies: [
-      {
-        name: "Flutter",
-        iconSrc: "/assets/skills/flutter.png",
-        iconAlt: "Flutter Logo",
-      },
-      {
-        name: "Supabase",
-        iconSrc: "/assets/skills/supabase.png",
-        iconAlt: "Supabase Logo",
-      },
-      {
-        name: "Firebase",
-        iconSrc: "/assets/skills/firebase.png",
-        iconAlt: "Firebase Logo",
-      },
-    ],
-  },
-  {
-    title: "Dishcovery",
-    period: "Sep 2025 - Oct 2025",
-    category: "Mobile",
-    role: "Flutter Developer · Team Lead",
-    company: "BEKUP — Baparekraf for Startup",
-    description:
-      "A mobile app that preserves Indonesia's traditional culinary heritage through AI-powered image recognition using Gemini API to identify traditional dishes from camera input.",
-    imageSrc: "/assets/projects/dishcovery.jpg",
-    imageAlt: "Dishcovery App Preview",
-    sourceUrl: "https://github.com/ellfataa",
-    downloadUrl: "#",
-    technologies: [
-      {
-        name: "Flutter",
-        iconSrc: "/assets/skills/flutter.png",
-        iconAlt: "Flutter Logo",
-      },
-      {
-        name: "Supabase",
-        iconSrc: "/assets/skills/supabase.png",
-        iconAlt: "Supabase Logo",
-      },
-      {
-        name: "Firebase",
-        iconSrc: "/assets/skills/firebase.png",
-        iconAlt: "Firebase Logo",
-      },
-    ],
-  },
-  {
-    title: "ManganKu App",
-    period: "2024",
-    category: "Mobile",
-    role: "Flutter Developer",
-    company: "BEKUP — Baparekraf for Startup",
-    description:
-      "A Flutter app that uses TensorFlow Lite and Firebase ML to recognize food from a photo, then generates nutritional information using Gemini AI and fetches recipes from external APIs.",
-    imageSrc: "/assets/projects/manganku.jpg",
-    imageAlt: "ManganKu App Preview",
-    sourceUrl: "https://github.com/ellfataa",
-    downloadUrl: "#",
-    technologies: [
-      {
-        name: "Flutter",
-        iconSrc: "/assets/skills/flutter.png",
-        iconAlt: "Flutter Logo",
-      },
-      {
-        name: "Firebase",
-        iconSrc: "/assets/skills/firebase.png",
-        iconAlt: "Firebase Logo",
-      },
-      {
-        name: "TensorFlow",
-        iconSrc: "/assets/skills/tensorflow.png",
-        iconAlt: "TensorFlow Logo",
-      },
-      {
-        name: "Supabase",
-        iconSrc: "/assets/skills/supabase.png",
-        iconAlt: "Supabase Logo",
-      },
-    ],
-  },
-  {
-    title: "WBS Public - Whistleblowing System",
-    period: "Dec 2025 - Apr 2026",
-    category: "Web",
-    role: "Frontend Engineer",
-    company: "Telkomsigma",
-    description:
-      "A public whistleblowing system that enables external users to securely submit reports with flexible identity options and track submission status.",
-    imageSrc: "/assets/projects/wbs-public.jpg",
-    imageAlt: "WBS Public Preview",
-    technologies: [
-      {
-        name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
-        iconAlt: "Next.js Logo",
-      },
-      {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
-        iconAlt: "TypeScript Logo",
-      },
-      {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
-        iconAlt: "Tailwind CSS Logo",
-      },
-    ],
-  },
-  {
-    title: "Personal Portfolio Website",
-    period: "2026",
-    category: "Web",
-    role: "Full-Stack Developer",
-    company: "Personal Project",
-    description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, responsive sections, dark mode, multilingual support, and AI chatbot integration.",
-    imageSrc: "/assets/projects/portfolio.jpg",
-    imageAlt: "Portfolio Website Preview",
-    sourceUrl: "https://github.com/ellfataa",
-    demoUrl: "#",
-    technologies: [
-      {
-        name: "Next.js",
-        iconSrc: "/assets/skills/nextjs.png",
-        iconAlt: "Next.js Logo",
-      },
-      {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/typescript.png",
-        iconAlt: "TypeScript Logo",
-      },
-      {
-        name: "Tailwind CSS",
-        iconSrc: "/assets/skills/tailwind.png",
-        iconAlt: "Tailwind CSS Logo",
-      },
-    ],
-  },
-  {
-    title: "Electricity Consumption Prediction",
-    period: "2025",
+    title: "SiBapas PWT",
+    period: "Jun 2026 - Jul 2026",
     category: "Machine Learning",
-    role: "ML Engineer",
-    company: "Final Thesis",
+    company: "ELF Std - Freelance Project",
+    role: "Full-Stack Engineer",
     description:
-      "A machine learning-based prediction system for electricity consumption using ensemble regression models and advanced feature engineering.",
-    imageSrc: "/assets/projects/electricity-prediction.jpg",
-    imageAlt: "Electricity Prediction Preview",
-    sourceUrl: "https://github.com/ellfataa",
+      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
+    imageSrc: "/assets/projects/SIBAPAS.png",
+    imageAlt: "SiBapas PWT Preview",
+    visibility: "Private",
+    isInternal: true,
     technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "laravel Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Best Intern DSS",
+    period: "Dec 2025 - May 2026",
+    category: "Machine Learning",
+    company: "Thesis",
+    role: "Full-Stack Engineer",
+    description:
+      "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
+    imageSrc: "/assets/projects/BEST_INTERN.webp",
+    imageAlt: "Best Intern Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
       {
         name: "Python",
-        iconSrc: "/assets/skills/python.png",
+        iconSrc: "/assets/skills/python.svg",
         iconAlt: "Python Logo",
       },
       {
-        name: "Scikit-learn",
-        iconSrc: "/assets/skills/scikit-learn.png",
-        iconAlt: "Scikit-learn Logo",
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+    ],
+  },
+  {
+    title: "TelkomBiz Plan",
+    period: "Dec 2025 - Feb 2026",
+    category: "Web",
+    company: "Telkom Indonesia - Internship",
+    role: "Full-Stack Engineer",
+    description:
+      "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
+    imageSrc: "/assets/projects/TELKOMBIZ.webp",
+    imageAlt: "TelkomBiz Plan Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
       },
       {
-        name: "Pandas",
-        iconSrc: "/assets/skills/pandas.png",
-        iconAlt: "Pandas Logo",
+        name: "Vue",
+        iconSrc: "/assets/skills/vue.svg",
+        iconAlt: "Vue Logo",
+      },
+    ],
+  },
+  {
+    title: "Nautica",
+    period: "Mar 2026 - Apr 2026",
+    category: "Web",
+    company: "ELF Std - Freelance Project",
+    role: "Full-Stack Engineer",
+    description:
+      "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
+    imageSrc: "/assets/projects/NAUTICA.webp",
+    imageAlt: "Nautica Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+    ],
+  },
+  {
+    title: "Webklik",
+    period: "Oct 2026 - Mar 2026",
+    category: "Web",
+    company: "Wesclic - Internship",
+    role: "System Analyst",
+    description:
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/WEBKLIK.webp",
+    imageAlt: "Webklik Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/next.svg",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+    ],
+  },
+  {
+    title: "Warmindo Modies",
+    period: "Feb 2026 - Mar 2026",
+    category: "Web",
+    company: "ELF Std - Freelance Project",
+    role: "Frontend Engineer",
+    description:
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/MODIES.webp",
+    imageAlt: "Modies Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/warmindo-modies",
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/next.svg",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+    ],
+  },
+  {
+    title: "Anahata",
+    period: "Mar 2025 - Mei 2025",
+    category: "Web",
+    company: "Jenderal Soedirman University",
+    role: "Full-Stack Engineer",
+    description:
+      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
+    imageSrc: "/assets/projects/ANAHATA.webp",
+    imageAlt: "Anahata Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
+    technologies: [
+      {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Sylvair",
+    period: "Sept 2024 - Okt 2024",
+    category: "Machine Learning",
+    company: "Jenderal Soedirman University",
+    role: "Full-Stack Engineer",
+    description:
+      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
+    imageSrc: "/assets/projects/SYLVAIR.webp",
+    imageAlt: "SylvairPreview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Sylvair",
+    technologies: [
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Streamlit",
+        iconSrc: "/assets/skills/streamlit.svg",
+        iconAlt: "Streamlit Logo",
+      },
+    ],
+  },
+  {
+    title: "DemonWard",
+    period: "Mar 2024 - Mei 2024",
+    category: "Web",
+    company: "Jenderal Soedirman University",
+    role: "Frontend Engineer",
+    description:
+      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
+    imageSrc: "/assets/projects/DEMONWARD.webp",
+    imageAlt: "DemonWard Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
+      },
+      {
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
       },
     ],
   },
@@ -404,10 +468,20 @@ export default function ProjectsPage() {
 
                   <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent opacity-80" />
 
-                  <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
-                    {project.sourceUrl && (
+                  {project.isInternal && (
+                    <div className="absolute right-3 top-3 rotate-45 rounded-md bg-amber-400 px-7 py-1 text-[9px] font-bold uppercase tracking-wider text-amber-950 shadow-sm">
+                      Internal
+                    </div>
+                  )}
+
+                  <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5">
+                    <span className="inline-flex items-center rounded-full border border-amber-300/60 bg-amber-100/80 px-2.5 py-0.5 text-[10px] font-medium text-amber-700 backdrop-blur dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-300">
+                      {project.visibility}
+                    </span>
+
+                    {project.githubUrl && (
                       <a
-                        href={project.sourceUrl}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 rounded-md bg-black/75 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur transition hover:bg-black"

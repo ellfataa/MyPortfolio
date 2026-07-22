@@ -137,7 +137,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/luthfata/",
     icon: <InstagramIcon />,
   },
 ];

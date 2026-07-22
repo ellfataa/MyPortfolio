@@ -244,7 +244,7 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="/assets/cv/cv-luthfi.pdf"
+              href="/assets/cv/CV - Luthfi Emillulfata.pdf"
               download
               className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/85 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-zinc-800 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
             >

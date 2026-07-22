@@ -228,16 +228,18 @@ export default function SkillsSection() {
               {category.title}
             </h3>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+            {/* Jarak gap diperkecil menjadi gap-2 dan sm:gap-3 */}
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {category.skills.map((skill) => (
                 <div key={skill.name} className="group relative">
-                  <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 group-hover:-translate-y-1 group-hover:border-slate-300 group-hover:shadow-md dark:border-zinc-800 dark:bg-white/4 dark:group-hover:border-zinc-700 dark:group-hover:bg-white/6 sm:h-14 sm:w-14">
+                  {/* Container diperbesar sekitar 2px dengan h-[50px] w-[50px] dan sm:h-[58px] sm:w-[58px] */}
+                  <div className="relative flex h-[50px] w-[50px] items-center justify-center overflow-hidden transition duration-300 group-hover:-translate-y-1 sm:h-[58px] sm:w-[58px]">
                     <Image
                       src={skill.iconSrc}
                       alt={skill.iconAlt}
                       fill
-                      className="object-contain p-2.5"
-                      sizes="56px"
+                      className="object-contain p-2"
+                      sizes="(max-width: 640px) 50px, 58px"
                     />
                   </div>
 
