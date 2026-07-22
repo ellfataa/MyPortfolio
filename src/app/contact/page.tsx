@@ -106,24 +106,6 @@ function LinkedinIcon() {
   );
 }
 
-function InstagramIcon() {
-  return (
-    <svg
-      className="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <path d="M17.5 6.5h.01" />
-    </svg>
-  );
-}
-
 const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
@@ -135,11 +117,6 @@ const socialLinks: SocialLink[] = [
     href: "https://www.linkedin.com/in/luthfi-emillulfata/",
     icon: <LinkedinIcon />,
   },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/luthfata/",
-    icon: <InstagramIcon />,
-  },
 ];
 
 export default function ContactPage() {
@@ -148,6 +125,8 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleChange = (field: keyof ContactForm, value: string) => {
     if (field === "message" && value.length > MAX_MESSAGE_LENGTH) return;
@@ -158,15 +137,41 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setStatus("loading");
 
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    );
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c5118604-63c4-4613-8e9f-82d8d5209a4c", 
+          subject: `Portfolio Contact from ${form.name}`,
+          from_name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
 
-    window.location.href = `mailto:luthfi.efata@gmail.com?subject=${subject}&body=${body}`;
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        
+        // Mengembalikan tombol ke status semula setelah 3 detik
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -329,11 +334,22 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md dark:bg-white dark:text-slate-950 dark:hover:bg-zinc-200"
+                disabled={status === "loading" || status === "success"}
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-950 dark:hover:bg-zinc-200"
               >
                 <SendIcon />
-                Send Message
+                {status === "loading"
+                  ? "Sending..."
+                  : status === "success"
+                  ? "Message Sent!"
+                  : "Send Message"}
               </button>
+
+              {status === "error" && (
+                <p className="mt-2 text-center text-sm text-red-500">
+                  Failed to send message. Please try again.
+                </p>
+              )}
             </div>
           </form>
         </section>

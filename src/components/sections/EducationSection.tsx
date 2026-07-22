@@ -35,7 +35,7 @@ const educations: Education[] = [
     ],
     images: [
       {
-        src: "/assets/education/after graduate 1.jpeg",
+        src: "/assets/education/after_graduate.jpeg",
         title: "After Graduation Ceremony",
         shortDescription:
           "A photo taken after the graduation ceremony, symbolizing...",
@@ -43,7 +43,7 @@ const educations: Education[] = [
           "A photo taken after the graduation ceremony, symbolizing the culmination of academic achievements and the transition to professional life.",
       },
       {
-        src: "/assets/education/after graduate 2.jpeg",
+        src: "/assets/education/cumLaude.jpeg",
         title: "Graduated with Cum Laude Honors",
         shortDescription:
           "A snapshot of the graduation certificate highlighting the Cum Laude distinction...",
@@ -51,7 +51,7 @@ const educations: Education[] = [
           "A snapshot of the graduation certificate highlighting the Cum Laude distinction, representing academic excellence and dedication.",
       },
       {
-        src: "/assets/education/after graduate 3.jpeg",
+        src: "/assets/education/graduation.jpeg",
         title: "Graduation Day Celebration",
         shortDescription:
           "A celebratory moment during the graduation day, capturing the joy and pride...",

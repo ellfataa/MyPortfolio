@@ -60,24 +60,6 @@ function LinkedinIcon() {
   );
 }
 
-function InstagramIcon() {
-  return (
-    <svg
-      className="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <path d="M17.5 6.5h.01" />
-    </svg>
-  );
-}
-
 function MailIcon() {
   return (
     <svg
@@ -98,7 +80,7 @@ function MailIcon() {
 const footerLinks: FooterLink[] = [
   {
     label: "About",
-    href: "#hero",
+    href: "/#hero",
   },
   {
     label: "Projects",
@@ -126,11 +108,6 @@ const socialLinks: SocialLink[] = [
     icon: <LinkedinIcon />,
   },
   {
-    label: "Instagram",
-    href: "https://www.instagram.com/",
-    icon: <InstagramIcon />,
-  },
-  {
     label: "Email",
     href: "mailto:luthfi.efata@gmail.com",
     icon: <MailIcon />,
@@ -143,7 +120,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-6xl px-4 pb-24 pt-8 sm:px-6 sm:pb-16 sm:pt-10 md:pb-10 lg:px-8">
         <div className="flex flex-col items-center">
           <a
-            href="#hero"
+            href="/#hero"
             className="group inline-flex items-center gap-3 text-slate-950 transition duration-300 hover:-translate-y-0.5 dark:text-white"
             aria-label="Back to top"
           >

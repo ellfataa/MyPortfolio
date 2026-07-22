@@ -41,7 +41,7 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
-    imageSrc: "/assets/projects/SIBAPAS.png",
+    imageSrc: "/assets/projects/SIBAPAS.jpeg",
     imageAlt: "SiBapas PWT Preview",
     visibility: "Private",
     isInternal: true,
@@ -71,7 +71,7 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
-    imageSrc: "/assets/projects/BEST_INTERN.webp",
+    imageSrc: "/assets/projects/BEST-INTERN.webp",
     imageAlt: "Best Intern Preview",
     visibility: "Private",
     isInternal: true,
@@ -101,7 +101,7 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
-    imageSrc: "/assets/projects/TELKOMBIZ.webp",
+    imageSrc: "/assets/projects/TELKOMBIZ.jpg",
     imageAlt: "TelkomBiz Plan Preview",
     visibility: "Private",
     isInternal: true,
@@ -126,7 +126,7 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
-    imageSrc: "/assets/projects/NAUTICA.webp",
+    imageSrc: "/assets/projects/NAUTICA1.webp",
     imageAlt: "Nautica Preview",
     visibility: "Private",
     isInternal: true,

@@ -31,7 +31,7 @@ const projects: Project[] = [
     role: "Full-Stack Engineer",
     description:
       "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
-    imageSrc: "/assets/projects/SIBAPAS.png",
+    imageSrc: "/assets/projects/SIBAPAS.jpeg",
     imageAlt: "SiBapas PWT Preview",
     visibility: "Private",
     isInternal: true,
