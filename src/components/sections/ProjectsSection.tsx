@@ -157,7 +157,7 @@ const projects: Project[] = [
     role: "System Analyst",
     description:
       "An IT service platform where I analyzed business requirements and produced PRDs, SRSs, and system diagrams to guide software development.",
-    imageSrc: "/assets/projects/webklik.jpg",
+    imageSrc: "/assets/projects/webklik1.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
     isInternal: true,
@@ -210,7 +210,7 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/anahata.jpg",
+    imageSrc: "/assets/projects/1anahata.jpg",
     imageAlt: "Anahata Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
@@ -239,7 +239,7 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A machine learning-powered web application built with Python and Streamlit to analyze lung disease risk using XGBoost and Random Forest models.",
-    imageSrc: "/assets/projects/sylvair.jpg",
+    imageSrc: "/assets/projects/1sylvair.jpg",
     imageAlt: "Sylvair Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/Sylvair",
@@ -263,7 +263,7 @@ const projects: Project[] = [
     role: "Frontend Engineer",
     description:
       "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
-    imageSrc: "/assets/projects/demonWard.jpg",
+    imageSrc: "/assets/projects/1demonWard.jpg",
     imageAlt: "DemonWard Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/FE-DemonWard",
