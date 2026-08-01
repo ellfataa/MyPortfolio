@@ -27,14 +27,14 @@ const projects: Project[] = [
   {
     title: "SiBapas PWT",
     period: "Jun 2026 - Jul 2026",
-    company: "ELF Std - Freelance Project",
-    role: "Full-Stack Engineer",
+    company: "ELF Studio - Freelance Project",
+    role: "Full-Stack Developer",
     description:
-      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
-    imageSrc: "/assets/projects/SIBAPAS.jpeg",
+    "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
+    imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
-    visibility: "Private",
-    isInternal: true,
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/LapasAPP",
     technologies: [
       {
         name: "Laravel",
@@ -57,10 +57,10 @@ const projects: Project[] = [
     title: "Best Intern DSS",
     period: "Dec 2025 - May 2026",
     company: "Thesis",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
-    imageSrc: "/assets/projects/BEST-INTERN.webp",
+    "A decision support system integrating ROC, Random Forest, and TOPSIS to objectively identify the best interns through hybrid weighting and multi-criteria evaluation.",
+    imageSrc: "/assets/projects/thesis.jpg",
     imageAlt: "Best Intern Preview",
     visibility: "Private",
     isInternal: true,
@@ -80,15 +80,25 @@ const projects: Project[] = [
         iconSrc: "/assets/skills/tailwind.svg",
         iconAlt: "Tailwind CSS Logo",
       },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+      {
+        name: "Postman",
+        iconSrc: "/assets/skills/postman.svg",
+        iconAlt: "Postman Logo",
+      },
     ],
   },
   {
     title: "TelkomBiz Plan",
     period: "Dec 2025 - Feb 2026",
     company: "Telkom Indonesia - Internship",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
+    "A web-based platform for promoting and calculating TelkomBiz products, integrating the MOORA method to provide optimal product recommendations based on customer needs.",
     imageSrc: "/assets/projects/TELKOMBIZ.jpg",
     imageAlt: "TelkomBiz Plan Preview",
     visibility: "Private",
@@ -104,16 +114,21 @@ const projects: Project[] = [
         iconSrc: "/assets/skills/vue.svg",
         iconAlt: "Vue Logo",
       },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
     ],
   },
   {
     title: "Nautica",
     period: "Mar 2026 - Apr 2026",
-    company: "ELF Std - Freelance Project",
-    role: "Full-Stack Engineer",
+    company: "ELF Studio - Freelance Project",
+    role: "Full-Stack Developer",
     description:
-      "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
-    imageSrc: "/assets/projects/NAUTICA1.webp",
+    "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+    imageSrc: "/assets/projects/NAUTICA1.jpg",
     imageAlt: "Nautica Preview",
     visibility: "Private",
     isInternal: true,
@@ -127,6 +142,11 @@ const projects: Project[] = [
         name: "Laravel",
         iconSrc: "/assets/skills/laravel.svg",
         iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
       },
     ],
   },
@@ -330,7 +350,7 @@ export default function ProjectsSection() {
 
     intervalRef.current = setInterval(() => {
       scrollProjects("right");
-    }, 12000);
+    }, 8000);
   }, [scrollProjects]);
 
   useEffect(() => {
@@ -469,7 +489,7 @@ export default function ProjectsSection() {
                   </span>
                 </div>
 
-                <p className="mt-4 line-clamp-4 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-sm">
+                <p className="mt-4 line-clamp-4 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-xs">
                   {project.description}
                 </p>
 

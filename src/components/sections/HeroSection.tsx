@@ -226,13 +226,13 @@ export default function HeroSection() {
           </div>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-zinc-300 sm:text-lg lg:mx-0">
-            Fresh Graduate in Informatics with a strong interest in Full-Stack
-            Development and Machine Learning. Experienced in building web-based
-            solutions and translating business requirements into functional,
-            scalable, and user-focused applications. Able to collaborate in
-            Agile environments, work effectively within cross-functional teams,
-            and contribute to the delivery of secure, reliable, and
-            user-oriented digital solutions.
+            Software Engineer with a Computer Science background
+            and a strong interest in Full-Stack Development, 
+            System Analysis, and Data Analysis. 
+            Experienced in designing and developing 
+            scalable web applications, translating business 
+            requirements into practical digital solutions, and collaborating 
+            within Agile teams to deliver reliable, secure, and user-centered software.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">

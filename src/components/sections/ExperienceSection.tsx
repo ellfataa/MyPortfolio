@@ -22,6 +22,19 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    company: "PT CAKRAWALA PUTRA MULYA",
+    role: "IT & Administration Supervisor",
+    period: "May 2026 - now",
+    logoSrc: "/assets/experience/logos/cpm.jpg",
+    logoAlt: "PT CAKRAWALA PUTRA MULYA Logo",
+    details: [
+      "Managed operational data through the company's information system by performing data entry, validation, and cross-checking to ensure data accuracy.",
+      "Monitored inventory records and maintained synchronization between physical stock and system data to support efficient operations.",
+      "Coordinated operational staff in customer service, inventory management, and product delivery to optimize daily workflows.",
+      "Supported administrative processes while improving operational efficiency through accurate data management and system utilization.",
+    ],
+  },
+  {
     company: "TELKOM INDONESIA",
     role: "Full-Stack Developer Intern",
     period: "Dec 2025 - Feb 2026",
@@ -35,20 +48,28 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/telkom-1.jpg",
-        title: "Enterprise Application Development",
+        src: "/assets/experience/telkom1.jpeg",
+        title: "Government Partnership Meeting",
         shortDescription:
-          "Development documentation related to enterprise application features...",
+          "Attended a strategic partnership meeting between PT Telkom...",
         description:
-          "Development documentation related to enterprise web application features, system integration, and continuous improvement during my internship experience.",
+          "Attended a strategic partnership meeting between PT Telkom Indonesia Purwokerto and the Banyumas Regency Government to support digital collaboration and public service innovation.",
       },
       {
-        src: "/assets/experience/telkom-2.jpg",
-        title: "Team Collaboration",
+        src: "/assets/experience/telkom2.jpg",
+        title: "School Visit Program",
         shortDescription:
-          "Collaboration process with cross-functional teams in an Agile workflow...",
+          "Supported a school visit program by welcoming students...",
         description:
-          "Collaboration process with cross-functional teams in an Agile workflow to deliver secure, reliable, and user-focused digital solutions.",
+          "Supported a school visit program by welcoming students from SMAN 1 Sumpiuh and introducing PT Telkom Indonesia's digital services, technology, and workplace environment."
+      },
+      {
+        src: "/assets/experience/telkom3.jpeg",
+        title: "Network Infrastructure Maintenance",
+        shortDescription:
+          "Participated in PMR activities at PT Telkom Majenang...",
+        description:
+          "Participated in PMR activities at PT Telkom Majenang by supporting network hardware maintenance, cleaning equipment, and assisting with hardware configuration to ensure reliable network operations."
       },
     ],
   },
@@ -66,12 +87,20 @@ const experiences: Experience[] = [
     ],
     images: [
       {
-        src: "/assets/experience/wesclic-1.png",
-        title: "System Requirement Analysis",
+        src: "/assets/experience/1wesclic.jpeg",
+        title: "Merawat Niat Program",
         shortDescription:
-          "Requirement analysis process for understanding user and system needs...",
+          "Participated in the 'Merawat Niat' program, a company...",
         description:
-          "Requirement analysis process for identifying user needs, documenting workflows, and preparing structured functional documentation for the development team.",
+          "Participated in the 'Merawat Niat' program, a company initiative combining collective prayers and intern presentations to promote continuous learning, personal growth, and a positive workplace culture.",
+      },
+      {
+        src: "/assets/experience/2wesclic.jpeg",
+        title: "Graduation Documentation",
+        shortDescription:
+          "Celebrated the successful completion of the internship program...",
+        description:
+          "Celebrated the successful completion of the internship program alongside mentors and fellow interns, marking the achievements and professional growth gained throughout the internship period."
       },
     ],
   },
@@ -89,26 +118,55 @@ const experiences: Experience[] = [
     images: [
       {
         src: "/assets/experience/pdam1.jpg",
-        title: "Internal Web Application",
+        title: "Morning Assembly",
         shortDescription:
-          "Web application development for supporting internal operational needs...",
+          "Participated in the company's daily morning assembly...",
         description:
-          "Web application development for supporting internal operational needs, including responsive interface implementation and backend functionality.",
+          "Participated in the company's daily morning assembly to receive operational updates, strengthen team coordination, and foster discipline and professionalism in the workplace."
+      },
+    ],
+  },
+  {
+    company: "ELF Studio",
+    role: "Freelancer",
+    period: "Jan 2024 - now",
+    logoSrc: "/assets/logo/logo.png",
+    logoAlt: "ELF Studio Logo",
+    details: [
+      "Built scalable web and mobile solutions by transforming client ideas into modern, responsive, and user-centered digital products.",
+      "Designed intuitive UI/UX and delivered end-to-end project execution, combining technical development, documentation, and effective client collaboration.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/freelance1.jpeg",
+        title: "System Documentation",
+        shortDescription:
+          "Created technical documentation by designing class diagrams...",
+        description:
+          "Created technical documentation by designing class diagrams to model system architecture and support efficient software development."
       },
       {
-        src: "/assets/certificates/pdam.jpg",
-        title: "Internal Web Application",
+        src: "/assets/experience/freelance2.jpeg",
+        title: "Dormitory Management System",
         shortDescription:
-          "Web application development for supporting internal operational needs...",
+          "Developed a web-based dormitory management system...",
         description:
-          "Web application development for supporting internal operational needs, including responsive interface implementation and backend functionality.",
+          "Developed a web-based dormitory management system, focusing on responsive interfaces and features to streamline administrative processes."
+      },
+      {
+        src: "/assets/experience/freelance3.jpeg",
+        title: "UI/UX Redesign Concept",
+        shortDescription:
+          "Designed a modern UI/UX redesign concept for an Indonesian esports team website...",
+        description:
+          "Designed a modern UI/UX redesign concept for an Indonesian esports team website, focusing on visual consistency and improved user experience."
       },
     ],
   },
   {
     company: "INFORMATICS LABORATORY",
     role: "Laboratory Assistant",
-    period: "Aug 2023 - Jun 2026",
+    period: "Aug 2023 - Apr 2026",
     logoSrc: "/assets/experience/logos/iflab.jpg",
     logoAlt: "Informatics Laboratory Logo",
     details: [
@@ -119,19 +177,19 @@ const experiences: Experience[] = [
     images: [
       {
         src: "/assets/experience/aslab-1.jpeg",
-        title: "Practicum Assistance",
+        title: "Laboratory Assistant Team",
         shortDescription:
-          "Supporting students during practicum learning activities...",
+          "Captured the completion of a practicum period alongside fellow laboratory assistants...",
         description:
-          "Supporting students during practicum learning activities by helping them understand technical concepts, solve practical problems, and complete assignments.",
+          "Captured the completion of a practicum period alongside fellow laboratory assistants, reflecting teamwork, dedication, and commitment to supporting students' learning experiences."
       },
       {
         src: "/assets/experience/aslab-2.jpg",
-        title: "Learning Support",
+        title: "Database Tutoring Session",
         shortDescription:
-          "Assisting laboratory sessions and supporting academic activities...",
+          "Invited by the Informatics Student Association (HMIF) to conduct a Database...",
         description:
-          "Assisting laboratory sessions and supporting academic activities through preparation, guidance, and evaluation of practicum materials.",
+          "Invited by the Informatics Student Association (HMIF) to conduct a Database tutoring session, helping students prepare for midterm and final examinations through concept explanations and problem-solving discussions."
       },
     ],
   },
@@ -143,33 +201,25 @@ const experiences: Experience[] = [
     logoAlt: "BEM UNSOED Logo",
     details: [
       "Conducted quantitative research and surveys to support executive ministries and deliver strategic insights for the university's student body.",
-      "Spearheaded large-scale survey data processing for the Data Analysis Directorate, handling key initiatives such as ‘Super Survey’ (749 respondents) and ‘Ekspektasi Mahasiswa Baru 2024’ (1519 respondents).",
+      "Spearheaded large-scale survey data processing for the Data Analysis Directorate, handling key initiatives such as 'Super Survey' (749 respondents) and 'Ekspektasi Mahasiswa Baru 2024' (1519 respondents).",
       "Analyzed raw survey data to create comprehensive PDF reports and collaborated on visual data presentations.",
     ],
     images: [
       {
-        src: "/assets/experience/bem-1.jpg",
-        title: "Organizational Data Analysis",
+        src: "/assets/experience/bem1.jpg",
+        title: "Research and Data Ministry Team",
         shortDescription:
-          "Data analysis activities for organizational reporting and evaluation...",
+          "Captured the completion of organizational responsibilities...",
         description:
-          "Data analysis activities used to support organizational decision-making, internal evaluation, and structured reporting for programs and activities.",
+          "Captured the completion of organizational responsibilities alongside members of the Research and Data Ministry, reflecting teamwork, commitment, and successful execution of departmental programs."
       },
       {
-        src: "/assets/experience/bem-2.jpg",
-        title: "Program Evaluation",
+        src: "/assets/experience/bem2.jpg",
+        title: "BEM Certificate",
         shortDescription:
-          "Supporting internal evaluation using structured data insights...",
+          "Received a certificate of appreciation for serving as a member of the Research and Data Ministry...",
         description:
-          "Supporting internal evaluation using structured data insights to help improve organizational programs and decision-making processes.",
-      },
-      {
-        src: "/assets/certificates/bem.jpg",
-        title: "Reporting Documentation",
-        shortDescription:
-          "Preparation of documentation and data-based organizational reports...",
-        description:
-          "Preparation of documentation and data-based organizational reports to support accountability and program evaluation.",
+          "Received a certificate of appreciation for serving as a member of the Research and Data Ministry, recognizing contributions to organizational programs and student leadership."
       },
     ],
   },
@@ -180,34 +230,34 @@ const experiences: Experience[] = [
     logoSrc: "/assets/experience/logos/hmifunsoed.png",
     logoAlt: "HMIF UNSOED Logo",
     details: [
-      "Enhanced student academic potential through structured programs, including the ‘Mahasiswa Berprestasi’ initiative.",
-      "Led the ‘Simpul Pintar’ Question Bank program, organizing 74 study materials and 148 exam questions for academic assessments.",
+      "Enhanced student academic potential through structured programs, including the 'Mahasiswa Berprestasi' initiative.",
+      "Led the 'Simpul Pintar' Question Bank program, organizing 74 study materials and 148 exam questions for academic assessments.",
       "Built 2 centralized data repositories utilizing Excel PivotTables to streamline internship and vendor management systems.",
     ],
     images: [
       {
-        src: "/assets/experience/hmif-1.jpg",
-        title: "Education Program",
+        src: "/assets/experience/hmif1.jpg",
+        title: "HMIF Studio Portrait",
         shortDescription:
-          "Supporting educational programs within the Informatics student association...",
+          "Captured alongside fellow HMIF members to commemorate organizational...",
         description:
-          "Supporting educational programs and academic initiatives within the Informatics student association to improve student learning engagement.",
+          "Captured alongside fellow HMIF members to commemorate organizational commitment, collaboration, and the successful completion of annual programs and activities."
       },
       {
-        src: "/assets/experience/hmif-2.jpeg",
-        title: "Student Development",
+        src: "/assets/experience/hmif2.jpeg",
+        title: "Education Division Team",
         shortDescription:
-          "Student development activities focused on learning and engagement...",
+          "Captured with the Education Division team after successfully organizing academic...",
         description:
-          "Student development activities focused on improving engagement, academic growth, and participation in educational initiatives.",
+          "Captured with the Education Division team after successfully organizing academic programs and initiatives to support student learning and development."
       },
       {
-        src: "/assets/certificates/hmif.jpg",
-        title: "Academic Activity",
+        src: "/assets/experience/hmif3.jpg",
+        title: "HMIF Certificate",
         shortDescription:
-          "Collaboration in organizing learning-related academic activities...",
+          "Received a certificate of appreciation for active contributions as a member of HMIF...",
         description:
-          "Collaboration in organizing learning-related academic activities for Informatics students through planning, coordination, and execution.",
+          "Received a certificate of appreciation for active contributions as a member of HMIF, recognizing dedication to organizational activities and student development."
       },
     ],
   },

@@ -23,8 +23,8 @@ type Education = {
 
 const educations: Education[] = [
   {
-    institution: "UNIVERSITAS JENDERAL SOEDIRMAN",
-    degree: "Bachelor of Informatics",
+    institution: "JENDERAL SOEDIRMAN UNIVERSITY",
+    degree: "Bachelor of Computer Science",
     period: "Aug 2022 - Jun 2026",
     gpa: "GPA: 3.87 / 4.00 (Cum Laude)",
     logoSrc: "/assets/education/logos/unsoed.png",
@@ -35,7 +35,7 @@ const educations: Education[] = [
     ],
     images: [
       {
-        src: "/assets/education/after_graduate.jpeg",
+        src: "/assets/education/afterGraduate.jpeg",
         title: "After Graduation Ceremony",
         shortDescription:
           "A photo taken after the graduation ceremony, symbolizing...",
@@ -51,7 +51,7 @@ const educations: Education[] = [
           "A snapshot of the graduation certificate highlighting the Cum Laude distinction, representing academic excellence and dedication.",
       },
       {
-        src: "/assets/education/graduation.jpeg",
+        src: "/assets/education/graduationDay.jpeg",
         title: "Graduation Day Celebration",
         shortDescription:
           "A celebratory moment during the graduation day, capturing the joy and pride...",
