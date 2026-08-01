@@ -8,6 +8,7 @@ import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
 type ProjectCategory = "All" | "Web" | "Mobile" | "Machine Learning";
+type ProjectCategoryValue = Exclude<ProjectCategory, "All">;
 
 type ProjectTech = {
   name: string;
@@ -18,7 +19,7 @@ type ProjectTech = {
 type Project = {
   title: string;
   period: string;
-  category: Exclude<ProjectCategory, "All">;
+  category: ProjectCategoryValue | ProjectCategoryValue[];
   role: string;
   company: string;
   description: string;
@@ -36,15 +37,15 @@ const projects: Project[] = [
   {
     title: "SiBapas PWT",
     period: "Jun 2026 - Jul 2026",
-    category: "Machine Learning",
-    company: "ELF Std - Freelance Project",
-    role: "Full-Stack Engineer",
+    category: ["Web", "Mobile"],
+    company: "ELF Studio - Freelance Project",
+    role: "Full-Stack Developer",
     description:
-      "A machine learning-based prediction system for electricity consumption using ensemble regression models and feature engineering.",
-    imageSrc: "/assets/projects/SIBAPAS.jpeg",
+      "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
+    imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
-    visibility: "Private",
-    isInternal: true,
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/LapasAPP",
     technologies: [
       {
         name: "Laravel",
@@ -68,10 +69,10 @@ const projects: Project[] = [
     period: "Dec 2025 - May 2026",
     category: "Machine Learning",
     company: "Thesis",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "A smart decision support system that leverages integrated data-driven algorithms to evaluate intern performance and accurately rank top talents.",
-    imageSrc: "/assets/projects/BEST-INTERN.webp",
+      "A decision support system integrating ROC, Random Forest, and TOPSIS to objectively identify the best interns through hybrid weighting and multi-criteria evaluation.",
+    imageSrc: "/assets/projects/thesis.jpg",
     imageAlt: "Best Intern Preview",
     visibility: "Private",
     isInternal: true,
@@ -91,6 +92,16 @@ const projects: Project[] = [
         iconSrc: "/assets/skills/tailwind.svg",
         iconAlt: "Tailwind CSS Logo",
       },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+      {
+        name: "Postman",
+        iconSrc: "/assets/skills/postman.svg",
+        iconAlt: "Postman Logo",
+      },
     ],
   },
   {
@@ -98,9 +109,9 @@ const projects: Project[] = [
     period: "Dec 2025 - Feb 2026",
     category: "Web",
     company: "Telkom Indonesia - Internship",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "An internal WBS for the Internal Audit team to manage, validate, and monitor whistleblowing reports end-to-end.",
+      "A web-based platform for promoting and calculating TelkomBiz products, integrating the MOORA method to provide optimal product recommendations based on customer needs.",
     imageSrc: "/assets/projects/TELKOMBIZ.jpg",
     imageAlt: "TelkomBiz Plan Preview",
     visibility: "Private",
@@ -116,20 +127,25 @@ const projects: Project[] = [
         iconSrc: "/assets/skills/vue.svg",
         iconAlt: "Vue Logo",
       },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
     ],
   },
   {
     title: "Nautica",
     period: "Mar 2026 - Apr 2026",
     category: "Web",
-    company: "ELF Std - Freelance Project",
-    role: "Full-Stack Engineer",
+    company: "ELF Studio - Freelance Project",
+    role: "Full-Stack Developer",
     description:
-      "Enhanced web-based ticketing system for monitoring SPBU shifts and operational issues with summaries and dashboards.",
-    imageSrc: "/assets/projects/NAUTICA1.webp",
+      "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+    imageSrc: "/assets/projects/NAUTICA1.jpg",
     imageAlt: "Nautica Preview",
-    visibility: "Private",
-    isInternal: true,
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
     technologies: [
       {
         name: "TypeScript",
@@ -140,6 +156,11 @@ const projects: Project[] = [
         name: "Laravel",
         iconSrc: "/assets/skills/laravel.svg",
         iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
       },
     ],
   },
@@ -150,26 +171,26 @@ const projects: Project[] = [
     company: "Wesclic - Internship",
     role: "System Analyst",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/WEBKLIK.webp",
+      "An IT service platform where I analyzed business requirements and produced PRDs, SRSs, and system diagrams to guide software development.",
+    imageSrc: "/assets/projects/webklik.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
       {
-        name: "Laravel",
-        iconSrc: "/assets/skills/laravel.svg",
-        iconAlt: "Laravel Logo",
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
       },
       {
-        name: "Next.js",
-        iconSrc: "/assets/skills/next.svg",
-        iconAlt: "Next.js Logo",
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
       },
       {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/ts.svg",
-        iconAlt: "TypeScript Logo",
+        name: "Microsoft Word",
+        iconSrc: "/assets/skills/mWord.svg",
+        iconAlt: "Microsoft Word Logo",
       },
     ],
   },
@@ -177,11 +198,11 @@ const projects: Project[] = [
     title: "Warmindo Modies",
     period: "Feb 2026 - Mar 2026",
     category: "Web",
-    company: "ELF Std - Freelance Project",
+    company: "ELF Studio - Freelance Project",
     role: "Frontend Engineer",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/MODIES.webp",
+      "A responsive company profile website designed to strengthen Warmindo Modies' online presence and showcase its products and services.",
+    imageSrc: "/assets/projects/warmindoModies.jpg",
     imageAlt: "Modies Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/warmindo-modies",
@@ -203,10 +224,10 @@ const projects: Project[] = [
     period: "Mar 2025 - Mei 2025",
     category: "Web",
     company: "Jenderal Soedirman University",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/ANAHATA.webp",
+    imageSrc: "/assets/projects/anahata.jpg",
     imageAlt: "Anahata Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
@@ -233,11 +254,11 @@ const projects: Project[] = [
     period: "Sept 2024 - Okt 2024",
     category: "Machine Learning",
     company: "Jenderal Soedirman University",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/SYLVAIR.webp",
-    imageAlt: "SylvairPreview",
+      "A machine learning-powered web application built with Python and Streamlit to analyze lung disease risk using XGBoost and Random Forest models.",
+    imageSrc: "/assets/projects/sylvair.jpg",
+    imageAlt: "Sylvair Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/Sylvair",
     technologies: [
@@ -260,8 +281,8 @@ const projects: Project[] = [
     company: "Jenderal Soedirman University",
     role: "Frontend Engineer",
     description:
-      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/DEMONWARD.webp",
+      "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
+    imageSrc: "/assets/projects/demonWard.jpg",
     imageAlt: "DemonWard Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/FE-DemonWard",
@@ -286,6 +307,33 @@ const categories: ProjectCategory[] = [
   "Mobile",
   "Machine Learning",
 ];
+
+function matchesProjectCategory(
+  category: Project["category"],
+  selectedCategory: ProjectCategory
+) {
+  if (selectedCategory === "All") return true;
+
+  const categories = Array.isArray(category) ? category : [category];
+  return categories.includes(selectedCategory as ProjectCategoryValue);
+}
+
+function getRoleBadgeColor(role: string) {
+  switch (role) {
+    case "Full-Stack Developer":
+    case "Full-Stack Engineer":
+      return "border-sky-300 bg-sky-100 text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300";
+    case "System Analyst":
+      return "border-purple-300 bg-purple-100 text-purple-600 dark:border-purple-400/30 dark:bg-purple-400/10 dark:text-purple-300";
+    case "Frontend Engineer":
+    case "Frontend Developer":
+      return "border-orange-300 bg-orange-100 text-orange-600 dark:border-orange-400/30 dark:bg-orange-400/10 dark:text-orange-300";
+    case "Data Analyst":
+      return "border-emerald-300 bg-emerald-100 text-emerald-600 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300";
+    default:
+      return "border-sky-300 bg-sky-100 text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300";
+  }
+}
 
 function SearchIcon() {
   return (
@@ -351,8 +399,7 @@ export default function ProjectsPage() {
     const query = searchQuery.toLowerCase().trim();
 
     return projects.filter((project) => {
-      const matchesCategory =
-        activeCategory === "All" || project.category === activeCategory;
+      const matchesCategory = matchesProjectCategory(project.category, activeCategory);
 
       const matchesSearch =
         !query ||
@@ -371,7 +418,7 @@ export default function ProjectsPage() {
   const getCategoryCount = (category: ProjectCategory) => {
     if (category === "All") return projects.length;
 
-    return projects.filter((project) => project.category === category).length;
+    return projects.filter((project) => matchesProjectCategory(project.category, category)).length;
   };
 
   return (
@@ -452,7 +499,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <article
                 key={project.title}
                 className="group overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md dark:border-zinc-800 dark:bg-white/4 dark:hover:border-zinc-700 dark:hover:bg-white/6"
@@ -462,6 +509,7 @@ export default function ProjectsPage() {
                     src={project.imageSrc}
                     alt={project.imageAlt}
                     fill
+                    priority={index < 6}
                     className="object-cover transition duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
@@ -536,7 +584,11 @@ export default function ProjectsPage() {
                   </p>
 
                   <div className="mt-4">
-                    <span className="rounded-md border border-sky-300 bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300">
+                    <span
+                      className={`rounded-md border px-3 py-1 text-xs font-medium ${getRoleBadgeColor(
+                        project.role
+                      )}`}
+                    >
                       {project.role}
                     </span>
                   </div>

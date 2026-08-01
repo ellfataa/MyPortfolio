@@ -14,36 +14,76 @@ type Certificate = {
 
 const certificates: Certificate[] = [
   {
+    title: "Certificate for Embedded System Programming Lab Assistant",
+    issuer: "UNSOED Informatics Laboratory",
+    date: "Jun 2026",
+    imageSrc: "/assets/sertifikat/PrakPST.jpeg",
+    imageAlt: "Certificate for Embedded System Programming Lab Assistant",
+    pdfUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
+  },
+  {
+    title: "GAMMAFEST Data Science Participants",
+    issuer: "IPB University",
+    date: "May 2025",
+    imageSrc: "/assets/sertifikat/GammaFest.jpg",
+    imageAlt: "GAMMAFEST Data Science Participants Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+  },
+  {
     title: "Data Analysis with Python",
     issuer: "IBM",
     date: "Apr 2025",
-    imageSrc: "/assets/sertifikat/ibm-analista.webp",
+    imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
     imageAlt: "Data Analysis with Python Certificate",
-    pdfUrl: "#",
+    pdfUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
   },
   {
     title: "Big Data 101",
     issuer: "IBM",
     date: "Apr 2025",
-    imageSrc: "/assets/sertifikat/ibm bigdata.webp",
+    imageSrc: "/assets/sertifikat/bigData.jpg",
     imageAlt: "Big Data 101 Certificate",
-    pdfUrl: "#",
+    pdfUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
+  },
+  {
+    title: "Intro to Data Analytics",
+    issuer: "RevoU Indonesia",
+    date: "Mar 2025",
+    imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
+    imageAlt: "Intro to Data Analytics Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
   },
   {
     title: "Google Analytics for Beginners",
     issuer: "Google",
     date: "Agu 2023",
-    imageSrc: "/assets/sertifikat/google analytics.webp",
+    imageSrc: "/assets/sertifikat/GAnalytics.jpg",
     imageAlt: "Google Analytics for Beginners Certificate",
-    pdfUrl: "#",
+    pdfUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
   },
   {
-    title: "Asisten Laboratorium Sistem Operasi",
-    issuer: "Horus Technology",
-    date: "Jul 2025",
-    imageSrc: "/assets/sertifikat/asprak so.webp",
-    imageAlt: "Asisten Laboratorium Sistem Operasi Certificate",
-    pdfUrl: "#",
+    title: "Database Course Tutor",
+    issuer: "HMIF UNSOED",
+    date: "May 2023",
+    imageSrc: "/assets/sertifikat/tentorBD.jpg",
+    imageAlt: "Database Course Tutor Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1exKE12IzUGqa4IYbKDTF_TAJwwTmYNfN/view?usp=sharing",
+  },
+  {
+    title: "National Level Mathematics Olympiad Gold Medal",
+    issuer: "UNIVERSITY.ID",
+    date: "Jan 2022",
+    imageSrc: "/assets/sertifikat/EmasUniversity.jpg",
+    imageAlt: "National Level Mathematics Olympiad Gold Medal Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1WxMJQPE0Xvzo_f241RNiQcW4Q2LkSqfl/view?usp=sharing",
+  },
+  {
+    title: "National Level Mathematics Olympiad Silver Medal",
+    issuer: "Yapresindo",
+    date: "Oct 2021",
+    imageSrc: "/assets/sertifikat/PerakOSAN.jpg",
+    imageAlt: "National Level Mathematics Olympiad Silver Medal Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1iVbzrVDkROzeJ55sd2kyB7B__Fpsz2Ri/view?usp=sharing",
   },
 ];
 
@@ -190,7 +230,7 @@ export default function CertificatesSection() {
               href={certificate.pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Open certificate PDF: ${certificate.title}`}
+              aria-label={`Open certificate: ${certificate.title}`}
               className="group relative min-w-full snap-start overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md dark:border-zinc-800 dark:bg-white/4 dark:hover:border-zinc-700 dark:hover:bg-white/6 sm:min-w-[calc(50%-0.5rem)] lg:min-w-[calc(33.333%-0.7rem)]"
             >
               <div className="relative aspect-16/10 overflow-hidden bg-slate-100 dark:bg-zinc-900">
@@ -201,12 +241,6 @@ export default function CertificatesSection() {
                   className="object-cover transition duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 31vw"
                 />
-
-                <div className="absolute inset-0 bg-linear-to-t from-black/30 via-black/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-
-                <div className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[10px] font-semibold text-white opacity-0 shadow-sm backdrop-blur transition duration-300 group-hover:opacity-100">
-                  View PDF
-                </div>
               </div>
 
               <div className="relative border-t border-slate-200 p-4 pb-10 dark:border-zinc-800">

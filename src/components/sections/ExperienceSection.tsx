@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type ExperienceImage = {
   src: string;
@@ -20,7 +21,7 @@ type Experience = {
   images?: ExperienceImage[];
 };
 
-const experiences: Experience[] = [
+const experiencesEN: Experience[] = [
   {
     company: "PT CAKRAWALA PUTRA MULYA",
     role: "IT & Administration Supervisor",
@@ -61,7 +62,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Supported a school visit program by welcoming students...",
         description:
-          "Supported a school visit program by welcoming students from SMAN 1 Sumpiuh and introducing PT Telkom Indonesia's digital services, technology, and workplace environment."
+          "Supported a school visit program by welcoming students from SMAN 1 Sumpiuh and introducing PT Telkom Indonesia's digital services, technology, and workplace environment.",
       },
       {
         src: "/assets/experience/telkom3.jpeg",
@@ -69,7 +70,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Participated in PMR activities at PT Telkom Majenang...",
         description:
-          "Participated in PMR activities at PT Telkom Majenang by supporting network hardware maintenance, cleaning equipment, and assisting with hardware configuration to ensure reliable network operations."
+          "Participated in PMR activities at PT Telkom Majenang by supporting network hardware maintenance, cleaning equipment, and assisting with hardware configuration to ensure reliable network operations.",
       },
     ],
   },
@@ -100,7 +101,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Celebrated the successful completion of the internship program...",
         description:
-          "Celebrated the successful completion of the internship program alongside mentors and fellow interns, marking the achievements and professional growth gained throughout the internship period."
+          "Celebrated the successful completion of the internship program alongside mentors and fellow interns, marking the achievements and professional growth gained throughout the internship period.",
       },
     ],
   },
@@ -122,7 +123,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Participated in the company's daily morning assembly...",
         description:
-          "Participated in the company's daily morning assembly to receive operational updates, strengthen team coordination, and foster discipline and professionalism in the workplace."
+          "Participated in the company's daily morning assembly to receive operational updates, strengthen team coordination, and foster discipline and professionalism in the workplace.",
       },
     ],
   },
@@ -143,7 +144,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Created technical documentation by designing class diagrams...",
         description:
-          "Created technical documentation by designing class diagrams to model system architecture and support efficient software development."
+          "Created technical documentation by designing class diagrams to model system architecture and support efficient software development.",
       },
       {
         src: "/assets/experience/freelance2.jpeg",
@@ -151,7 +152,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Developed a web-based dormitory management system...",
         description:
-          "Developed a web-based dormitory management system, focusing on responsive interfaces and features to streamline administrative processes."
+          "Developed a web-based dormitory management system, focusing on responsive interfaces and features to streamline administrative processes.",
       },
       {
         src: "/assets/experience/freelance3.jpeg",
@@ -159,7 +160,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Designed a modern UI/UX redesign concept for an Indonesian esports team website...",
         description:
-          "Designed a modern UI/UX redesign concept for an Indonesian esports team website, focusing on visual consistency and improved user experience."
+          "Designed a modern UI/UX redesign concept for an Indonesian esports team website, focusing on visual consistency and improved user experience.",
       },
     ],
   },
@@ -181,7 +182,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Captured the completion of a practicum period alongside fellow laboratory assistants...",
         description:
-          "Captured the completion of a practicum period alongside fellow laboratory assistants, reflecting teamwork, dedication, and commitment to supporting students' learning experiences."
+          "Captured the completion of a practicum period alongside fellow laboratory assistants, reflecting teamwork, dedication, and commitment to supporting students' learning experiences.",
       },
       {
         src: "/assets/experience/aslab-2.jpg",
@@ -189,7 +190,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Invited by the Informatics Student Association (HMIF) to conduct a Database...",
         description:
-          "Invited by the Informatics Student Association (HMIF) to conduct a Database tutoring session, helping students prepare for midterm and final examinations through concept explanations and problem-solving discussions."
+          "Invited by the Informatics Student Association (HMIF) to conduct a Database tutoring session, helping students prepare for midterm and final examinations through concept explanations and problem-solving discussions.",
       },
     ],
   },
@@ -211,7 +212,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Captured the completion of organizational responsibilities...",
         description:
-          "Captured the completion of organizational responsibilities alongside members of the Research and Data Ministry, reflecting teamwork, commitment, and successful execution of departmental programs."
+          "Captured the completion of organizational responsibilities alongside members of the Research and Data Ministry, reflecting teamwork, commitment, and successful execution of departmental programs.",
       },
       {
         src: "/assets/experience/bem2.jpg",
@@ -219,7 +220,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Received a certificate of appreciation for serving as a member of the Research and Data Ministry...",
         description:
-          "Received a certificate of appreciation for serving as a member of the Research and Data Ministry, recognizing contributions to organizational programs and student leadership."
+          "Received a certificate of appreciation for serving as a member of the Research and Data Ministry, recognizing contributions to organizational programs and student leadership.",
       },
     ],
   },
@@ -241,7 +242,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Captured alongside fellow HMIF members to commemorate organizational...",
         description:
-          "Captured alongside fellow HMIF members to commemorate organizational commitment, collaboration, and the successful completion of annual programs and activities."
+          "Captured alongside fellow HMIF members to commemorate organizational commitment, collaboration, and the successful completion of annual programs and activities.",
       },
       {
         src: "/assets/experience/hmif2.jpeg",
@@ -249,7 +250,7 @@ const experiences: Experience[] = [
         shortDescription:
           "Captured with the Education Division team after successfully organizing academic...",
         description:
-          "Captured with the Education Division team after successfully organizing academic programs and initiatives to support student learning and development."
+          "Captured with the Education Division team after successfully organizing academic programs and initiatives to support student learning and development.",
       },
       {
         src: "/assets/experience/hmif3.jpg",
@@ -257,18 +258,277 @@ const experiences: Experience[] = [
         shortDescription:
           "Received a certificate of appreciation for active contributions as a member of HMIF...",
         description:
-          "Received a certificate of appreciation for active contributions as a member of HMIF, recognizing dedication to organizational activities and student development."
+          "Received a certificate of appreciation for active contributions as a member of HMIF, recognizing dedication to organizational activities and student development.",
+      },
+    ],
+  },
+];
+
+const experiencesID: Experience[] = [
+  {
+    company: "PT CAKRAWALA PUTRA MULYA",
+    role: "Supervisor IT & Administrasi",
+    period: "Mei 2026 - sekarang",
+    logoSrc: "/assets/experience/logos/cpm.jpg",
+    logoAlt: "Logo PT CAKRAWALA PUTRA MULYA",
+    details: [
+      "Mengelola data operasional melalui sistem informasi perusahaan dengan melakukan entri data, validasi, dan pemeriksaan silang untuk memastikan keakuratan data.",
+      "Memantau catatan inventaris dan menjaga sinkronisasi antara stok fisik dan data sistem untuk mendukung kelancaran operasi.",
+      "Mengoordinasikan staf operasional dalam layanan pelanggan, manajemen inventaris, dan pengiriman produk untuk mengoptimalkan alur kerja harian.",
+      "Mendukung proses administrasi sekaligus meningkatkan efisiensi operasional melalui manajemen data dan pemanfaatan sistem yang akurat.",
+    ],
+  },
+  {
+    company: "TELKOM INDONESIA",
+    role: "Intern Full-Stack Developer",
+    period: "Des 2025 - Feb 2026",
+    logoSrc: "/assets/experience/logos/idtelkom.jpg",
+    logoAlt: "Logo Telkom Indonesia",
+    details: [
+      "Memimpin pengembangan website promosi produk Telkom untuk mendukung inisiatif komersial dan pemasaran.",
+      "Mengelola portal berita perusahaan dengan mengunggah 20+ konten, memastikan penyebaran informasi yang up-to-date.",
+      "Memverifikasi dan mencocokkan 1500+ data produk pelanggan untuk keakuratan dan konsistensi database.",
+      "Melakukan audit infrastruktur jaringan dan penilaian PMR di cabang Purwokerto, Banjarnegara, Cilacap, dan Purbalingga.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/telkom1.jpeg",
+        title: "Pertemuan Kemitraan Pemerintah",
+        shortDescription:
+          "Menghadiri pertemuan kemitraan strategis antara PT Telkom...",
+        description:
+          "Menghadiri pertemuan kemitraan strategis antara PT Telkom Indonesia Purwokerto dan Pemerintah Kabupaten Banyumas untuk mendukung kolaborasi digital dan inovasi layanan publik.",
+      },
+      {
+        src: "/assets/experience/telkom2.jpg",
+        title: "Program Kunjungan Sekolah",
+        shortDescription:
+          "Mendukung program kunjungan sekolah dengan menyambut siswa...",
+        description:
+          "Mendukung program kunjungan sekolah dengan menyambut siswa dari SMAN 1 Sumpiuh dan memperkenalkan layanan digital, teknologi, serta lingkungan kerja PT Telkom Indonesia.",
+      },
+      {
+        src: "/assets/experience/telkom3.jpeg",
+        title: "Pemeliharaan Infrastruktur Jaringan",
+        shortDescription:
+          "Berpartisipasi dalam kegiatan PMR di PT Telkom Majenang...",
+        description:
+          "Berpartisipasi dalam kegiatan PMR di PT Telkom Majenang dengan mendukung pemeliharaan perangkat keras jaringan, membersihkan peralatan, dan membantu konfigurasi perangkat keras untuk memastikan operasi jaringan yang andal.",
+      },
+    ],
+  },
+  {
+    company: "WESCLIC NEOTECH INDONESIA",
+    role: "Intern System Analyst",
+    period: "Agt 2025 - Des 2025",
+    logoSrc: "/assets/experience/logos/wesclic.jpg",
+    logoAlt: "Logo Wesclic",
+    details: [
+      "Menganalisis dan mendokumentasikan kebutuhan sistem untuk 5 proyek yang berjalan bersamaan di berbagai domain bisnis.",
+      "Mengembangkan 30+ diagram alur sistem komprehensif termasuk use case, sequence, class diagram, dan ERD.",
+      "Membuat 4 Product Requirement Document (PRD) dan 5 Software Requirement Specification (SRS) untuk memandu tim pengembang.",
+      "Menyusun manual pengguna dan dokumentasi teknis untuk mendukung implementasi proyek dan adaptasi pengguna akhir.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/1wesclic.jpeg",
+        title: "Program Merawat Niat",
+        shortDescription:
+          "Berpartisipasi dalam program 'Merawat Niat', sebuah inisiatif...",
+        description:
+          "Berpartisipasi dalam program 'Merawat Niat', sebuah inisiatif perusahaan yang menggabungkan doa bersama dan presentasi pemagang untuk mendorong pembelajaran berkelanjutan, pertumbuhan pribadi, dan budaya kerja yang positif.",
+      },
+      {
+        src: "/assets/experience/2wesclic.jpeg",
+        title: "Dokumentasi Kelulusan",
+        shortDescription:
+          "Merayakan penyelesaian program magang yang sukses...",
+        description:
+          "Merayakan penyelesaian program magang yang sukses bersama mentor dan sesama pemagang, menandai pencapaian dan pertumbuhan profesional yang diperoleh selama periode magang.",
+      },
+    ],
+  },
+  {
+    company: "PDAM BANYUMAS",
+    role: "Intern Full-Stack Developer",
+    period: "Jul 2024 - Agt 2024",
+    logoSrc: "/assets/experience/logos/pdambms.jpg",
+    logoAlt: "Logo PDAM Banyumas",
+    details: [
+      "Membangun portal pendaftaran pelanggan menggunakan Laravel dan Midtrans, mencakup 306 desa di 27 kecamatan.",
+      "Membuat dokumentasi sistem yang komprehensif termasuk use case, sequence, activity, dan class diagram.",
+      "Mempresentasikan kemajuan proyek dan pembaruan teknis kepada supervisor lapangan sepanjang siklus pengembangan.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/pdam1.jpg",
+        title: "Apel Pagi",
+        shortDescription:
+          "Berpartisipasi dalam apel pagi harian perusahaan...",
+        description:
+          "Berpartisipasi dalam apel pagi harian perusahaan untuk menerima pembaruan operasional, memperkuat koordinasi tim, serta menumbuhkan kedisiplinan dan profesionalisme di tempat kerja.",
+      },
+    ],
+  },
+  {
+    company: "ELF Studio",
+    role: "Pekerja Lepas (Freelancer)",
+    period: "Jan 2024 - sekarang",
+    logoSrc: "/assets/logo/logo.png",
+    logoAlt: "Logo ELF Studio",
+    details: [
+      "Membangun solusi web dan seluler yang dapat diskalakan dengan mengubah ide klien menjadi produk digital yang modern, responsif, dan berpusat pada pengguna.",
+      "Merancang UI/UX yang intuitif dan memberikan eksekusi proyek end-to-end, menggabungkan pengembangan teknis, dokumentasi, dan kolaborasi klien yang efektif.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/freelance1.jpeg",
+        title: "Dokumentasi Sistem",
+        shortDescription:
+          "Membuat dokumentasi teknis dengan merancang class diagram...",
+        description:
+          "Membuat dokumentasi teknis dengan merancang class diagram untuk memodelkan arsitektur sistem dan mendukung pengembangan perangkat lunak yang efisien.",
+      },
+      {
+        src: "/assets/experience/freelance2.jpeg",
+        title: "Sistem Manajemen Asrama",
+        shortDescription:
+          "Mengembangkan sistem manajemen asrama berbasis web...",
+        description:
+          "Mengembangkan sistem manajemen asrama berbasis web, berfokus pada antarmuka responsif dan fitur untuk menyederhanakan proses administratif.",
+      },
+      {
+        src: "/assets/experience/freelance3.jpeg",
+        title: "Konsep Desain Ulang UI/UX",
+        shortDescription:
+          "Merancang konsep desain ulang UI/UX modern untuk website...",
+        description:
+          "Merancang konsep desain ulang UI/UX modern untuk website tim esports Indonesia, berfokus pada konsistensi visual dan pengalaman pengguna yang ditingkatkan.",
+      },
+    ],
+  },
+  {
+    company: "INFORMATICS LABORATORY",
+    role: "Asisten Laboratorium",
+    period: "Agt 2023 - Apr 2026",
+    logoSrc: "/assets/experience/logos/iflab.jpg",
+    logoAlt: "Logo Informatics Laboratory",
+    details: [
+      "Mengajar dan membimbing 110+ mahasiswa di berbagai shift, memberikan panduan praktik langsung yang komprehensif dalam Sistem Tertanam, Sistem Operasi, dan Basis Data.",
+      "Menyelesaikan 55+ masalah teknis yang mencakup proses sistem, manajemen memori, dan kueri SQL, sambil mendemonstrasikan perakitan praktis end-to-end untuk modul praktikum.",
+      "Merancang dan mengevaluasi 20+ metrik penilaian, termasuk tugas praktikum, kuis, dan proyek akhir IoT, mengelola proses penilaian end-to-end untuk memastikan kompetensi mahasiswa.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/aslab-1.jpeg",
+        title: "Tim Asisten Laboratorium",
+        shortDescription:
+          "Mengabadikan penyelesaian periode praktikum bersama rekan...",
+        description:
+          "Mengabadikan penyelesaian periode praktikum bersama rekan-rekan asisten laboratorium, mencerminkan kerja sama tim, dedikasi, dan komitmen untuk mendukung pengalaman belajar mahasiswa.",
+      },
+      {
+        src: "/assets/experience/aslab-2.jpg",
+        title: "Sesi Tutor Basis Data",
+        shortDescription:
+          "Diundang oleh Himpunan Mahasiswa Informatika (HMIF)...",
+        description:
+          "Diundang oleh Himpunan Mahasiswa Informatika (HMIF) untuk mengadakan sesi tutor Basis Data, membantu mahasiswa mempersiapkan ujian tengah dan akhir semester melalui penjelasan konsep dan diskusi pemecahan masalah.",
+      },
+    ],
+  },
+  {
+    company: "BEM UNSOED",
+    role: "Staf Divisi Analisis Data",
+    period: "Feb 2024 - Des 2024",
+    logoSrc: "/assets/experience/logos/bemu.jpg",
+    logoAlt: "Logo BEM UNSOED",
+    details: [
+      "Melakukan riset kuantitatif dan survei untuk mendukung kementerian eksekutif dan memberikan wawasan strategis bagi mahasiswa universitas.",
+      "Memimpin pemrosesan data survei berskala besar untuk Direktorat Analisis Data, menangani inisiatif utama seperti 'Super Survey' (749 responden) dan 'Ekspektasi Mahasiswa Baru 2024' (1519 responden).",
+      "Menganalisis data survei mentah untuk membuat laporan PDF yang komprehensif dan berkolaborasi dalam presentasi data visual.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/bem1.jpg",
+        title: "Tim Kementerian Riset dan Data",
+        shortDescription:
+          "Mengabadikan penyelesaian tanggung jawab organisasi...",
+        description:
+          "Mengabadikan penyelesaian tanggung jawab organisasi bersama anggota Kementerian Riset dan Data, mencerminkan kerja sama tim, komitmen, dan keberhasilan eksekusi program departemen.",
+      },
+      {
+        src: "/assets/experience/bem2.jpg",
+        title: "Sertifikat BEM",
+        shortDescription:
+          "Menerima sertifikat penghargaan karena menjabat sebagai...",
+        description:
+          "Menerima sertifikat penghargaan karena menjabat sebagai anggota Kementerian Riset dan Data, mengakui kontribusi terhadap program organisasi dan kepemimpinan mahasiswa.",
+      },
+    ],
+  },
+  {
+    company: "HMIF UNSOED",
+    role: "Staf Divisi Pendidikan",
+    period: "Mar 2024 - Des 2024",
+    logoSrc: "/assets/experience/logos/hmifunsoed.png",
+    logoAlt: "Logo HMIF UNSOED",
+    details: [
+      "Meningkatkan potensi akademik mahasiswa melalui program terstruktur, termasuk inisiatif 'Mahasiswa Berprestasi'.",
+      "Memimpin program Bank Soal 'Simpul Pintar', mengorganisir 74 materi studi dan 148 pertanyaan ujian untuk penilaian akademik.",
+      "Membangun 2 repositori data terpusat menggunakan Excel PivotTables untuk menyederhanakan sistem manajemen magang dan vendor.",
+    ],
+    images: [
+      {
+        src: "/assets/experience/hmif1.jpg",
+        title: "Potret Studio HMIF",
+        shortDescription:
+          "Diabadikan bersama sesama anggota HMIF untuk memperingati...",
+        description:
+          "Diabadikan bersama sesama anggota HMIF untuk memperingati komitmen organisasi, kolaborasi, dan keberhasilan penyelesaian program serta aktivitas tahunan.",
+      },
+      {
+        src: "/assets/experience/hmif2.jpeg",
+        title: "Tim Divisi Pendidikan",
+        shortDescription:
+          "Diabadikan bersama tim Divisi Pendidikan setelah berhasil...",
+        description:
+          "Diabadikan bersama tim Divisi Pendidikan setelah berhasil menyelenggarakan program dan inisiatif akademik untuk mendukung pembelajaran serta pengembangan mahasiswa.",
+      },
+      {
+        src: "/assets/experience/hmif3.jpg",
+        title: "Sertifikat HMIF",
+        shortDescription:
+          "Menerima sertifikat penghargaan atas kontribusi aktif...",
+        description:
+          "Menerima sertifikat penghargaan atas kontribusi aktif sebagai anggota HMIF, mengakui dedikasi terhadap kegiatan organisasi dan pengembangan mahasiswa.",
       },
     ],
   },
 ];
 
 export default function ExperienceSection() {
+  const { language, t } = useLanguage();
   const [openIndex, setOpenIndex] = useState(-1);
   const [selectedImage, setSelectedImage] = useState<{
     company: string;
     image: ExperienceImage;
   } | null>(null);
+
+  // Menentukan data yang dirender berdasarkan status bahasa dari context
+  const activeExperiences = language === "id" ? experiencesID : experiencesEN;
+
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   const toggleExperience = (index: number) => {
     setOpenIndex((prev) => (prev === index ? -1 : index));
@@ -285,12 +545,12 @@ export default function ExperienceSection() {
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
-          Experience
+          {t("experience.title")}
         </h2>
       </div>
 
       <div className="space-y-6">
-        {experiences.map((experience, index) => {
+        {activeExperiences.map((experience, index) => {
           const isOpen = openIndex === index;
 
           return (
@@ -343,8 +603,8 @@ export default function ExperienceSection() {
                 <div className="overflow-hidden">
                   <div className="ml-0 mt-3 sm:ml-16">
                     <ul className="space-y-2 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-sm">
-                      {experience.details.map((detail) => (
-                        <li key={detail} className="flex gap-3">
+                      {experience.details.map((detail, dIndex) => (
+                        <li key={dIndex} className="flex gap-3">
                           <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-slate-400 dark:bg-zinc-500" />
                           <span>{detail}</span>
                         </li>

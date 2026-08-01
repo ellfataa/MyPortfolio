@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+// Import hook useLanguage
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type Skill = {
   name: string;
@@ -7,13 +11,16 @@ type Skill = {
 };
 
 type SkillCategory = {
-  title: string;
+  titleEn: string;
+  titleId: string;
   skills: Skill[];
 };
 
+// Data dimodifikasi agar memiliki title bahasa inggris & indonesia
 const skillCategories: SkillCategory[] = [
   {
-    title: "Programming Languages",
+    titleEn: "Programming Languages",
+    titleId: "Bahasa Pemrograman",
     skills: [
       {
         name: "TypeScript",
@@ -78,7 +85,8 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Frameworks & Libraries",
+    titleEn: "Frameworks & Libraries",
+    titleId: "Framework & Library",
     skills: [
       {
         name: "React.js",
@@ -133,7 +141,8 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Databases & ORM",
+    titleEn: "Databases & ORM",
+    titleId: "Basis Data & ORM",
     skills: [
       {
         name: "MySQL",
@@ -158,7 +167,8 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Other Tools & Platforms",
+    titleEn: "Other Tools & Platforms",
+    titleId: "Alat & Platform Lainnya",
     skills: [
       {
         name: "Node.js",
@@ -186,6 +196,11 @@ const skillCategories: SkillCategory[] = [
         iconAlt: "Google Colab Logo",
       },
       {
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
+      },
+      {
         name: "Postman",
         iconSrc: "/assets/skills/postman.svg",
         iconAlt: "Postman Logo",
@@ -200,11 +215,23 @@ const skillCategories: SkillCategory[] = [
         iconSrc: "/assets/skills/figma.svg",
         iconAlt: "Figma Logo",
       },
+      {
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
+      },
+      {
+        name: "Microsoft Word",
+        iconSrc: "/assets/skills/mWord.svg",
+        iconAlt: "Microsoft Word Logo",
+      },
     ],
   },
 ];
 
 export default function SkillsSection() {
+  const { language, t } = useLanguage();
+
   return (
     <section
       id="skills"
@@ -212,28 +239,26 @@ export default function SkillsSection() {
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
-          Skills
+          {t("skills.title")}
         </h2>
 
         <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
-          A collection of technologies, programming languages, frameworks, and
-          platforms that support me in developing digital solutions.
+          {t("skills.subtitle")}
         </p>
       </div>
 
       <div className="space-y-8">
         {skillCategories.map((category) => (
-          <article key={category.title}>
+          <article key={category.titleEn}>
             <h3 className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500 sm:text-sm">
-              {category.title}
+              {/* Me-render judul kategori berdasarkan bahasa */}
+              {language === "id" ? category.titleId : category.titleEn}
             </h3>
 
-            {/* Jarak gap diperkecil menjadi gap-2 dan sm:gap-3 */}
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {category.skills.map((skill) => (
                 <div key={skill.name} className="group relative">
-                  {/* Container diperbesar sekitar 2px dengan h-[50px] w-[50px] dan sm:h-[58px] sm:w-[58px] */}
-                  <div className="relative flex h-[50px] w-[50px] items-center justify-center overflow-hidden transition duration-300 group-hover:-translate-y-1 sm:h-[58px] sm:w-[58px]">
+                  <div className="relative flex h-12.5 w-12.5 items-center justify-center overflow-hidden transition duration-300 group-hover:-translate-y-1 sm:h-14.5 sm:w-14.5">
                     <Image
                       src={skill.iconSrc}
                       alt={skill.iconAlt}

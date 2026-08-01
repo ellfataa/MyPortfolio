@@ -14,34 +14,39 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const dockItems = [
-  {
-    label: "About",
-    href: "/#hero",
-    icon: User,
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    icon: FolderGit2,
-  },
-  {
-    label: "Certificates",
-    href: "/certificates",
-    icon: Award,
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    icon: Mail,
-  },
-];
-
 export default function BottomDock() {
   const [darkMode, setDarkMode] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const { language, toggleLanguage, t } = useLanguage();
+  // Gunakan ID unik untuk state hover, BUKAN teks labelnya
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+
+  const dockItems = [
+    {
+      id: "about",
+      label: t("dock.about"),
+      href: "/#hero",
+      icon: User,
+    },
+    {
+      id: "projects",
+      label: t("dock.projects"),
+      href: "/projects",
+      icon: FolderGit2,
+    },
+    {
+      id: "certificates",
+      label: t("dock.certificates"),
+      href: "/certificates",
+      icon: Award,
+    },
+    {
+      id: "contact",
+      label: t("dock.contact"),
+      href: "/contact",
+      icon: Mail,
+    },
+  ];
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -59,24 +64,18 @@ export default function BottomDock() {
   useEffect(() => {
     const handleChatbotStateChange = (event: Event) => {
       const chatbotEvent = event as CustomEvent<{ isOpen: boolean }>;
-
       setIsChatbotOpen(chatbotEvent.detail.isOpen);
     };
 
     window.addEventListener("chatbot-state-change", handleChatbotStateChange);
-
     return () => {
-      window.removeEventListener(
-        "chatbot-state-change",
-        handleChatbotStateChange
-      );
+      window.removeEventListener("chatbot-state-change", handleChatbotStateChange);
     };
   }, []);
 
   const toggleTheme = () => {
     setDarkMode((prev) => {
       const nextTheme = !prev;
-
       if (nextTheme) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
@@ -84,7 +83,6 @@ export default function BottomDock() {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
       }
-
       return nextTheme;
     });
   };
@@ -96,8 +94,8 @@ export default function BottomDock() {
   const dockButtonClass =
     "relative flex h-9 w-9 cursor-pointer items-center justify-center rounded-2xl text-slate-500 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-110 hover:bg-slate-100 hover:text-slate-950 active:translate-y-0 active:scale-95 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white sm:h-10 sm:w-10 md:h-11 md:w-11";
 
-  const renderTooltip = (label: string) => {
-    if (hoveredItem !== label) return null;
+  const renderTooltip = (id: string, label: string) => {
+    if (hoveredId !== id) return null;
 
     return (
       <span className="pointer-events-none absolute -top-10 left-1/2 hidden -translate-x-1/2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-medium text-slate-700 shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 md:block">
@@ -123,17 +121,12 @@ export default function BottomDock() {
                 href={item.href}
                 title={item.label}
                 aria-label={item.label}
-                onMouseEnter={() => setHoveredItem(item.label)}
-                onMouseLeave={() => setHoveredItem(null)}
+                onMouseEnter={() => setHoveredId(item.id)}
+                onMouseLeave={() => setHoveredId(null)}
                 className={dockButtonClass}
               >
-                {renderTooltip(item.label)}
-
-                <Icon
-                  size={18}
-                  strokeWidth={1.9}
-                  className="md:h-5 md:w-5"
-                />
+                {renderTooltip(item.id, item.label)}
+                <Icon size={18} strokeWidth={1.9} className="md:h-5 md:w-5" />
               </a>
             );
           })}
@@ -145,38 +138,28 @@ export default function BottomDock() {
           <button
             type="button"
             onClick={toggleChatbot}
-            title="AI Chat"
-            aria-label="AI Chat"
-            onMouseEnter={() => setHoveredItem("AI Chat")}
-            onMouseLeave={() => setHoveredItem(null)}
+            title={t("dock.aiChat")}
+            aria-label={t("dock.aiChat")}
+            onMouseEnter={() => setHoveredId("chat")}
+            onMouseLeave={() => setHoveredId(null)}
             className={dockButtonClass}
           >
-            {renderTooltip("AI Chat")}
-
-            <Bot
-              size={18}
-              strokeWidth={1.9}
-              className="md:h-5 md:w-5"
-            />
+            {renderTooltip("chat", t("dock.aiChat"))}
+            <Bot size={18} strokeWidth={1.9} className="md:h-5 md:w-5" />
           </button>
 
           <button
             type="button"
             onClick={toggleLanguage}
-            title="Change Language"
-            aria-label="Change Language"
-            onMouseEnter={() => setHoveredItem("Language")}
-            onMouseLeave={() => setHoveredItem(null)}
+            title={t("dock.language")}
+            aria-label={t("dock.language")}
+            onMouseEnter={() => setHoveredId("language")}
+            onMouseLeave={() => setHoveredId(null)}
             className={dockButtonClass}
           >
-            {renderTooltip("Language")}
-
-            <Languages
-              size={18}
-              strokeWidth={1.9}
-              className="md:h-5 md:w-5"
-            />
-
+            {renderTooltip("language", t("dock.language"))}
+            <Languages size={18} strokeWidth={1.9} className="md:h-5 md:w-5" />
+            
             <span className="absolute -right-1 -top-1 rounded-full bg-slate-950 px-1.5 py-0.5 text-[8px] font-bold leading-none text-white dark:bg-white dark:text-black">
               {language.toUpperCase()}
             </span>
@@ -185,26 +168,17 @@ export default function BottomDock() {
           <button
             type="button"
             onClick={toggleTheme}
-            title="Change Theme"
-            aria-label="Change Theme"
-            onMouseEnter={() => setHoveredItem("Theme")}
-            onMouseLeave={() => setHoveredItem(null)}
+            title={t("dock.theme")}
+            aria-label={t("dock.theme")}
+            onMouseEnter={() => setHoveredId("theme")}
+            onMouseLeave={() => setHoveredId(null)}
             className={dockButtonClass}
           >
-            {renderTooltip("Theme")}
-
+            {renderTooltip("theme", t("dock.theme"))}
             {darkMode ? (
-              <Sun
-                size={18}
-                strokeWidth={1.9}
-                className="md:h-5 md:w-5"
-              />
+              <Sun size={18} strokeWidth={1.9} className="md:h-5 md:w-5" />
             ) : (
-              <Moon
-                size={18}
-                strokeWidth={1.9}
-                className="md:h-5 md:w-5"
-              />
+              <Moon size={18} strokeWidth={1.9} className="md:h-5 md:w-5" />
             )}
           </button>
         </div>

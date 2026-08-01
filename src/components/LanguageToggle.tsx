@@ -1,18 +1,15 @@
 "use client";
 
-import { useState } from "react";
+// Sesuaikan path import ini jika lokasi LanguageProvider Anda berbeda
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function LanguageToggle() {
-  const [language, setLanguage] = useState<"id" | "en">("id");
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "id" ? "en" : "id"));
-  };
+  const { language, toggleLanguage } = useLanguage();
 
   return (
     <button
       onClick={toggleLanguage}
-      className="rounded-full border border-slate-300 px-3 py-1 text-xs font-medium dark:border-slate-700"
+      className="rounded-full border border-slate-300 px-3 py-1 text-xs font-medium transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
     >
       {language === "id" ? "ID" : "EN"}
     </button>

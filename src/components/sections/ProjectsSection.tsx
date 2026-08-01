@@ -30,7 +30,7 @@ const projects: Project[] = [
     company: "ELF Studio - Freelance Project",
     role: "Full-Stack Developer",
     description:
-    "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
+      "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
     imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
     visibility: "Public",
@@ -59,7 +59,7 @@ const projects: Project[] = [
     company: "Thesis",
     role: "Full-Stack Developer",
     description:
-    "A decision support system integrating ROC, Random Forest, and TOPSIS to objectively identify the best interns through hybrid weighting and multi-criteria evaluation.",
+      "A decision support system integrating ROC, Random Forest, and TOPSIS to objectively identify the best interns through hybrid weighting and multi-criteria evaluation.",
     imageSrc: "/assets/projects/thesis.jpg",
     imageAlt: "Best Intern Preview",
     visibility: "Private",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     company: "Telkom Indonesia - Internship",
     role: "Full-Stack Developer",
     description:
-    "A web-based platform for promoting and calculating TelkomBiz products, integrating the MOORA method to provide optimal product recommendations based on customer needs.",
+      "A web-based platform for promoting and calculating TelkomBiz products, integrating the MOORA method to provide optimal product recommendations based on customer needs.",
     imageSrc: "/assets/projects/TELKOMBIZ.jpg",
     imageAlt: "TelkomBiz Plan Preview",
     visibility: "Private",
@@ -127,11 +127,11 @@ const projects: Project[] = [
     company: "ELF Studio - Freelance Project",
     role: "Full-Stack Developer",
     description:
-    "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+      "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
     imageSrc: "/assets/projects/NAUTICA1.jpg",
     imageAlt: "Nautica Preview",
-    visibility: "Private",
-    isInternal: true,
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
     technologies: [
       {
         name: "TypeScript",
@@ -156,37 +156,37 @@ const projects: Project[] = [
     company: "Wesclic - Internship",
     role: "System Analyst",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/WEBKLIK.webp",
+      "An IT service platform where I analyzed business requirements and produced PRDs, SRSs, and system diagrams to guide software development.",
+    imageSrc: "/assets/projects/webklik.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
       {
-        name: "Laravel",
-        iconSrc: "/assets/skills/laravel.svg",
-        iconAlt: "Laravel Logo",
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
       },
       {
-        name: "Next.js",
-        iconSrc: "/assets/skills/next.svg",
-        iconAlt: "Next.js Logo",
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
       },
       {
-        name: "TypeScript",
-        iconSrc: "/assets/skills/ts.svg",
-        iconAlt: "TypeScript Logo",
+        name: "Microsoft Word",
+        iconSrc: "/assets/skills/mWord.svg",
+        iconAlt: "Microsoft Word Logo",
       },
     ],
   },
   {
     title: "Warmindo Modies",
     period: "Feb 2026 - Mar 2026",
-    company: "ELF Std - Freelance Project",
+    company: "ELF Studio - Freelance Project",
     role: "Frontend Engineer",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/MODIES.webp",
+      "A responsive company profile website designed to strengthen Warmindo Modies' online presence and showcase its products and services.",
+    imageSrc: "/assets/projects/warmindoModies.jpg",
     imageAlt: "Modies Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/warmindo-modies",
@@ -207,10 +207,10 @@ const projects: Project[] = [
     title: "Anahata",
     period: "Mar 2025 - Mei 2025",
     company: "Jenderal Soedirman University",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/ANAHATA.webp",
+    imageSrc: "/assets/projects/anahata.jpg",
     imageAlt: "Anahata Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
@@ -236,10 +236,10 @@ const projects: Project[] = [
     title: "Sylvair",
     period: "Sept 2024 - Okt 2024",
     company: "Jenderal Soedirman University",
-    role: "Full-Stack Engineer",
+    role: "Full-Stack Developer",
     description:
-      "A modern personal portfolio website built with Next.js, Tailwind CSS, dark mode, responsive sections, and AI chatbot integration.",
-    imageSrc: "/assets/projects/SYLVAIR.webp",
+      "A machine learning-powered web application built with Python and Streamlit to analyze lung disease risk using XGBoost and Random Forest models.",
+    imageSrc: "/assets/projects/sylvair.jpg",
     imageAlt: "Sylvair Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/Sylvair",
@@ -262,8 +262,8 @@ const projects: Project[] = [
     company: "Jenderal Soedirman University",
     role: "Frontend Engineer",
     description:
-      "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
-    imageSrc: "/assets/projects/DEMONWARD.webp",
+      "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
+    imageSrc: "/assets/projects/demonWard.jpg",
     imageAlt: "DemonWard Preview",
     visibility: "Public",
     githubUrl: "https://github.com/ellfataa/FE-DemonWard",
@@ -281,6 +281,23 @@ const projects: Project[] = [
     ],
   },
 ];
+
+function getRoleBadgeColor(role: string) {
+  switch (role) {
+    case "Full-Stack Developer":
+    case "Full-Stack Engineer":
+      return "border-sky-300 bg-sky-100 text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300";
+    case "System Analyst":
+      return "border-purple-300 bg-purple-100 text-purple-600 dark:border-purple-400/30 dark:bg-purple-400/10 dark:text-purple-300";
+    case "Frontend Engineer":
+    case "Frontend Developer":
+      return "border-orange-300 bg-orange-100 text-orange-600 dark:border-orange-400/30 dark:bg-orange-400/10 dark:text-orange-300";
+    case "Data Analyst":
+      return "border-emerald-300 bg-emerald-100 text-emerald-600 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300";
+    default:
+      return "border-sky-300 bg-sky-100 text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300";
+  }
+}
 
 function getCurrentVisibleCards() {
   if (typeof window === "undefined") return 3;
@@ -397,7 +414,7 @@ export default function ProjectsSection() {
         </h2>
 
         <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
-          A showcase of my work in web development and machine learning.
+          A showcase of my work in scalable software and intelligent systems.
         </p>
       </div>
 
@@ -484,7 +501,11 @@ export default function ProjectsSection() {
                 </p>
 
                 <div className="mt-3">
-                  <span className="rounded-md border border-sky-300 bg-sky-100 px-3 py-1 text-xs font-medium text-sky-600 dark:border-sky-400/30 dark:bg-sky-400/10 dark:text-sky-300">
+                  <span
+                    className={`rounded-md border px-3 py-1 text-xs font-medium ${getRoleBadgeColor(
+                      project.role
+                    )}`}
+                  >
                     {project.role}
                   </span>
                 </div>

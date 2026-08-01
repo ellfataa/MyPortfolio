@@ -7,7 +7,7 @@ import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
-type CertificateCategory = "All" | "Web" | "Mobile" | "AI" | "UI/UX" | "Others";
+type CertificateCategory = "All" | "Web" | "Mobile" | "Data" | "Others";
 
 type Certificate = {
   title: string;
@@ -22,44 +22,94 @@ type Certificate = {
 
 const certificates: Certificate[] = [
   {
+    title: "Certificate for Embedded System Programming Lab Assistant",
+    issuer: "UNSOED Informatics Laboratory",
+    issuedDate: "Jun 2026",
+    category: "Others",
+    imageSrc: "/assets/sertifikat/PrakPST.jpeg",
+    imageAlt: "Certificate for Embedded System Programming Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
+    skills: ["Embedded Systems", "Laboratory Assistant", "C/C++"],
+  },
+  {
+    title: "GAMMAFEST Data Science Participants",
+    issuer: "IPB University",
+    issuedDate: "May 2025",
+    category: "Others",
+    imageSrc: "/assets/sertifikat/GammaFest.jpg",
+    imageAlt: "GAMMAFEST Data Science Participants Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+    skills: ["Data Science", "Machine Learning", "Data Analysis"],
+  },
+  {
     title: "Data Analysis with Python",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    category: "Web",
-    imageSrc: "/assets/sertifikat/ibm-analista.webp",
+    category: "Data",
+    imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
     imageAlt: "Data Analysis with Python Certificate",
-    credentialUrl: "/assets/sertifikat/ibm-analista.webp",
-    skills: ["Python", "Data Analysis"],
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
+    skills: ["Python", "Data Analysis", "Pandas"],
   },
   {
     title: "Big Data 101",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    category: "AI",
-    imageSrc: "/assets/sertifikat/ibm bigdata.webp",
+    category: "Data",
+    imageSrc: "/assets/sertifikat/bigData.jpg",
     imageAlt: "Big Data 101 Certificate",
-    credentialUrl: "/assets/sertifikat/ibm bigdata.webp",
-    skills: ["Big Data", "Data Analysis"],
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
+    skills: ["Big Data", "Hadoop", "Data Engineering"],
+  },
+  {
+    title: "Intro to Data Analytics",
+    issuer: "RevoU Indonesia",
+    issuedDate: "Mar 2025",
+    category: "Data",
+    imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
+    imageAlt: "Intro to Data Analytics Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
+    skills: ["Data Analytics", "SQL", "Tableau"],
   },
   {
     title: "Google Analytics for Beginners",
     issuer: "Google",
     issuedDate: "Agu 2023",
     category: "Web",
-    imageSrc: "/assets/sertifikat/google analytics.webp",
+    imageSrc: "/assets/sertifikat/GAnalytics.jpg",
     imageAlt: "Google Analytics for Beginners Certificate",
-    credentialUrl: "/assets/sertifikat/google analytics.webp",
-    skills: ["Google Analytics", "Web Analytics"],
+    credentialUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
+    skills: ["Google Analytics", "Web Analytics", "SEO"],
   },
   {
-    title: "Asisten Laboratorium Sistem Operasi",
-    issuer: "Horus Technology",
-    issuedDate: "Jul 2025",
+    title: "Database Course Tutor",
+    issuer: "HMIF UNSOED",
+    issuedDate: "May 2023",
+    category: "Web",
+    imageSrc: "/assets/sertifikat/tentorBD.jpg",
+    imageAlt: "Database Course Tutor Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1exKE12IzUGqa4IYbKDTF_TAJwwTmYNfN/view?usp=sharing",
+    skills: ["Database Management", "SQL", "Mentoring"],
+  },
+  {
+    title: "National Level Mathematics Olympiad Gold Medal",
+    issuer: "UNIVERSITY.ID",
+    issuedDate: "Jan 2022",
     category: "Others",
-    imageSrc: "/assets/sertifikat/asprak so.webp",
-    imageAlt: "Asisten Laboratorium Sistem Operasi Certificate",
-    credentialUrl: "/assets/sertifikat/asprak so.webp",
-    skills: ["Operating Systems", "Laboratory Assistant"],
+    imageSrc: "/assets/sertifikat/EmasUniversity.jpg",
+    imageAlt: "National Level Mathematics Olympiad Gold Medal Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1WxMJQPE0Xvzo_f241RNiQcW4Q2LkSqfl/view?usp=sharing",
+    skills: ["Mathematics", "Problem Solving", "Analytical Thinking"],
+  },
+  {
+    title: "National Level Mathematics Olympiad Silver Medal",
+    issuer: "Yapresindo",
+    issuedDate: "Oct 2021",
+    category: "Others",
+    imageSrc: "/assets/sertifikat/PerakOSAN.jpg",
+    imageAlt: "National Level Mathematics Olympiad Silver Medal Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1iVbzrVDkROzeJ55sd2kyB7B__Fpsz2Ri/view?usp=sharing",
+    skills: ["Mathematics", "Problem Solving", "Analytical Thinking"],
   },
 ];
 
@@ -67,8 +117,7 @@ const categories: CertificateCategory[] = [
   "All",
   "Web",
   "Mobile",
-  "AI",
-  "UI/UX",
+  "Data",
   "Others",
 ];
 

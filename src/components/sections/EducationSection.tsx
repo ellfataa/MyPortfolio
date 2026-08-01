@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type EducationImage = {
   src: string;
@@ -21,7 +22,7 @@ type Education = {
   images?: EducationImage[];
 };
 
-const educations: Education[] = [
+const educationsEN: Education[] = [
   {
     institution: "JENDERAL SOEDIRMAN UNIVERSITY",
     degree: "Bachelor of Computer Science",
@@ -62,7 +63,51 @@ const educations: Education[] = [
   },
 ];
 
+const educationsID: Education[] = [
+  {
+    institution: "UNIVERSITAS JENDERAL SOEDIRMAN",
+    degree: "Sarjana Ilmu Komputer (S.Kom.)",
+    period: "Agt 2022 - Jun 2026",
+    gpa: "IPK: 3.87 / 4.00 (Cum Laude)",
+    logoSrc: "/assets/education/logos/unsoed.png",
+    logoAlt: "Logo Universitas Jenderal Soedirman",
+    details: [
+      "Mata kuliah relevan: Pengembangan Web, Pengembangan Mobile, Sistem Basis Data, Jaringan Komputer, Sistem Operasi, Data Mining, Machine Learning, Kecerdasan Buatan, dan Sistem Tertanam.",
+      "Tugas Akhir: Implementasi Sistem Pembobotan Hibrida Berdasarkan Integrasi ROC, Random Forest, dan TOPSIS pada Sistem Pendukung Keputusan Pemilihan Peserta Magang Terbaik di PT Wesclic Neotech Indonesia.",
+    ],
+    images: [
+      {
+        src: "/assets/education/afterGraduate.jpeg",
+        title: "Setelah Upacara Wisuda",
+        shortDescription:
+          "Foto yang diambil setelah upacara wisuda, melambangkan...",
+        description:
+          "Foto yang diambil setelah upacara wisuda, melambangkan puncak pencapaian akademik dan transisi menuju dunia profesional.",
+      },
+      {
+        src: "/assets/education/cumLaude.jpeg",
+        title: "Lulus dengan Predikat Cum Laude",
+        shortDescription:
+          "Potret sertifikat kelulusan yang menyoroti predikat Cum Laude...",
+        description:
+          "Potret sertifikat kelulusan yang menyoroti predikat Cum Laude, mewakili keunggulan akademik dan dedikasi.",
+      },
+      {
+        src: "/assets/education/graduationDay.jpeg",
+        title: "Perayaan Hari Wisuda",
+        shortDescription:
+          "Momen perayaan di hari wisuda, mengabadikan kegembiraan...",
+        description:
+          "Momen perayaan di hari wisuda, mengabadikan kegembiraan dan kebanggaan dalam menyelesaikan program sarjana.",
+      },
+    ],
+  },
+];
+
 export default function EducationSection() {
+  const { language, t } = useLanguage();
+  const activeEducations = language === "id" ? educationsID : educationsEN;
+
   const [selectedImage, setSelectedImage] = useState<{
     institution: string;
     image: EducationImage;
@@ -91,12 +136,12 @@ export default function EducationSection() {
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
-          Education
+          {t("education.title")}
         </h2>
       </div>
 
       <div className="space-y-6">
-        {educations.map((education) => (
+        {activeEducations.map((education) => (
           <article key={education.institution}>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div className="flex min-w-0 gap-4">
@@ -132,8 +177,8 @@ export default function EducationSection() {
 
             <div className="ml-0 mt-2 sm:ml-16">
               <ul className="space-y-2 text-xs leading-6 text-slate-600 dark:text-zinc-300 sm:text-sm">
-                {education.details.map((detail) => (
-                  <li key={detail} className="flex gap-3">
+                {education.details.map((detail, dIndex) => (
+                  <li key={dIndex} className="flex gap-3">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-slate-400 dark:bg-zinc-500" />
                     <span>{detail}</span>
                   </li>
