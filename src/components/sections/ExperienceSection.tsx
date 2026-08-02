@@ -22,19 +22,19 @@ type Experience = {
 };
 
 const experiencesEN: Experience[] = [
-  {
-    company: "PT CAKRAWALA PUTRA MULYA",
-    role: "IT & Administration Supervisor",
-    period: "May 2026 - now",
-    logoSrc: "/assets/experience/logos/cpm.jpg",
-    logoAlt: "PT CAKRAWALA PUTRA MULYA Logo",
-    details: [
-      "Managed operational data through the company's information system by performing data entry, validation, and cross-checking to ensure data accuracy.",
-      "Monitored inventory records and maintained synchronization between physical stock and system data to support efficient operations.",
-      "Coordinated operational staff in customer service, inventory management, and product delivery to optimize daily workflows.",
-      "Supported administrative processes while improving operational efficiency through accurate data management and system utilization.",
-    ],
-  },
+  // {
+  //   company: "PT CAKRAWALA PUTRA MULYA",
+  //   role: "IT & Administration Supervisor",
+  //   period: "May 2026 - now",
+  //   logoSrc: "/assets/experience/logos/cpm.jpg",
+  //   logoAlt: "PT CAKRAWALA PUTRA MULYA Logo",
+  //   details: [
+  //     "Managed operational data through the company's information system by performing data entry, validation, and cross-checking to ensure data accuracy.",
+  //     "Monitored inventory records and maintained synchronization between physical stock and system data to support efficient operations.",
+  //     "Coordinated operational staff in customer service, inventory management, and product delivery to optimize daily workflows.",
+  //     "Supported administrative processes while improving operational efficiency through accurate data management and system utilization.",
+  //   ],
+  // },
   {
     company: "TELKOM INDONESIA",
     role: "Full-Stack Developer Intern",
@@ -265,19 +265,19 @@ const experiencesEN: Experience[] = [
 ];
 
 const experiencesID: Experience[] = [
-  {
-    company: "PT CAKRAWALA PUTRA MULYA",
-    role: "Supervisor IT & Administrasi",
-    period: "Mei 2026 - sekarang",
-    logoSrc: "/assets/experience/logos/cpm.jpg",
-    logoAlt: "Logo PT CAKRAWALA PUTRA MULYA",
-    details: [
-      "Mengelola data operasional melalui sistem informasi perusahaan dengan melakukan entri data, validasi, dan pemeriksaan silang untuk memastikan keakuratan data.",
-      "Memantau catatan inventaris dan menjaga sinkronisasi antara stok fisik dan data sistem untuk mendukung kelancaran operasi.",
-      "Mengoordinasikan staf operasional dalam layanan pelanggan, manajemen inventaris, dan pengiriman produk untuk mengoptimalkan alur kerja harian.",
-      "Mendukung proses administrasi sekaligus meningkatkan efisiensi operasional melalui manajemen data dan pemanfaatan sistem yang akurat.",
-    ],
-  },
+  // {
+  //   company: "PT CAKRAWALA PUTRA MULYA",
+  //   role: "Supervisor IT & Administrasi",
+  //   period: "Mei 2026 - sekarang",
+  //   logoSrc: "/assets/experience/logos/cpm.jpg",
+  //   logoAlt: "Logo PT CAKRAWALA PUTRA MULYA",
+  //   details: [
+  //     "Mengelola data operasional melalui sistem informasi perusahaan dengan melakukan entri data, validasi, dan pemeriksaan silang untuk memastikan keakuratan data.",
+  //     "Memantau catatan inventaris dan menjaga sinkronisasi antara stok fisik dan data sistem untuk mendukung kelancaran operasi.",
+  //     "Mengoordinasikan staf operasional dalam layanan pelanggan, manajemen inventaris, dan pengiriman produk untuk mengoptimalkan alur kerja harian.",
+  //     "Mendukung proses administrasi sekaligus meningkatkan efisiensi operasional melalui manajemen data dan pemanfaatan sistem yang akurat.",
+  //   ],
+  // },
   {
     company: "TELKOM INDONESIA",
     role: "Intern Full-Stack Developer",
