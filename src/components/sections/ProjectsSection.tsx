@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type ProjectTech = {
   name: string;
@@ -23,7 +24,7 @@ type Project = {
   technologies: ProjectTech[];
 };
 
-const projects: Project[] = [
+const projectsEN: Project[] = [
   {
     title: "SiBapas PWT",
     period: "Jun 2026 - Jul 2026",
@@ -33,8 +34,7 @@ const projects: Project[] = [
       "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
     imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
-    visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/LapasAPP",
+    visibility: "Private",
     technologies: [
       {
         name: "Laravel",
@@ -156,7 +156,7 @@ const projects: Project[] = [
     company: "Wesclic - Internship",
     role: "System Analyst",
     description:
-      "An IT service platform where I analyzed business requirements and produced PRDs, SRSs, and system diagrams to guide software development.",
+      "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting",
     imageSrc: "/assets/projects/webklik1.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
@@ -171,11 +171,6 @@ const projects: Project[] = [
         name: "Draw IO",
         iconSrc: "/assets/skills/drawio.svg",
         iconAlt: "Draw IO Logo",
-      },
-      {
-        name: "Microsoft Word",
-        iconSrc: "/assets/skills/mWord.svg",
-        iconAlt: "Microsoft Word Logo",
       },
     ],
   },
@@ -206,7 +201,7 @@ const projects: Project[] = [
   {
     title: "Anahata",
     period: "Mar 2025 - Mei 2025",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Full-Stack Developer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
@@ -235,7 +230,7 @@ const projects: Project[] = [
   {
     title: "Sylvair",
     period: "Sept 2024 - Okt 2024",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Full-Stack Developer",
     description:
       "A machine learning-powered web application built with Python and Streamlit to analyze lung disease risk using XGBoost and Random Forest models.",
@@ -259,10 +254,263 @@ const projects: Project[] = [
   {
     title: "DemonWard",
     period: "Mar 2024 - Mei 2024",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Frontend Engineer",
     description:
       "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
+    imageSrc: "/assets/projects/1demonWard.jpg",
+    imageAlt: "DemonWard Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
+      },
+      {
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
+      },
+    ],
+  },
+];
+
+const projectsID: Project[] = [
+  {
+    title: "SiBapas PWT",
+    period: "Jun 2026 - Jul 2026",
+    company: "ELF Studio - Proyek Freelance",
+    role: "Full-Stack Developer",
+    description:
+      "Platform berbasis web terintegrasi untuk melihat laporan Pembimbing Kemasyarakatan (PK) dan memungkinkan PK memantau perkembangan klien secara efisien.",
+    imageSrc: "/assets/projects/sibapasPWT.jpeg",
+    imageAlt: "SiBapas PWT Preview",
+    visibility: "Private",
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "laravel Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Best Intern DSS",
+    period: "Des 2025 - Mei 2026",
+    company: "Tugas Akhir",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem pendukung keputusan yang mengintegrasikan ROC, Random Forest, dan TOPSIS untuk mengidentifikasi pemagang terbaik.",
+    imageSrc: "/assets/projects/thesis.jpg",
+    imageAlt: "Best Intern Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+      {
+        name: "Postman",
+        iconSrc: "/assets/skills/postman.svg",
+        iconAlt: "Postman Logo",
+      },
+    ],
+  },
+  {
+    title: "TelkomBiz Plan",
+    period: "Des 2025 - Feb 2026",
+    company: "Telkom Indonesia - Magang",
+    role: "Full-Stack Developer",
+    description:
+      "Platform berbasis web untuk mempromosikan dan menghitung harga produk TelkomBiz, serta memberikan rekomendasi produk yang optimal sesuai kebutuhan pelanggan.",
+    imageSrc: "/assets/projects/TELKOMBIZ.jpg",
+    imageAlt: "TelkomBiz Plan Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "Vue",
+        iconSrc: "/assets/skills/vue.svg",
+        iconAlt: "Vue Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Nautica",
+    period: "Mar 2026 - Apr 2026",
+    company: "ELF Studio - Proyek Freelance",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem manajemen asrama berbasis web yang menyederhanakan administrasi asrama taruna, manajemen data penghuni asrama, dan proses operasional harian.",
+    imageSrc: "/assets/projects/NAUTICA1.jpg",
+    imageAlt: "Nautica Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Webklik",
+    period: "Okt 2026 - Mar 2026",
+    company: "Wesclic - Magang",
+    role: "System Analyst",
+    description:
+      "Platform berbasis web untuk promosi jasa pembuatan aplikasi berbasis website dan mobile, serta menawarkan konsultasi pengembangan software",
+    imageSrc: "/assets/projects/webklik1.jpg",
+    imageAlt: "Webklik Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
+      },
+      {
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
+      },
+    ],
+  },
+  {
+    title: "Warmindo Modies",
+    period: "Feb 2026 - Mar 2026",
+    company: "ELF Studio - Proyek Freelance",
+    role: "Frontend Engineer",
+    description:
+      "Situs web profil perusahaan yang responsif, dirancang untuk memperkuat kehadiran online Warmindo Modies serta memamerkan produk dan layanannya.",
+    imageSrc: "/assets/projects/warmindoModies.jpg",
+    imageAlt: "Modies Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/warmindo-modies",
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/next.svg",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+    ],
+  },
+  {
+    title: "Anahata",
+    period: "Mar 2025 - Mei 2025",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem pakar berbasis web menggunakan metode Naive Bayes untuk menghitung probabilitas penyakit dada berdasarkan gejala yang dilaporkan pengguna.",
+    imageSrc: "/assets/projects/1anahata.jpg",
+    imageAlt: "Anahata Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
+    technologies: [
+      {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Sylvair",
+    period: "Sep 2024 - Okt 2024",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Aplikasi web bertenaga machine learning yang dibangun dengan Python dan Streamlit untuk menganalisis risiko penyakit paru menggunakan model XGBoost dan Random Forest.",
+    imageSrc: "/assets/projects/1sylvair.jpg",
+    imageAlt: "Sylvair Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Sylvair",
+    technologies: [
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Streamlit",
+        iconSrc: "/assets/skills/streamlit.svg",
+        iconAlt: "Streamlit Logo",
+      },
+    ],
+  },
+  {
+    title: "DemonWard",
+    period: "Mar 2024 - Mei 2024",
+    company: "Tugas Kuliah",
+    role: "Frontend Engineer",
+    description:
+      "Ensiklopedia anime berbasis web yang menyediakan informasi komprehensif tentang karakter Demon Slayer, alur cerita, dan konten terkait melalui antarmuka yang intuitif.",
     imageSrc: "/assets/projects/1demonWard.jpg",
     imageAlt: "DemonWard Preview",
     visibility: "Public",
@@ -309,14 +557,17 @@ function getCurrentVisibleCards() {
 }
 
 export default function ProjectsSection() {
+  const { language, t } = useLanguage();
+  const activeProjects = language === "id" ? projectsID : projectsEN;
+
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
 
-  const maxIndex = Math.max(projects.length - visibleCards, 0);
-  const totalDots = Math.max(projects.length - visibleCards + 1, 1);
+  const maxIndex = Math.max(activeProjects.length - visibleCards, 0);
+  const totalDots = Math.max(activeProjects.length - visibleCards + 1, 1);
 
   const scrollToProject = useCallback(
     (index: number) => {
@@ -376,7 +627,7 @@ export default function ProjectsSection() {
 
       setVisibleCards(nextVisibleCards);
       setActiveIndex((prev) =>
-        Math.min(prev, Math.max(projects.length - nextVisibleCards, 0))
+        Math.min(prev, Math.max(activeProjects.length - nextVisibleCards, 0))
       );
     };
 
@@ -387,7 +638,7 @@ export default function ProjectsSection() {
     return () => {
       window.removeEventListener("resize", updateVisibleCards);
     };
-  }, []);
+  }, [activeProjects.length]);
 
   useEffect(() => {
     scrollToProject(activeIndex);
@@ -410,11 +661,11 @@ export default function ProjectsSection() {
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
-          Projects
+          {t("projects.title")}
         </h2>
 
         <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
-          A showcase of my work in scalable software and intelligent systems.
+          {t("projects.subtitle")}
         </p>
       </div>
 
@@ -435,7 +686,7 @@ export default function ProjectsSection() {
           ref={scrollRef}
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
         >
-          {projects.map((project) => (
+          {activeProjects.map((project) => (
             <article
               key={project.title}
               className="group min-w-full snap-start overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md dark:border-zinc-800 dark:bg-white/4 dark:hover:border-zinc-700 dark:hover:bg-white/6 sm:min-w-[calc(50%-0.5rem)] lg:min-w-[calc(33.333%-0.7rem)]"
@@ -572,7 +823,7 @@ export default function ProjectsSection() {
         href="/projects"
         className="mt-6 inline-flex items-center gap-2 text-base font-medium text-slate-950 transition hover:gap-3 dark:text-white"
       >
-        See All Projects <span>→</span>
+        {t("projects.seeAll")} <span>→</span>
       </a>
     </section>
   );

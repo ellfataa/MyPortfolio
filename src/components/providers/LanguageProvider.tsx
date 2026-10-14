@@ -64,7 +64,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
 
     "hero.portfolio": "Portfolio",
     "hero.description":
-      "Software Engineer with a Computer Science background and a strong interest in Full-Stack Development, System Analysis, and Data Analysis. Experienced in designing and developing scalable web applications, translating business requirements into practical digital solutions, and collaborating within Agile teams to deliver reliable, secure, and user-centered software.",
+      "Computer Science graduate with expertise in Full-Stack Web Development, System Analysis, and Data Analysis. Experienced in delivering end-to-end web applications, managing technical system documentation, and driving projects within Agile environments to build data-driven, business-aligned tech solutions.",
     "hero.contactBtn": "Contact Me",
     "hero.downloadBtn": "Download CV",
 
@@ -118,7 +118,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
 
     "hero.portfolio": "Portofolio",
     "hero.description":
-      "Software Engineer dengan latar belakang Ilmu Komputer dan ketertarikan kuat pada Full-Stack Development, Analisis Sistem, dan Analisis Data. Berpengalaman dalam merancang dan mengembangkan aplikasi web yang scalable, menerjemahkan kebutuhan bisnis menjadi solusi digital praktis, serta berkolaborasi dalam tim Agile untuk menghasilkan perangkat lunak yang andal, aman, dan berpusat pada pengguna.",
+      "Lulusan Teknik Informatika dengan keahlian dalam Full-Stack Web Development, Analisis Sistem, dan Analisis Data. Berpengalaman dalam mengembangkan aplikasi web secara end-to-end, menyusun dokumentasi teknis sistem, serta menjalankan proyek di lingkungan Agile untuk menciptakan solusi teknologi berbasis data yang selaras dengan tujuan bisnis.",
     "hero.contactBtn": "Hubungi Saya",
     "hero.downloadBtn": "Unduh CV",
 
@@ -130,7 +130,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
     "skills.subtitle": "Kumpulan teknologi, bahasa pemrograman, framework, dan platform yang mendukung saya dalam mengembangkan solusi digital.",
     
     "projects.title": "Proyek",
-    "projects.subtitle": "Kumpulan karya saya di bidang perangkat lunak terukur dan sistem cerdas.",
+    "projects.subtitle": "Kumpulan proyek di bidang perangkat lunak dan sistem cerdas.",
     "projects.seeAll": "Lihat Semua Proyek",
 
     "certificates.title": "Sertifikat",

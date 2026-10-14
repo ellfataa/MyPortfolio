@@ -122,7 +122,6 @@ export default function HeroSection() {
     <section id="hero" className="mx-auto flex min-h-[82vh] w-full max-w-6xl items-center px-4 py-6 sm:px-6 sm:py-10 md:py-14 lg:px-8">
       <div className="grid w-full items-center gap-10 lg:grid-cols-[1.55fr_0.45fr] xl:grid-cols-[1.6fr_0.4fr]">
         <div className="order-2 w-full max-w-5xl text-center lg:order-1 lg:text-left">
-          {/* Menerapkan terjemahan pada sub-heading */}
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-zinc-500">
             {t("hero.portfolio")}
           </p>
@@ -141,7 +140,6 @@ export default function HeroSection() {
             ))}
           </div>
 
-          {/* Menerapkan terjemahan pada Deskripsi Profil */}
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-zinc-300 sm:text-lg lg:mx-0">
             {t("hero.description")}
           </p>

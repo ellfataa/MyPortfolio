@@ -22,22 +22,22 @@ type Experience = {
 };
 
 const experiencesEN: Experience[] = [
-  // {
-  //   company: "PT CAKRAWALA PUTRA MULYA",
-  //   role: "IT & Administration Supervisor",
-  //   period: "May 2026 - now",
-  //   logoSrc: "/assets/experience/logos/cpm.jpg",
-  //   logoAlt: "PT CAKRAWALA PUTRA MULYA Logo",
-  //   details: [
-  //     "Managed operational data through the company's information system by performing data entry, validation, and cross-checking to ensure data accuracy.",
-  //     "Monitored inventory records and maintained synchronization between physical stock and system data to support efficient operations.",
-  //     "Coordinated operational staff in customer service, inventory management, and product delivery to optimize daily workflows.",
-  //     "Supported administrative processes while improving operational efficiency through accurate data management and system utilization.",
-  //   ],
-  // },
+  {
+    company: "SINAR MULYA",
+    role: "Administrative & Data Analyst",
+    period: "May 2026 - now",
+    logoSrc: "/assets/experience/logos/cpm.jpg",
+    logoAlt: "SINAR MULYA Logo",
+    details: [
+      "Managed operational data through the company's information system by performing data entry, validation, and cross-checking to ensure data accuracy.",
+      "Monitored inventory records and maintained synchronization between physical stock and system data to support efficient operations.",
+      "Coordinated operational staff in customer service, inventory management, and product delivery to optimize daily workflows.",
+      "Supported administrative processes while improving operational efficiency through accurate data management and system utilization.",
+    ],
+  },
   {
     company: "TELKOM INDONESIA",
-    role: "Full-Stack Developer Intern",
+    role: "Software Engineer Intern",
     period: "Dec 2025 - Feb 2026",
     logoSrc: "/assets/experience/logos/idtelkom.jpg",
     logoAlt: "Telkom Indonesia Logo",
@@ -75,8 +75,8 @@ const experiencesEN: Experience[] = [
     ],
   },
   {
-    company: "WESCLIC NEOTECH INDONESIA",
-    role: "System Analyst Intern",
+    company: "WESCLIC TECHNOLOGY",
+    role: "Data & System Analyst Intern",
     period: "Aug 2025 - Dec 2025",
     logoSrc: "/assets/experience/logos/wesclic.jpg",
     logoAlt: "Wesclic Logo",
@@ -107,7 +107,7 @@ const experiencesEN: Experience[] = [
   },
   {
     company: "PDAM BANYUMAS",
-    role: "Full-Stack Developer Intern",
+    role: "Software Engineer Intern",
     period: "Jul 2024 - Aug 2024",
     logoSrc: "/assets/experience/logos/pdambms.jpg",
     logoAlt: "PDAM Banyumas Logo",
@@ -134,7 +134,7 @@ const experiencesEN: Experience[] = [
     logoSrc: "/assets/logo/logo.png",
     logoAlt: "ELF Studio Logo",
     details: [
-      "Built scalable web and mobile solutions by transforming client ideas into modern, responsive, and user-centered digital products.",
+      "Built scalable web application solutions by transforming client ideas into modern, responsive, and user-centered digital products.",
       "Designed intuitive UI/UX and delivered end-to-end project execution, combining technical development, documentation, and effective client collaboration.",
     ],
     images: [
@@ -196,7 +196,7 @@ const experiencesEN: Experience[] = [
   },
   {
     company: "BEM UNSOED",
-    role: "Data Analysis Division Staff",
+    role: "Data Analyst Division Staff",
     period: "Feb 2024 - Dec 2024",
     logoSrc: "/assets/experience/logos/bemu.jpg",
     logoAlt: "BEM UNSOED Logo",
@@ -265,22 +265,22 @@ const experiencesEN: Experience[] = [
 ];
 
 const experiencesID: Experience[] = [
-  // {
-  //   company: "PT CAKRAWALA PUTRA MULYA",
-  //   role: "Supervisor IT & Administrasi",
-  //   period: "Mei 2026 - sekarang",
-  //   logoSrc: "/assets/experience/logos/cpm.jpg",
-  //   logoAlt: "Logo PT CAKRAWALA PUTRA MULYA",
-  //   details: [
-  //     "Mengelola data operasional melalui sistem informasi perusahaan dengan melakukan entri data, validasi, dan pemeriksaan silang untuk memastikan keakuratan data.",
-  //     "Memantau catatan inventaris dan menjaga sinkronisasi antara stok fisik dan data sistem untuk mendukung kelancaran operasi.",
-  //     "Mengoordinasikan staf operasional dalam layanan pelanggan, manajemen inventaris, dan pengiriman produk untuk mengoptimalkan alur kerja harian.",
-  //     "Mendukung proses administrasi sekaligus meningkatkan efisiensi operasional melalui manajemen data dan pemanfaatan sistem yang akurat.",
-  //   ],
-  // },
+  {
+    company: "SINAR MULYA",
+    role: "Administrasi & Analis Data",
+    period: "Mei 2026 - sekarang",
+    logoSrc: "/assets/experience/logos/cpm.jpg",
+    logoAlt: "Logo SINAR MULYA",
+    details: [
+      "Mengelola data operasional melalui sistem informasi perusahaan dengan melakukan entri data, validasi, dan pemeriksaan silang untuk memastikan keakuratan data.",
+      "Memantau catatan inventaris dan menjaga sinkronisasi antara stok fisik dan data sistem untuk mendukung kelancaran operasi.",
+      "Mengoordinasikan staf operasional dalam layanan pelanggan, manajemen inventaris, dan pengiriman produk untuk mengoptimalkan alur kerja harian.",
+      "Mendukung proses administrasi sekaligus meningkatkan efisiensi operasional melalui manajemen data dan pemanfaatan sistem yang akurat.",
+    ],
+  },
   {
     company: "TELKOM INDONESIA",
-    role: "Intern Full-Stack Developer",
+    role: "Magang Software Engineer",
     period: "Des 2025 - Feb 2026",
     logoSrc: "/assets/experience/logos/idtelkom.jpg",
     logoAlt: "Logo Telkom Indonesia",
@@ -318,8 +318,8 @@ const experiencesID: Experience[] = [
     ],
   },
   {
-    company: "WESCLIC NEOTECH INDONESIA",
-    role: "Intern System Analyst",
+    company: "WESCLIC TECHNOLOGY",
+    role: "Magang Analis Data & Sistem",
     period: "Agt 2025 - Des 2025",
     logoSrc: "/assets/experience/logos/wesclic.jpg",
     logoAlt: "Logo Wesclic",
@@ -350,7 +350,7 @@ const experiencesID: Experience[] = [
   },
   {
     company: "PDAM BANYUMAS",
-    role: "Intern Full-Stack Developer",
+    role: "Magang Software Engineer",
     period: "Jul 2024 - Agt 2024",
     logoSrc: "/assets/experience/logos/pdambms.jpg",
     logoAlt: "Logo PDAM Banyumas",
@@ -377,7 +377,7 @@ const experiencesID: Experience[] = [
     logoSrc: "/assets/logo/logo.png",
     logoAlt: "Logo ELF Studio",
     details: [
-      "Membangun solusi web dan seluler yang dapat diskalakan dengan mengubah ide klien menjadi produk digital yang modern, responsif, dan berpusat pada pengguna.",
+      "Membangun solusi aplikasi berbasis web yang dapat diskalakan dengan mengubah ide klien menjadi produk digital yang modern, responsif, dan berpusat pada pengguna.",
       "Merancang UI/UX yang intuitif dan memberikan eksekusi proyek end-to-end, menggabungkan pengembangan teknis, dokumentasi, dan kolaborasi klien yang efektif.",
     ],
     images: [
@@ -408,7 +408,7 @@ const experiencesID: Experience[] = [
     ],
   },
   {
-    company: "INFORMATICS LABORATORY",
+    company: "LABORATORIUM INFORMATIKA",
     role: "Asisten Laboratorium",
     period: "Agt 2023 - Apr 2026",
     logoSrc: "/assets/experience/logos/iflab.jpg",
@@ -469,7 +469,7 @@ const experiencesID: Experience[] = [
   },
   {
     company: "HMIF UNSOED",
-    role: "Staf Divisi Pendidikan",
+    role: "Staf Divisi Edukasi",
     period: "Mar 2024 - Des 2024",
     logoSrc: "/assets/experience/logos/hmifunsoed.png",
     logoAlt: "Logo HMIF UNSOED",
@@ -489,11 +489,11 @@ const experiencesID: Experience[] = [
       },
       {
         src: "/assets/experience/hmif2.jpeg",
-        title: "Tim Divisi Pendidikan",
+        title: "Tim Divisi Edukasi",
         shortDescription:
-          "Diabadikan bersama tim Divisi Pendidikan setelah berhasil...",
+          "Diabadikan bersama tim Divisi Edukasi setelah berhasil...",
         description:
-          "Diabadikan bersama tim Divisi Pendidikan setelah berhasil menyelenggarakan program dan inisiatif akademik untuk mendukung pembelajaran serta pengembangan mahasiswa.",
+          "Diabadikan bersama tim Divisi Edukasi setelah berhasil menyelenggarakan program dan inisiatif akademik untuk mendukung pembelajaran serta pengembangan mahasiswa.",
       },
       {
         src: "/assets/experience/hmif3.jpg",

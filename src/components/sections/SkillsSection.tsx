@@ -186,19 +186,29 @@ const skillCategories: SkillCategory[] = [
         iconAlt: "GitHub Logo",
       },
       {
-        name: "Vercel",
-        iconSrc: "/assets/skills/vercel.svg",
-        iconAlt: "Vercel Logo",
+        name: "Google Colab",
+        iconSrc: "/assets/skills/gColab.svg",
+        iconAlt: "Google Colab Logo",
       },
       {
-        name: "Google Colab",
-        iconSrc: "/assets/skills/gcolab.png",
-        iconAlt: "Google Colab Logo",
+        name: "Power BI",
+        iconSrc: "/assets/skills/powerBI.svg",
+        iconAlt: "Power BI Logo",
       },
       {
         name: "DB Diagram",
         iconSrc: "/assets/skills/DBDiagram.svg",
         iconAlt: "DB Diagram Logo",
+      },
+      {
+        name: "Power Automate",
+        iconSrc: "/assets/skills/pAutomate.svg",
+        iconAlt: "Power Automate Logo",
+      },
+      {
+        name: "Vercel",
+        iconSrc: "/assets/skills/vercel.svg",
+        iconAlt: "Vercel Logo",
       },
       {
         name: "Postman",
@@ -219,11 +229,6 @@ const skillCategories: SkillCategory[] = [
         name: "Draw IO",
         iconSrc: "/assets/skills/drawio.svg",
         iconAlt: "Draw IO Logo",
-      },
-      {
-        name: "Microsoft Word",
-        iconSrc: "/assets/skills/mWord.svg",
-        iconAlt: "Microsoft Word Logo",
       },
     ],
   },

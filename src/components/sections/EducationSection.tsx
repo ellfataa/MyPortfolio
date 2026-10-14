@@ -72,8 +72,8 @@ const educationsID: Education[] = [
     logoSrc: "/assets/education/logos/unsoed.png",
     logoAlt: "Logo Universitas Jenderal Soedirman",
     details: [
-      "Mata kuliah relevan: Pengembangan Web, Pengembangan Mobile, Sistem Basis Data, Jaringan Komputer, Sistem Operasi, Data Mining, Machine Learning, Kecerdasan Buatan, dan Sistem Tertanam.",
-      "Tugas Akhir: Implementasi Sistem Pembobotan Hibrida Berdasarkan Integrasi ROC, Random Forest, dan TOPSIS pada Sistem Pendukung Keputusan Pemilihan Peserta Magang Terbaik di PT Wesclic Neotech Indonesia.",
+      "Mata kuliah relevan: Pengembangan Aplikasi Web, Pengembangan Aplikasi Mobile, Sistem Basis Data, Jaringan Komputer, Sistem Operasi, Data Mining, Machine Learning, Kecerdasan Buatan, dan Sistem Tertanam.",
+      "Tugas Akhir: Implementasi Hybrid Weighting System Berbasis Integrasi ROC, Random Forest, dan TOPSIS Pada Sistem Pendukung Keputusan Pemilihan Peserta Magang Terbaik di PT Wesclic Neotech Indonesia.",
     ],
     images: [
       {
