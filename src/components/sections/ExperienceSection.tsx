@@ -21,6 +21,7 @@ type Experience = {
   images?: ExperienceImage[];
 };
 
+// Bahasa Inggris
 const experiencesEN: Experience[] = [
   {
     company: "SINAR MULYA",
@@ -264,6 +265,7 @@ const experiencesEN: Experience[] = [
   },
 ];
 
+// Bahasa Indonesia
 const experiencesID: Experience[] = [
   {
     company: "SINAR MULYA",

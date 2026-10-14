@@ -53,6 +53,7 @@ type TranslationKey =
   | "chatbot.suggestion.flutter";
 
 const translations: Record<Language, Record<TranslationKey, string>> = {
+  // Bahasa Inggris
   en: {
     "dock.about": "About",
     "dock.projects": "Projects",
@@ -107,8 +108,9 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
     "chatbot.suggestion.flutter": "Tell me about his Flutter projects",
   },
 
+  // Bahasa Indonesia
   id: {
-    "dock.about": "Tentang",
+    "dock.about": "Tentang Saya",
     "dock.projects": "Proyek",
     "dock.certificates": "Sertifikat",
     "dock.contact": "Kontak",
@@ -134,7 +136,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
     "projects.seeAll": "Lihat Semua Proyek",
 
     "certificates.title": "Sertifikat",
-    "certificates.subtitle": "Sorotan dari perjalanan belajar dan pertumbuhan profesional saya.",
+    "certificates.subtitle": "Perjalanan belajar dan pertumbuhan profesional saya.",
     "certificates.seeAll": "Lihat Semua Sertifikat",
 
     "contact.heading": "Mari Bekerja Sama",

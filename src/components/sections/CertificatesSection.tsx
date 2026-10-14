@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type Certificate = {
   title: string;
@@ -12,7 +13,8 @@ type Certificate = {
   pdfUrl: string;
 };
 
-const certificates: Certificate[] = [
+// Bahasa Inggris
+const certificatesEN: Certificate[] = [
   {
     title: "Certificate for Embedded System Programming Lab Assistant",
     issuer: "UNSOED Informatics Laboratory",
@@ -21,14 +23,14 @@ const certificates: Certificate[] = [
     imageAlt: "Certificate for Embedded System Programming Lab Assistant",
     pdfUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
   },
-  {
-    title: "GAMMAFEST Data Science Participants",
-    issuer: "IPB University",
-    date: "May 2025",
-    imageSrc: "/assets/sertifikat/GammaFest.jpg",
-    imageAlt: "GAMMAFEST Data Science Participants Certificate",
-    pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
-  },
+  // {
+  //   title: "GAMMAFEST Data Science Participants",
+  //   issuer: "IPB University",
+  //   date: "May 2025",
+  //   imageSrc: "/assets/sertifikat/GammaFest.jpg",
+  //   imageAlt: "GAMMAFEST Data Science Participants Certificate",
+  //   pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+  // },
   {
     title: "Data Analysis with Python",
     issuer: "IBM",
@@ -87,6 +89,82 @@ const certificates: Certificate[] = [
   },
 ];
 
+// Bahasa Indonesia
+const certificatesID: Certificate[] = [
+  {
+    title: "Sertifikat Asisten Pemrograman Sistem Tertanam",
+    issuer: "Laboratorium Informatika UNSOED",
+    date: "Jun 2026",
+    imageSrc: "/assets/sertifikat/PrakPST.jpeg",
+    imageAlt: "Certificate for Embedded System Programming Lab Assistant",
+    pdfUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
+  },
+  // {
+  //   title: "Peserta Data Science GAMMAFEST",
+  //   issuer: "IPB University",
+  //   date: "Mei 2025",
+  //   imageSrc: "/assets/sertifikat/GammaFest.jpg",
+  //   imageAlt: "GAMMAFEST Data Science Participants Certificate",
+  //   pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+  // },
+  {
+    title: "Analisis Data dengan Python",
+    issuer: "IBM",
+    date: "Apr 2025",
+    imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
+    imageAlt: "Data Analysis with Python Certificate",
+    pdfUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
+  },
+  {
+    title: "Big Data 101",
+    issuer: "IBM",
+    date: "Apr 2025",
+    imageSrc: "/assets/sertifikat/bigData.jpg",
+    imageAlt: "Big Data 101 Certificate",
+    pdfUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
+  },
+  {
+    title: "Pengantar Data Analisis",
+    issuer: "RevoU Indonesia",
+    date: "Mar 2025",
+    imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
+    imageAlt: "Intro to Data Analytics Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
+  },
+  {
+    title: "Google Analytics Pemula",
+    issuer: "Google",
+    date: "Agt 2023",
+    imageSrc: "/assets/sertifikat/GAnalytics.jpg",
+    imageAlt: "Google Analytics for Beginners Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
+  },
+  {
+    title: "Tutor Mata Kuliah Basis Data",
+    issuer: "HMIF UNSOED",
+    date: "Mei 2023",
+    imageSrc: "/assets/sertifikat/tentorBD.jpg",
+    imageAlt: "Database Course Tutor Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1exKE12IzUGqa4IYbKDTF_TAJwwTmYNfN/view?usp=sharing",
+  },
+  {
+    title: "Medali Emas Olimpiade Matematika",
+    issuer: "UNIVERSITY.ID",
+    date: "Jan 2022",
+    imageSrc: "/assets/sertifikat/EmasUniversity.jpg",
+    imageAlt: "National Level Mathematics Olympiad Gold Medal Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1WxMJQPE0Xvzo_f241RNiQcW4Q2LkSqfl/view?usp=sharing",
+  },
+  {
+    title: "Medali Perak Olimpiade Matematika",
+    issuer: "Yapresindo",
+    date: "Okt 2021",
+    imageSrc: "/assets/sertifikat/PerakOSAN.jpg",
+    imageAlt: "National Level Mathematics Olympiad Silver Medal Certificate",
+    pdfUrl: "https://drive.google.com/file/d/1iVbzrVDkROzeJ55sd2kyB7B__Fpsz2Ri/view?usp=sharing",
+  },
+];
+
 function getCurrentVisibleCards() {
   if (typeof window === "undefined") return 3;
 
@@ -97,14 +175,17 @@ function getCurrentVisibleCards() {
 }
 
 export default function CertificatesSection() {
+  const { language, t } = useLanguage();
+  const activeCertificates = language === "id" ? certificatesID : certificatesEN;
+
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
 
-  const maxIndex = Math.max(certificates.length - visibleCards, 0);
-  const totalDots = Math.max(certificates.length - visibleCards + 1, 1);
+  const maxIndex = Math.max(activeCertificates.length - visibleCards, 0);
+  const totalDots = Math.max(activeCertificates.length - visibleCards + 1, 1);
 
   const scrollToCertificate = useCallback(
     (index: number) => {
@@ -164,7 +245,7 @@ export default function CertificatesSection() {
 
       setVisibleCards(nextVisibleCards);
       setActiveIndex((prev) =>
-        Math.min(prev, Math.max(certificates.length - nextVisibleCards, 0))
+        Math.min(prev, Math.max(activeCertificates.length - nextVisibleCards, 0))
       );
     };
 
@@ -175,7 +256,7 @@ export default function CertificatesSection() {
     return () => {
       window.removeEventListener("resize", updateVisibleCards);
     };
-  }, []);
+  }, [activeCertificates.length]);
 
   useEffect(() => {
     scrollToCertificate(activeIndex);
@@ -198,12 +279,11 @@ export default function CertificatesSection() {
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-2xl md:text-3xl">
-          Certificates
+          {t("certificates.title")}
         </h2>
 
         <p className="mt-1 max-w-6xl text-sm leading-6 text-slate-600 dark:text-zinc-300 sm:text-base">
-          Highlights from my continuous learning journey and professional
-          growth.
+          {t("certificates.subtitle")}
         </p>
       </div>
 
@@ -224,7 +304,7 @@ export default function CertificatesSection() {
           ref={scrollRef}
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
         >
-          {certificates.map((certificate) => (
+          {activeCertificates.map((certificate) => (
             <a
               key={certificate.title}
               href={certificate.pdfUrl}
@@ -296,7 +376,7 @@ export default function CertificatesSection() {
         href="/certificates"
         className="mt-6 inline-flex items-center gap-2 text-base font-medium text-slate-950 transition hover:gap-3 dark:text-white"
       >
-        See All Certificates <span>→</span>
+        {t("certificates.seeAll")} <span>→</span>
       </a>
     </section>
   );

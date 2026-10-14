@@ -1,9 +1,7 @@
-import Image from "next/image";
+"use client";
 
-type FooterLink = {
-  label: string;
-  href: string;
-};
+import Image from "next/image";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 type SocialLink = {
   label: string;
@@ -77,25 +75,6 @@ function MailIcon() {
   );
 }
 
-const footerLinks: FooterLink[] = [
-  {
-    label: "About",
-    href: "/#hero",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "Certificates",
-    href: "/certificates",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
-
 const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
@@ -115,6 +94,27 @@ const socialLinks: SocialLink[] = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    {
+      label: t("footer.about"),
+      href: "/#hero",
+    },
+    {
+      label: t("footer.projects"),
+      href: "/projects",
+    },
+    {
+      label: t("footer.certificates"),
+      href: "/certificates",
+    },
+    {
+      label: t("footer.contact"),
+      href: "/contact",
+    },
+  ];
+
   return (
     <footer className="w-full border-t-2 border-slate-200/80 dark:border-zinc-800">
       <div className="mx-auto w-full max-w-6xl px-4 pb-24 pt-8 sm:px-6 sm:pb-16 sm:pt-10 md:pb-10 lg:px-8">
@@ -144,7 +144,7 @@ export default function Footer() {
 
         <div className="mt-7 flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
           <p className="text-sm text-slate-500 dark:text-zinc-400">
-            © 2026 Luthfi Emillulfata. All rights reserved.
+            © 2026 Luthfi Emillulfata. {t("footer.rights")}
           </p>
 
           <div className="flex items-center gap-3">
