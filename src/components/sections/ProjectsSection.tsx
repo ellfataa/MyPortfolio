@@ -35,6 +35,7 @@ const projectsEN: Project[] = [
     imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
     visibility: "Private",
+    isInternal: true,
     technologies: [
       {
         name: "Laravel",
@@ -156,7 +157,7 @@ const projectsEN: Project[] = [
     company: "Wesclic - Internship",
     role: "System Analyst",
     description:
-      "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting",
+      "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting.",
     imageSrc: "/assets/projects/webklik1.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",

@@ -44,8 +44,8 @@ const projects: Project[] = [
       "An integrated web-based platform for managing client activity reports, enabling Community Counselors (Pembimbing Kemasyarakatan/PK) to efficiently monitor client progress.",
     imageSrc: "/assets/projects/sibapasPWT.jpeg",
     imageAlt: "SiBapas PWT Preview",
-    visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/LapasAPP",
+    visibility: "Private",
+    isInternal: true,
     technologies: [
       {
         name: "Laravel",
@@ -107,7 +107,7 @@ const projects: Project[] = [
   {
     title: "TelkomBiz Plan",
     period: "Dec 2025 - Feb 2026",
-    category: "Web",
+    category: ["Web","Mobile"],
     company: "Telkom Indonesia - Internship",
     role: "Full-Stack Developer",
     description:
@@ -167,11 +167,11 @@ const projects: Project[] = [
   {
     title: "Webklik",
     period: "Oct 2026 - Mar 2026",
-    category: "Web",
+    category: ["Web","Mobile"],
     company: "Wesclic - Internship",
     role: "System Analyst",
     description:
-      "An IT service platform where I analyzed business requirements and produced PRDs, SRSs, and system diagrams to guide software development.",
+      "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting.",
     imageSrc: "/assets/projects/webklik1.jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
@@ -186,11 +186,6 @@ const projects: Project[] = [
         name: "Draw IO",
         iconSrc: "/assets/skills/drawio.svg",
         iconAlt: "Draw IO Logo",
-      },
-      {
-        name: "Microsoft Word",
-        iconSrc: "/assets/skills/mWord.svg",
-        iconAlt: "Microsoft Word Logo",
       },
     ],
   },
@@ -223,7 +218,7 @@ const projects: Project[] = [
     title: "Anahata",
     period: "Mar 2025 - Mei 2025",
     category: "Web",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Full-Stack Developer",
     description:
       "A Web-based expert system using Naive Bayes to calculate chest disease probabilities from user-reported symptoms.",
@@ -253,7 +248,7 @@ const projects: Project[] = [
     title: "Sylvair",
     period: "Sept 2024 - Okt 2024",
     category: "Machine Learning",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Full-Stack Developer",
     description:
       "A machine learning-powered web application built with Python and Streamlit to analyze lung disease risk using XGBoost and Random Forest models.",
@@ -278,7 +273,7 @@ const projects: Project[] = [
     title: "DemonWard",
     period: "Mar 2024 - Mei 2024",
     category: "Web",
-    company: "Jenderal Soedirman University",
+    company: "Course Assignment",
     role: "Frontend Engineer",
     description:
       "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
