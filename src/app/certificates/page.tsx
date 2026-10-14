@@ -7,95 +7,128 @@ import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
+// Import hook bahasa
+import { useLanguage } from "@/components/providers/LanguageProvider";
+
 type CertificateCategory = "All" | "Web" | "Mobile" | "Data" | "Others";
 
 type Certificate = {
   title: string;
   issuer: string;
   issuedDate: string;
-  category: Exclude<CertificateCategory, "All">;
+  categories: Exclude<CertificateCategory, "All">[];
   imageSrc: string;
   imageAlt: string;
   credentialUrl: string;
   skills: string[];
 };
 
-const certificates: Certificate[] = [
+const certificatesEN: Certificate[] = [
   {
-    title: "Certificate for Embedded System Programming Lab Assistant",
+    title: "Embedded System Programming Lab Assistant",
     issuer: "UNSOED Informatics Laboratory",
     issuedDate: "Jun 2026",
-    category: "Others",
+    categories: ["Web", "Mobile"],
     imageSrc: "/assets/sertifikat/PrakPST.jpeg",
     imageAlt: "Certificate for Embedded System Programming Lab Assistant",
     credentialUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
-    skills: ["Embedded Systems", "Laboratory Assistant", "C/C++"],
-  },
-  {
-    title: "GAMMAFEST Data Science Participants",
-    issuer: "IPB University",
-    issuedDate: "May 2025",
-    category: "Others",
-    imageSrc: "/assets/sertifikat/GammaFest.jpg",
-    imageAlt: "GAMMAFEST Data Science Participants Certificate",
-    credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
-    skills: ["Data Science", "Machine Learning", "Data Analysis"],
+    skills: ["C/C++", "Laboratory Assistant", "VS Code", "Git"],
   },
   {
     title: "Data Analysis with Python",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    category: "Data",
+    categories: ["Data"],
     imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
     imageAlt: "Data Analysis with Python Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
-    skills: ["Python", "Data Analysis", "Pandas"],
+    skills: ["Python", "Data Analyst", "Google Colab", "Power BI"],
   },
   {
     title: "Big Data 101",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    category: "Data",
+    categories: ["Data"],
     imageSrc: "/assets/sertifikat/bigData.jpg",
     imageAlt: "Big Data 101 Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
-    skills: ["Big Data", "Hadoop", "Data Engineering"],
+    skills: ["Python", "Data Analyst", "Google Colab", "Power BI"],
   },
   {
     title: "Intro to Data Analytics",
     issuer: "RevoU Indonesia",
     issuedDate: "Mar 2025",
-    category: "Data",
+    categories: ["Data"],
     imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
     imageAlt: "Intro to Data Analytics Certificate",
     credentialUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
-    skills: ["Data Analytics", "SQL", "Tableau"],
+    skills: ["SQL", "Data Analyst", "Google Colab", "DB Diagram"],
+  },
+  {
+    title: "Operating Systems Lab Assistant",
+    issuer: "UNSOED Informatics Laboratory",
+    issuedDate: "Jul 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/PrakSO.jpg",
+    imageAlt: "Certificate for Operating Systems Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1o6wxccY1ibES4iBlgqtjCy4wv0CS06dC/view?usp=sharing",
+    skills: ["Bash", "Laboratory Assistant", "VS Code", "Git"],
+  },
+  {
+    title: "Database Lab Assistant",
+    issuer: "UNSOED Informatics Laboratory",
+    issuedDate: "Dec 2023",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/PrakSO.jpg",
+    imageAlt: "Certificate for Database Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1U3ms0Kd_eK4a7AcDJoarM7DaL80u55RR/view?usp=sharing",
+    skills: ["SQL", "Laboratory Assistant", "DB Diagram", "Git"],
   },
   {
     title: "Google Analytics for Beginners",
     issuer: "Google",
     issuedDate: "Agu 2023",
-    category: "Web",
+    categories: ["Data"],
     imageSrc: "/assets/sertifikat/GAnalytics.jpg",
     imageAlt: "Google Analytics for Beginners Certificate",
     credentialUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
-    skills: ["Google Analytics", "Web Analytics", "SEO"],
+    skills: ["Python", "Data Analyst", "Google Colab", "DB Diagram"],
+  },
+  {
+    title: "Data Analyst Division Staff",
+    issuer: "BEM UNSOED",
+    issuedDate: "Dec 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/sertifBEM.jpg",
+    imageAlt: "Data Analyst Division Staff Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1hsxr1eBozdFX-qOl-fiLvtp2TA8x2OrB/view?usp=sharing",
+    skills: ["Python", "Staff", "Google Colab", "VS Code"],
+  },
+  {
+    title: "Education Division Staff",
+    issuer: "HMIF UNSOED",
+    issuedDate: "Dec 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/sertifHMIF.jpg",
+    imageAlt: "Education Division Staff Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1czaAlIV47A6CiWu_FdQer4xcrSTnoyQn/view?usp=sharing",
+    skills: ["Bash", "Staff", "Git", "Figma"],
   },
   {
     title: "Database Course Tutor",
     issuer: "HMIF UNSOED",
     issuedDate: "May 2023",
-    category: "Web",
+    categories: ["Others"],
     imageSrc: "/assets/sertifikat/tentorBD.jpg",
     imageAlt: "Database Course Tutor Certificate",
     credentialUrl: "https://drive.google.com/file/d/1exKE12IzUGqa4IYbKDTF_TAJwwTmYNfN/view?usp=sharing",
-    skills: ["Database Management", "SQL", "Mentoring"],
+    skills: ["SQL", "Laboratory Assistant", "DB Diagram", "Git"],
   },
   {
     title: "National Level Mathematics Olympiad Gold Medal",
     issuer: "UNIVERSITY.ID",
     issuedDate: "Jan 2022",
-    category: "Others",
+    categories: ["Others"],
     imageSrc: "/assets/sertifikat/EmasUniversity.jpg",
     imageAlt: "National Level Mathematics Olympiad Gold Medal Certificate",
     credentialUrl: "https://drive.google.com/file/d/1WxMJQPE0Xvzo_f241RNiQcW4Q2LkSqfl/view?usp=sharing",
@@ -105,11 +138,155 @@ const certificates: Certificate[] = [
     title: "National Level Mathematics Olympiad Silver Medal",
     issuer: "Yapresindo",
     issuedDate: "Oct 2021",
-    category: "Others",
+    categories: ["Others"],
     imageSrc: "/assets/sertifikat/PerakOSAN.jpg",
     imageAlt: "National Level Mathematics Olympiad Silver Medal Certificate",
     credentialUrl: "https://drive.google.com/file/d/1iVbzrVDkROzeJ55sd2kyB7B__Fpsz2Ri/view?usp=sharing",
     skills: ["Mathematics", "Problem Solving", "Analytical Thinking"],
+  },
+  {
+    title: "GAMMAFEST Data Science Participants",
+    issuer: "IPB University",
+    issuedDate: "May 2025",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/GammaFest.jpg",
+    imageAlt: "GAMMAFEST Data Science Participants Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+    skills: ["Python", "Data Analyst", "Google Colab", "VS Code"],
+  },
+];
+
+// Bahasa Indonesia
+const certificatesID: Certificate[] = [
+  {
+    title: "Asisten Laboratorium Pemrograman Sistem Tertanam",
+    issuer: "Laboratorium Informatika UNSOED",
+    issuedDate: "Jun 2026",
+    categories: ["Web", "Mobile"],
+    imageSrc: "/assets/sertifikat/PrakPST.jpeg",
+    imageAlt: "Certificate for Embedded System Programming Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
+    skills: ["C/C++", "Asisten Laboratorium", "VS Code", "Git"],
+  },
+  {
+    title: "Analisis Data dengan Python",
+    issuer: "IBM",
+    issuedDate: "Apr 2025",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
+    imageAlt: "Data Analysis with Python Certificate",
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
+    skills: ["Python", "Analis Data", "Google Colab", "Power BI"],
+  },
+  {
+    title: "Big Data 101",
+    issuer: "IBM",
+    issuedDate: "Apr 2025",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/bigData.jpg",
+    imageAlt: "Big Data 101 Certificate",
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
+    skills: ["Python", "Analis Data", "Google Colab", "Power BI"],
+  },
+  {
+    title: "Pengantar Analisis Data",
+    issuer: "RevoU Indonesia",
+    issuedDate: "Mar 2025",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
+    imageAlt: "Intro to Data Analytics Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
+    skills: ["SQL", "Analis Data", "Google Colab", "DB Diagram"],
+  },
+  {
+    title: "Asisten Laboratorium Sistem Operasi",
+    issuer: "Laboratorium Informatika UNSOED",
+    issuedDate: "Jul 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/PrakSO.jpg",
+    imageAlt: "Certificate for Operating Systems Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1o6wxccY1ibES4iBlgqtjCy4wv0CS06dC/view?usp=sharing",
+    skills: ["Bash", "Asisten Laboratorium", "VS Code", "Git"],
+  },
+  {
+    title: "Asisten Laboratorium Basis Data",
+    issuer: "Laboratorium Informatika UNSOED",
+    issuedDate: "Des 2023",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/PrakSO.jpg",
+    imageAlt: "Certificate for Database Lab Assistant",
+    credentialUrl: "https://drive.google.com/file/d/1U3ms0Kd_eK4a7AcDJoarM7DaL80u55RR/view?usp=sharing",
+    skills: ["SQL", "Asisten Laboratorium", "DB Diagram", "Git"],
+  },
+  {
+    title: "Google Analytics Pemula",
+    issuer: "Google",
+    issuedDate: "Agt 2023",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/GAnalytics.jpg",
+    imageAlt: "Google Analytics for Beginners Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
+    skills: ["Python", "Analis Data", "Google Colab", "DB Diagram"],
+  },
+  {
+    title: "Staf Divisi Analis Data",
+    issuer: "BEM UNSOED",
+    issuedDate: "Des 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/sertifBEM.jpg",
+    imageAlt: "Data Analyst Division Staff Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1hsxr1eBozdFX-qOl-fiLvtp2TA8x2OrB/view?usp=sharing",
+    skills: ["Python", "Staf", "Google Colab", "VS Code"],
+  },
+  {
+    title: "Staf Divisi Pendidikan",
+    issuer: "HMIF UNSOED",
+    issuedDate: "Des 2024",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/sertifHMIF.jpg",
+    imageAlt: "Education Division Staff Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1czaAlIV47A6CiWu_FdQer4xcrSTnoyQn/view?usp=sharing",
+    skills: ["Bash", "Staf", "Git", "Figma"],
+  },
+  {
+    title: "Tutor Mata Kuliah Basis Data",
+    issuer: "HMIF UNSOED",
+    issuedDate: "Mei 2023",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/tentorBD.jpg",
+    imageAlt: "Database Course Tutor Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1exKE12IzUGqa4IYbKDTF_TAJwwTmYNfN/view?usp=sharing",
+    skills: ["SQL", "Asisten Laboratorium", "DB Diagram", "Git"],
+  },
+  {
+    title: "Medali Emas Olimpiade Matematika",
+    issuer: "UNIVERSITY.ID",
+    issuedDate: "Jan 2022",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/EmasUniversity.jpg",
+    imageAlt: "National Level Mathematics Olympiad Gold Medal Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1WxMJQPE0Xvzo_f241RNiQcW4Q2LkSqfl/view?usp=sharing",
+    skills: ["Matematika", "Problem Solving", "Pemikiran Analitis"],
+  },
+  {
+    title: "Medali Perak Olimpiade Matematika",
+    issuer: "Yapresindo",
+    issuedDate: "Okt 2021",
+    categories: ["Others"],
+    imageSrc: "/assets/sertifikat/PerakOSAN.jpg",
+    imageAlt: "National Level Mathematics Olympiad Silver Medal Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1iVbzrVDkROzeJ55sd2kyB7B__Fpsz2Ri/view?usp=sharing",
+    skills: ["Matematika", "Problem Solving", "Pemikiran Analitis"],
+  },
+  {
+    title: "Peserta Data Science GAMMAFEST",
+    issuer: "IPB University",
+    issuedDate: "Mei 2025",
+    categories: ["Data"],
+    imageSrc: "/assets/sertifikat/GammaFest.jpg",
+    imageAlt: "GAMMAFEST Data Science Participants Certificate",
+    credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
+    skills: ["Python", "Analis Data", "Google Colab", "VS Code"],
   },
 ];
 
@@ -120,6 +297,15 @@ const categories: CertificateCategory[] = [
   "Data",
   "Others",
 ];
+
+// Map label untuk kategori berdasarkan bahasa
+const categoryLabels: Record<CertificateCategory, { en: string; id: string }> = {
+  All: { en: "All", id: "Semua" },
+  Web: { en: "Web", id: "Web" },
+  Mobile: { en: "Mobile", id: "Mobile" },
+  Data: { en: "Data", id: "Data" },
+  Others: { en: "Others", id: "Lainnya" },
+};
 
 const INITIAL_VISIBLE_COUNT = 9;
 
@@ -160,6 +346,9 @@ function ExpandIcon() {
 }
 
 export default function CertificatesPage() {
+  const { language, t } = useLanguage();
+  const activeCertificates = language === "id" ? certificatesID : certificatesEN;
+
   const [activeCategory, setActiveCategory] =
     useState<CertificateCategory>("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -170,29 +359,33 @@ export default function CertificatesPage() {
   const filteredCertificates = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
 
-    return certificates.filter((certificate) => {
+    return activeCertificates.filter((certificate) => {
       const matchesCategory =
-        activeCategory === "All" || certificate.category === activeCategory;
+        activeCategory === "All" || certificate.categories.includes(activeCategory);
 
       const matchesSearch =
         !query ||
         certificate.title.toLowerCase().includes(query) ||
         certificate.issuer.toLowerCase().includes(query) ||
-        certificate.category.toLowerCase().includes(query) ||
+        certificate.categories.some((category) =>
+          categoryLabels[category as CertificateCategory][language]
+            .toLowerCase()
+            .includes(query)
+        ) ||
         certificate.skills.some((skill) => skill.toLowerCase().includes(query));
 
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, activeCertificates, language]);
 
   const visibleCertificates = filteredCertificates.slice(0, visibleCount);
   const hasMoreCertificates = visibleCount < filteredCertificates.length;
 
   const getCategoryCount = (category: CertificateCategory) => {
-    if (category === "All") return certificates.length;
+    if (category === "All") return activeCertificates.length;
 
-    return certificates.filter(
-      (certificate) => certificate.category === category
+    return activeCertificates.filter((certificate) =>
+      certificate.categories.includes(category)
     ).length;
   };
 
@@ -214,7 +407,6 @@ export default function CertificatesPage() {
     if (!selectedCertificate) return;
 
     const originalOverflow = document.body.style.overflow;
-
     document.body.style.overflow = "hidden";
 
     return () => {
@@ -239,7 +431,7 @@ export default function CertificatesPage() {
             <span>/</span>
 
             <span className="text-slate-950 dark:text-white">
-              Certificates
+              {language === "id" ? "Sertifikat" : "Certificates"}
             </span>
           </div>
         </header>
@@ -247,12 +439,15 @@ export default function CertificatesPage() {
         <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl">
-              Certifications & Achievements
+              {language === "id" ? "Sertifikasi & Pencapaian" : "Certifications & Achievements"}
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-zinc-300 sm:text-base md:text-lg">
-              A glimpse into my ongoing journey of growth, <br /> learning, and
-              professional development.
+              {language === "id" ? (
+                <>Sekilas tentang perjalanan saya dalam bertumbuh, <br /> belajar, dan pengembangan profesional.</>
+              ) : (
+                <>A glimpse into my ongoing journey of growth, <br /> learning, and professional development.</>
+              )}
             </p>
           </div>
 
@@ -273,7 +468,7 @@ export default function CertificatesPage() {
                           : "text-slate-500 hover:bg-slate-100 hover:text-slate-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-white"
                       }`}
                     >
-                      <span>{category}</span>
+                      <span>{categoryLabels[category][language]}</span>
 
                       <span
                         className={`rounded-full px-1.5 py-0.5 text-[10px] ${
@@ -296,7 +491,7 @@ export default function CertificatesPage() {
               <input
                 value={searchQuery}
                 onChange={(event) => handleSearchChange(event.target.value)}
-                placeholder="Search by title, issuer, skill, or credential..."
+                placeholder={language === "id" ? "Cari judul, penerbit, atau keahlian..." : "Search by title, issuer, or skill..."}
                 className="min-w-0 flex-1 bg-transparent text-sm text-slate-950 outline-none placeholder:text-slate-400 dark:text-white dark:placeholder:text-zinc-500"
               />
             </div>
@@ -323,7 +518,7 @@ export default function CertificatesPage() {
                   <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 backdrop-blur-0 transition duration-300 group-hover:bg-black/35 group-hover:opacity-100 group-hover:backdrop-blur-[2px]">
                     <span className="inline-flex items-center gap-2 rounded-full bg-black/80 px-5 py-3 text-sm font-bold text-white shadow-lg backdrop-blur">
                       <ExpandIcon />
-                      Expand Image
+                      {language === "id" ? "Perbesar Gambar" : "Expand Image"}
                     </span>
                   </div>
                 </div>
@@ -344,7 +539,9 @@ export default function CertificatesPage() {
           {filteredCertificates.length === 0 && (
             <div className="mt-10 rounded-3xl border border-slate-200 bg-white/80 px-6 py-12 text-center shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-white/4">
               <p className="text-sm font-medium text-slate-500 dark:text-zinc-400">
-                No certificates found. Try another keyword or category.
+                {language === "id" 
+                  ? "Sertifikat tidak ditemukan. Coba kata kunci atau kategori lain." 
+                  : "No certificates found. Try another keyword or category."}
               </p>
             </div>
           )}
@@ -356,7 +553,7 @@ export default function CertificatesPage() {
                 onClick={() => setVisibleCount((prev) => prev + 6)}
                 className="inline-flex cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md dark:border-zinc-800 dark:bg-white/8 dark:text-white dark:hover:bg-white/12"
               >
-                Load More Certificates
+                {language === "id" ? "Muat Lebih Banyak" : "Load More Certificates"}
               </button>
             </div>
           )}
@@ -412,7 +609,7 @@ export default function CertificatesPage() {
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-950 px-7 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-zinc-200"
                 >
-                  View Credential
+                  {language === "id" ? "Lihat Kredensial" : "View Credential"}
                 </a>
               </div>
 
@@ -421,7 +618,7 @@ export default function CertificatesPage() {
               <div className="grid gap-6 md:grid-cols-[0.6fr_1.4fr]">
                 <div>
                   <p className="text-sm font-bold text-slate-950 dark:text-white">
-                    Issued:
+                    {language === "id" ? "Diterbitkan:" : "Issued:"}
                     <span className="ml-2 font-medium text-slate-500 dark:text-zinc-400">
                       {selectedCertificate.issuedDate}
                     </span>

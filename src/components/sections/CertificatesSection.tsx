@@ -16,21 +16,13 @@ type Certificate = {
 // Bahasa Inggris
 const certificatesEN: Certificate[] = [
   {
-    title: "Certificate for Embedded System Programming Lab Assistant",
+    title: "Embedded System Programming Lab Assistant",
     issuer: "UNSOED Informatics Laboratory",
     date: "Jun 2026",
     imageSrc: "/assets/sertifikat/PrakPST.jpeg",
     imageAlt: "Certificate for Embedded System Programming Lab Assistant",
     pdfUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
   },
-  // {
-  //   title: "GAMMAFEST Data Science Participants",
-  //   issuer: "IPB University",
-  //   date: "May 2025",
-  //   imageSrc: "/assets/sertifikat/GammaFest.jpg",
-  //   imageAlt: "GAMMAFEST Data Science Participants Certificate",
-  //   pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
-  // },
   {
     title: "Data Analysis with Python",
     issuer: "IBM",
@@ -92,21 +84,13 @@ const certificatesEN: Certificate[] = [
 // Bahasa Indonesia
 const certificatesID: Certificate[] = [
   {
-    title: "Sertifikat Asisten Pemrograman Sistem Tertanam",
+    title: "Asisten Pemrograman Sistem Tertanam",
     issuer: "Laboratorium Informatika UNSOED",
     date: "Jun 2026",
     imageSrc: "/assets/sertifikat/PrakPST.jpeg",
     imageAlt: "Certificate for Embedded System Programming Lab Assistant",
     pdfUrl: "https://drive.google.com/file/d/1kCb9AfcIQ62Du0w8U6idfKNSWbaovdaM/view?usp=drive_link",
   },
-  // {
-  //   title: "Peserta Data Science GAMMAFEST",
-  //   issuer: "IPB University",
-  //   date: "Mei 2025",
-  //   imageSrc: "/assets/sertifikat/GammaFest.jpg",
-  //   imageAlt: "GAMMAFEST Data Science Participants Certificate",
-  //   pdfUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
-  // },
   {
     title: "Analisis Data dengan Python",
     issuer: "IBM",
@@ -124,7 +108,7 @@ const certificatesID: Certificate[] = [
     pdfUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
   },
   {
-    title: "Pengantar Data Analisis",
+    title: "Pengantar Analisis Data",
     issuer: "RevoU Indonesia",
     date: "Mar 2025",
     imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",

@@ -6,6 +6,9 @@ import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
+// Import hook bahasa
+import { useLanguage } from "@/components/providers/LanguageProvider";
+
 type ContactForm = {
   name: string;
   email: string;
@@ -120,6 +123,8 @@ const socialLinks: SocialLink[] = [
 ];
 
 export default function ContactPage() {
+  const { language, t } = useLanguage();
+
   const [form, setForm] = useState<ContactForm>({
     name: "",
     email: "",
@@ -163,7 +168,6 @@ export default function ContactPage() {
         setStatus("success");
         setForm({ name: "", email: "", message: "" });
         
-        // Mengembalikan tombol ke status semula setelah 3 detik
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("error");
@@ -190,7 +194,9 @@ export default function ContactPage() {
 
             <span>/</span>
 
-            <span className="text-slate-950 dark:text-white">Contact</span>
+            <span className="text-slate-950 dark:text-white">
+              {language === "id" ? "Kontak" : "Contact"}
+            </span>
           </div>
         </header>
 
@@ -201,12 +207,11 @@ export default function ContactPage() {
             </div>
 
             <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl md:text-6xl">
-              Get in touch
+              {t("contact.heading")}
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-zinc-300 sm:text-lg">
-              I&apos;m always open to discussing new projects, creative ideas,
-              or opportunities to bring your visions to life.
+              {t("contact.description")}
             </p>
 
             <div className="mt-12 space-y-7">
@@ -226,7 +231,7 @@ export default function ContactPage() {
 
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500">
-                  Location
+                  {language === "id" ? "Lokasi" : "Location"}
                 </p>
 
                 <p className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-slate-950 dark:text-white sm:text-base">
@@ -240,7 +245,7 @@ export default function ContactPage() {
 
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500">
-                Socials
+                {language === "id" ? "Media Sosial" : "Socials"}
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -272,17 +277,18 @@ export default function ContactPage() {
                   htmlFor="name"
                   className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500"
                 >
-                  Name
+                  {language === "id" ? "Nama" : "Name"}
                 </label>
 
+                {/* Perbaikan: Tambahkan dark:focus:bg-zinc-950 */}
                 <input
                   id="name"
                   type="text"
                   value={form.name}
                   onChange={(event) => handleChange("name", event.target.value)}
-                  placeholder="Your name"
+                  placeholder={language === "id" ? "Nama Anda" : "Your name"}
                   required
-                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600"
+                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:bg-zinc-950"
                 />
               </div>
 
@@ -291,9 +297,10 @@ export default function ContactPage() {
                   htmlFor="email"
                   className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500"
                 >
-                  Email Address
+                  {language === "id" ? "Alamat Email" : "Email Address"}
                 </label>
 
+                {/* Perbaikan: Tambahkan dark:focus:bg-zinc-950 */}
                 <input
                   id="email"
                   type="email"
@@ -303,7 +310,7 @@ export default function ContactPage() {
                   }
                   placeholder="your@email.com"
                   required
-                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600"
+                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:bg-zinc-950"
                 />
               </div>
 
@@ -312,19 +319,20 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-zinc-500"
                 >
-                  Message
+                  {language === "id" ? "Pesan" : "Message"}
                 </label>
 
+                {/* Perbaikan: Tambahkan dark:focus:bg-zinc-950 */}
                 <textarea
                   id="message"
                   value={form.message}
                   onChange={(event) =>
                     handleChange("message", event.target.value)
                   }
-                  placeholder="Type your message here..."
+                  placeholder={language === "id" ? "Ketik pesan Anda di sini..." : "Type your message here..."}
                   required
                   rows={6}
-                  className="mt-3 min-h-36 w-full resize-none rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm leading-7 text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600"
+                  className="mt-3 min-h-36 w-full resize-none rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm leading-7 text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:bg-zinc-950"
                 />
 
                 <p className="mt-2 text-right text-xs text-slate-400 dark:text-zinc-500">
@@ -339,15 +347,15 @@ export default function ContactPage() {
               >
                 <SendIcon />
                 {status === "loading"
-                  ? "Sending..."
+                  ? (language === "id" ? "Mengirim..." : "Sending...")
                   : status === "success"
-                  ? "Message Sent!"
-                  : "Send Message"}
+                  ? (language === "id" ? "Pesan Terkirim!" : "Message Sent!")
+                  : (language === "id" ? "Kirim Pesan" : "Send Message")}
               </button>
 
               {status === "error" && (
                 <p className="mt-2 text-center text-sm text-red-500">
-                  Failed to send message. Please try again.
+                  {language === "id" ? "Gagal mengirim pesan. Silakan coba lagi." : "Failed to send message. Please try again."}
                 </p>
               )}
             </div>

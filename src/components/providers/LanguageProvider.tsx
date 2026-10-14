@@ -110,7 +110,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
 
   // Bahasa Indonesia
   id: {
-    "dock.about": "Tentang Saya",
+    "dock.about": "Beranda",
     "dock.projects": "Proyek",
     "dock.certificates": "Sertifikat",
     "dock.contact": "Kontak",
@@ -145,7 +145,7 @@ const translations: Record<Language, Record<TranslationKey, string>> = {
     "contact.available": "Terbuka untuk peluang baru",
     "contact.button": "Hubungi Saya",
 
-    "footer.about": "Tentang",
+    "footer.about": "Tentang Saya",
     "footer.projects": "Proyek",
     "footer.certificates": "Sertifikat",
     "footer.contact": "Kontak",
