@@ -10,7 +10,7 @@ import Chatbot from "@/components/chatbot";
 // Import hook bahasa
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
-type CertificateCategory = "All" | "Web" | "Mobile" | "Data" | "Others";
+type CertificateCategory = "All" | "Web" | "Mobile" | "Data & ML" | "Others";
 
 type Certificate = {
   title: string;
@@ -38,7 +38,7 @@ const certificatesEN: Certificate[] = [
     title: "Data Analysis with Python",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
     imageAlt: "Data Analysis with Python Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
@@ -48,7 +48,7 @@ const certificatesEN: Certificate[] = [
     title: "Big Data 101",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/bigData.jpg",
     imageAlt: "Big Data 101 Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
@@ -58,7 +58,7 @@ const certificatesEN: Certificate[] = [
     title: "Intro to Data Analytics",
     issuer: "RevoU Indonesia",
     issuedDate: "Mar 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
     imageAlt: "Intro to Data Analytics Certificate",
     credentialUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
@@ -88,7 +88,7 @@ const certificatesEN: Certificate[] = [
     title: "Google Analytics for Beginners",
     issuer: "Google",
     issuedDate: "Agu 2023",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/GAnalytics.jpg",
     imageAlt: "Google Analytics for Beginners Certificate",
     credentialUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
@@ -148,7 +148,7 @@ const certificatesEN: Certificate[] = [
     title: "GAMMAFEST Data Science Participants",
     issuer: "IPB University",
     issuedDate: "May 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/GammaFest.jpg",
     imageAlt: "GAMMAFEST Data Science Participants Certificate",
     credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
@@ -172,7 +172,7 @@ const certificatesID: Certificate[] = [
     title: "Analisis Data dengan Python",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/dataAnalysis.jpg",
     imageAlt: "Data Analysis with Python Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/cfb1d38b2dd944a49b84e6a700978f4f",
@@ -182,7 +182,7 @@ const certificatesID: Certificate[] = [
     title: "Big Data 101",
     issuer: "IBM",
     issuedDate: "Apr 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/bigData.jpg",
     imageAlt: "Big Data 101 Certificate",
     credentialUrl: "https://courses.cognitiveclass.ai/certificates/5b29d1c5fd044cbcbcd06257b06d2808",
@@ -192,7 +192,7 @@ const certificatesID: Certificate[] = [
     title: "Pengantar Analisis Data",
     issuer: "RevoU Indonesia",
     issuedDate: "Mar 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/dataAnalysisREVOU.jpg",
     imageAlt: "Intro to Data Analytics Certificate",
     credentialUrl: "https://drive.google.com/file/d/1cSh03RWk4Z_AfjAUE75BvEdQPykn6M2O/view?usp=sharing",
@@ -222,7 +222,7 @@ const certificatesID: Certificate[] = [
     title: "Google Analytics Pemula",
     issuer: "Google",
     issuedDate: "Agt 2023",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/GAnalytics.jpg",
     imageAlt: "Google Analytics for Beginners Certificate",
     credentialUrl: "https://drive.google.com/file/d/1xx0DpWSrNOlAD2yHVSjvqrAMt57F_lMM/view?usp=sharing",
@@ -282,7 +282,7 @@ const certificatesID: Certificate[] = [
     title: "Peserta Data Science GAMMAFEST",
     issuer: "IPB University",
     issuedDate: "Mei 2025",
-    categories: ["Data"],
+    categories: ["Data & ML"],
     imageSrc: "/assets/sertifikat/GammaFest.jpg",
     imageAlt: "GAMMAFEST Data Science Participants Certificate",
     credentialUrl: "https://drive.google.com/file/d/1Xi_HMK2tNGkpRPs1fH13rxm_8yEjDQZV/view?usp=sharing",
@@ -294,7 +294,7 @@ const categories: CertificateCategory[] = [
   "All",
   "Web",
   "Mobile",
-  "Data",
+  "Data & ML",
   "Others",
 ];
 
@@ -303,7 +303,7 @@ const categoryLabels: Record<CertificateCategory, { en: string; id: string }> = 
   All: { en: "All", id: "Semua" },
   Web: { en: "Web", id: "Web" },
   Mobile: { en: "Mobile", id: "Mobile" },
-  Data: { en: "Data", id: "Data" },
+  "Data & ML": { en: "Data & ML", id: "Data & ML" },
   Others: { en: "Others", id: "Lainnya" },
 };
 

@@ -7,7 +7,7 @@ import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
-type ProjectCategory = "All" | "Web" | "Mobile" | "Machine Learning";
+type ProjectCategory = "All" | "Web" | "Mobile" | "Data & ML";
 type ProjectCategoryValue = Exclude<ProjectCategory, "All">;
 
 type ProjectTech = {
@@ -33,6 +33,7 @@ type Project = {
   technologies: ProjectTech[];
 };
 
+// Bahasa Inggris
 const projects: Project[] = [
   {
     title: "SiBapas PWT",
@@ -67,7 +68,7 @@ const projects: Project[] = [
   {
     title: "Best Intern DSS",
     period: "Dec 2025 - May 2026",
-    category: "Machine Learning",
+    category: "Data & ML",
     company: "Thesis",
     role: "Full-Stack Developer",
     description:
@@ -135,6 +136,66 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "SekulLegend",
+    period: "Sep 2023 - Nov 2023",
+    category: "Web",
+    company: "Course Assignment",
+    role: "Full-Stack Developer",
+    description:
+      "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+    imageSrc: "/assets/projects/.jpg",
+    imageAlt: "Nautica Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "QUEASY",
+    period: "Mar 2025 - Jun 2025",
+    category: "Web",
+    company: "Course Assignment",
+    role: "Full-Stack Developer",
+    description:
+      "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+    imageSrc: "/assets/projects/jpg",
+    imageAlt: "Nautica Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
     title: "Nautica",
     period: "Mar 2026 - Apr 2026",
     category: "Web",
@@ -165,6 +226,36 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "PDAM Portal",
+    period: "Jul 2024 - Agt 2024",
+    category: "Web",
+    company: "PDAM Banyumas - Internship",
+    role: "Full-Stack Developer",
+    description:
+      "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
+    imageSrc: "/assets/projects/jpg",
+    imageAlt: "Nautica Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
     title: "Webklik",
     period: "Oct 2026 - Mar 2026",
     category: ["Web","Mobile"],
@@ -173,6 +264,31 @@ const projects: Project[] = [
     description:
       "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting.",
     imageSrc: "/assets/projects/webklik1.jpg",
+    imageAlt: "Webklik Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
+      },
+      {
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
+      },
+    ],
+  },
+  {
+    title: "Credit Risk Prediction",
+    period: "May 2024 - Jun 2024",
+    category: "Data & ML",
+    company: "Course Assignment",
+    role: "Full-Stack Developer",
+    description:
+      "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting.",
+    imageSrc: "/assets/projects/jpg",
     imageAlt: "Webklik Preview",
     visibility: "Private",
     isInternal: true,
@@ -247,7 +363,7 @@ const projects: Project[] = [
   {
     title: "Sylvair",
     period: "Sept 2024 - Okt 2024",
-    category: "Machine Learning",
+    category: "Data & ML",
     company: "Course Assignment",
     role: "Full-Stack Developer",
     description:
@@ -294,13 +410,38 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Cloud Service Selection Decision Support",
+    period: "Mar 2024 - Jun 2024",
+    category: "Data & ML",
+    company: "Course Assignment",
+    role: "Full-Stack Developer",
+    description:
+      "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
+    imageSrc: "/assets/projects/jpg",
+    imageAlt: "DemonWard Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
+      },
+      {
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
+      },
+    ],
+  },
 ];
 
 const categories: ProjectCategory[] = [
   "All",
   "Web",
   "Mobile",
-  "Machine Learning",
+  "Data & ML",
 ];
 
 function matchesProjectCategory(

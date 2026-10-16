@@ -22,6 +22,51 @@ type SocialLink = {
 };
 
 const MAX_MESSAGE_LENGTH = 5000;
+const TRUSTED_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "googlemail.com",
+  "outlook.com",
+  "hotmail.com",
+  "live.com",
+  "msn.com",
+  "yahoo.com",
+  "yahoo.co.id",
+  "ymail.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "proton.me",
+  "protonmail.com",
+  "aol.com",
+  "zoho.com",
+  "zohomail.com",
+  "gmx.com",
+  "gmx.net",
+  "fastmail.com",
+  "tutanota.com",
+  "tutamail.com",
+  "hey.com",
+  "mail.com",
+  "yandex.com",
+  "yandex.ru",
+  "ya.ru",
+]);
+
+function getEmailValidationError(email: string): "format" | "domain" | null {
+  const normalizedEmail = email.trim().toLowerCase();
+  const emailParts = normalizedEmail.split("@");
+
+  if (
+    emailParts.length !== 2 ||
+    !emailParts[0] ||
+    !emailParts[1] ||
+    /\s/.test(normalizedEmail)
+  ) {
+    return "format";
+  }
+
+  return TRUSTED_EMAIL_DOMAINS.has(emailParts[1]) ? null : "domain";
+}
 
 function MailIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
@@ -132,9 +177,12 @@ export default function ContactPage() {
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [emailError, setEmailError] = useState<"format" | "domain" | null>(null);
 
   const handleChange = (field: keyof ContactForm, value: string) => {
     if (field === "message" && value.length > MAX_MESSAGE_LENGTH) return;
+
+    if (field === "email") setEmailError(null);
 
     setForm((prev) => ({
       ...prev,
@@ -144,6 +192,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const validationError = getEmailValidationError(form.email);
+    if (validationError) {
+      setEmailError(validationError);
+      return;
+    }
+
     setStatus("loading");
 
     try {
@@ -300,7 +355,6 @@ export default function ContactPage() {
                   {language === "id" ? "Alamat Email" : "Email Address"}
                 </label>
 
-                {/* Perbaikan: Tambahkan dark:focus:bg-zinc-950 */}
                 <input
                   id="email"
                   type="email"
@@ -309,9 +363,34 @@ export default function ContactPage() {
                     handleChange("email", event.target.value)
                   }
                   placeholder="your@email.com"
+                  autoComplete="email"
+                  inputMode="email"
+                  spellCheck={false}
                   required
-                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:bg-white dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-zinc-600 dark:focus:bg-zinc-950"
+                  aria-invalid={emailError !== null}
+                  aria-describedby={emailError ? "email-error" : undefined}
+                  className={`mt-3 w-full rounded-2xl border bg-white/70 px-5 py-3.5 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:bg-white dark:bg-zinc-950/60 dark:text-white dark:placeholder:text-zinc-500 dark:focus:bg-zinc-950 ${
+                    emailError
+                      ? "border-red-500 focus:border-red-500 dark:border-red-500 dark:focus:border-red-500"
+                      : "border-slate-200 focus:border-slate-400 dark:border-zinc-800 dark:focus:border-zinc-600"
+                  }`}
                 />
+
+                {emailError && (
+                  <p
+                    id="email-error"
+                    role="alert"
+                    className="mt-2 text-sm text-red-500"
+                  >
+                    {emailError === "format"
+                      ? language === "id"
+                        ? "Masukkan alamat email dengan format yang valid."
+                        : "Enter a valid email address."
+                      : language === "id"
+                        ? "Gunakan email dari penyedia tepercaya, seperti Gmail, Outlook, Yahoo, iCloud, atau Proton."
+                        : "Use an email from a trusted provider, such as Gmail, Outlook, Yahoo, iCloud, or Proton."}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -322,7 +401,6 @@ export default function ContactPage() {
                   {language === "id" ? "Pesan" : "Message"}
                 </label>
 
-                {/* Perbaikan: Tambahkan dark:focus:bg-zinc-950 */}
                 <textarea
                   id="message"
                   value={form.message}
