@@ -235,8 +235,8 @@ const projects: Project[] = [
       "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
     imageSrc: "/assets/projects/jpg",
     imageAlt: "Nautica Preview",
-    visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/Nautica",
+    visibility: "Private",
+    isInternal: true,
     technologies: [
       {
         name: "TypeScript",
@@ -288,10 +288,10 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A web-based platform for promoting services in creating website and mobile applications, as well as offering software development consulting.",
-    imageSrc: "/assets/projects/jpg",
-    imageAlt: "Webklik Preview",
-    visibility: "Private",
-    isInternal: true,
+    imageSrc: "/assets/projects/1creditRisk.jpeg",
+    imageAlt: "Credit Risk Prediction Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/bintangyosua/credit_risk_dashboard",
     technologies: [
       {
         name: "DB Diagram",
@@ -418,10 +418,10 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A web-based anime encyclopedia that provides comprehensive information on Demon Slayer characters, story arcs, and related content through an intuitive interface.",
-    imageSrc: "/assets/projects/jpg",
-    imageAlt: "DemonWard Preview",
+    imageSrc: "/assets/projects/1cloudServer.jpeg",
+    imageAlt: "Cloud Service Selection Decision Support Preview",
     visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    githubUrl: "https://drive.google.com/file/d/1S2Ks5Ni3MRMdungtd7mynVNsiWGZpxbw/view?usp=sharing",
     technologies: [
       {
         name: "HTML",
@@ -505,6 +505,25 @@ function GitHubIcon() {
     >
       <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
       <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg
+      className="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M13 5h6v6" />
+      <path d="m19 5-9 9" />
+      <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
     </svg>
   );
 }
@@ -670,7 +689,11 @@ export default function ProjectsPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 rounded-md bg-black/75 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur transition hover:bg-black"
                       >
-                        <GitHubIcon />
+                        {project.githubUrl.startsWith("https://github.com/") ? (
+                          <GitHubIcon />
+                        ) : (
+                          <ExternalLinkIcon />
+                        )}
                         Source
                       </a>
                     )}
