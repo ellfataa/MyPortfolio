@@ -7,6 +7,9 @@ import BottomDock from "@/components/layout/BottomDock";
 import Footer from "@/components/layout/footer";
 import Chatbot from "@/components/chatbot";
 
+// Import hook bahasa
+import { useLanguage } from "@/components/providers/LanguageProvider";
+
 type ProjectCategory = "All" | "Web" | "Mobile" | "Data & ML";
 type ProjectCategoryValue = Exclude<ProjectCategory, "All">;
 
@@ -34,7 +37,7 @@ type Project = {
 };
 
 // Bahasa Inggris
-const projects: Project[] = [
+const projectsEN: Project[] = [
   {
     title: "SiBapas PWT",
     period: "Jun 2026 - Jul 2026",
@@ -143,10 +146,10 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
-    imageSrc: "/assets/projects/.jpg",
-    imageAlt: "Nautica Preview",
+    imageSrc: "/assets/projects/1SL.jpg",
+    imageAlt: "SekulLegend Preview",
     visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/Nautica",
+    githubUrl: "https://github.com/ellfataa/SekulLegend",
     technologies: [
       {
         name: "TypeScript",
@@ -173,10 +176,10 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
-    imageSrc: "/assets/projects/jpg",
-    imageAlt: "Nautica Preview",
+    imageSrc: "/assets/projects/1queasy.jpeg",
+    imageAlt: "QUEASY Preview",
     visibility: "Public",
-    githubUrl: "https://github.com/ellfataa/Nautica",
+    githubUrl: "https://github.com/ellfataa/Queasy",
     technologies: [
       {
         name: "TypeScript",
@@ -437,12 +440,424 @@ const projects: Project[] = [
   },
 ];
 
+// Bahasa Indonesia
+const projectsID: Project[] = [
+  {
+    title: "SiBapas PWT",
+    period: "Jun 2026 - Jul 2026",
+    category: ["Web", "Mobile"],
+    company: "ELF Studio - Proyek Freelance",
+    role: "Full-Stack Developer",
+    description:
+      "Platform berbasis web terintegrasi untuk mengelola laporan aktivitas klien, memungkinkan Pembimbing Kemasyarakatan (PK) memantau perkembangan klien secara efisien.",
+    imageSrc: "/assets/projects/sibapasPWT.jpeg",
+    imageAlt: "SiBapas PWT Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "laravel Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Best Intern DSS",
+    period: "Des 2025 - Mei 2026",
+    category: "Data & ML",
+    company: "Tugas Akhir",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem pendukung keputusan yang mengintegrasikan ROC, Random Forest, dan TOPSIS untuk mengidentifikasi pemagang terbaik secara objektif.",
+    imageSrc: "/assets/projects/thesis.jpg",
+    imageAlt: "Best Intern Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+      {
+        name: "Postman",
+        iconSrc: "/assets/skills/postman.svg",
+        iconAlt: "Postman Logo",
+      },
+    ],
+  },
+  {
+    title: "TelkomBiz Plan",
+    period: "Des 2025 - Feb 2026",
+    category: ["Web","Mobile"],
+    company: "Telkom Indonesia - Magang",
+    role: "Full-Stack Developer",
+    description:
+      "Platform berbasis web untuk mempromosikan dan menghitung harga produk TelkomBiz, mengintegrasikan metode MOORA untuk memberikan rekomendasi produk.",
+    imageSrc: "/assets/projects/TELKOMBIZ.jpg",
+    imageAlt: "TelkomBiz Plan Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "Vue",
+        iconSrc: "/assets/skills/vue.svg",
+        iconAlt: "Vue Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "SekulLegend",
+    period: "Sep 2023 - Nov 2023",
+    category: "Web",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem manajemen asrama berbasis web yang menyederhanakan administrasi taruna, manajemen data penghuni, dan proses operasional harian.",
+    imageSrc: "/assets/projects/1SL.jpg",
+    imageAlt: "SekulLegend Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/SekulLegend",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "QUEASY",
+    period: "Mar 2025 - Jun 2025",
+    category: "Web",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem manajemen asrama berbasis web yang menyederhanakan administrasi taruna, manajemen data penghuni, dan proses operasional harian.",
+    imageSrc: "/assets/projects/1queasy.jpeg",
+    imageAlt: "QUEASY Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Queasy",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Nautica",
+    period: "Mar 2026 - Apr 2026",
+    category: "Web",
+    company: "ELF Studio - Proyek Freelance",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem manajemen asrama berbasis web yang menyederhanakan administrasi taruna, manajemen data penghuni, dan proses operasional harian.",
+    imageSrc: "/assets/projects/NAUTICA1.jpg",
+    imageAlt: "Nautica Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Nautica",
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "PDAM Portal",
+    period: "Jul 2024 - Agt 2024",
+    category: "Web",
+    company: "PDAM Banyumas - Magang",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem manajemen asrama berbasis web yang menyederhanakan administrasi taruna, manajemen data penghuni, dan proses operasional harian.",
+    imageSrc: "/assets/projects/1pdam.jpeg",
+    imageAlt: "PDAM Portal Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+      {
+        name: "Laravel",
+        iconSrc: "/assets/skills/laravel.svg",
+        iconAlt: "Laravel Logo",
+      },
+      {
+        name: "MySQL",
+        iconSrc: "/assets/skills/mysql.svg",
+        iconAlt: "MySQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Webklik",
+    period: "Okt 2026 - Mar 2026",
+    category: ["Web","Mobile"],
+    company: "Wesclic - Magang",
+    role: "System Analyst",
+    description:
+      "Platform berbasis web untuk mempromosikan layanan pembuatan situs web dan aplikasi seluler, serta menawarkan konsultasi pengembangan perangkat lunak.",
+    imageSrc: "/assets/projects/webklik1.jpg",
+    imageAlt: "Webklik Preview",
+    visibility: "Private",
+    isInternal: true,
+    technologies: [
+      {
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
+      },
+      {
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
+      },
+    ],
+  },
+  {
+    title: "Credit Risk Prediction",
+    period: "Mei 2024 - Jun 2024",
+    category: "Data & ML",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Platform berbasis web untuk mempromosikan layanan pembuatan situs web dan aplikasi seluler, serta menawarkan konsultasi pengembangan perangkat lunak.",
+    imageSrc: "/assets/projects/1creditRisk.jpeg",
+    imageAlt: "Credit Risk Prediction Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/bintangyosua/credit_risk_dashboard",
+    technologies: [
+      {
+        name: "DB Diagram",
+        iconSrc: "/assets/skills/DBDiagram.svg",
+        iconAlt: "DB Diagram Logo",
+      },
+      {
+        name: "Draw IO",
+        iconSrc: "/assets/skills/drawio.svg",
+        iconAlt: "Draw IO Logo",
+      },
+    ],
+  },
+  {
+    title: "Warmindo Modies",
+    period: "Feb 2026 - Mar 2026",
+    category: "Web",
+    company: "ELF Studio - Proyek Freelance",
+    role: "Frontend Engineer",
+    description:
+      "Situs web profil perusahaan yang responsif, dirancang untuk memperkuat kehadiran online Warmindo Modies serta memamerkan produk dan layanannya.",
+    imageSrc: "/assets/projects/warmindoModies.jpg",
+    imageAlt: "Modies Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/warmindo-modies",
+    technologies: [
+      {
+        name: "Next.js",
+        iconSrc: "/assets/skills/next.svg",
+        iconAlt: "Next.js Logo",
+      },
+      {
+        name: "TypeScript",
+        iconSrc: "/assets/skills/ts.svg",
+        iconAlt: "TypeScript Logo",
+      },
+    ],
+  },
+  {
+    title: "Anahata",
+    period: "Mar 2025 - Mei 2025",
+    category: "Web",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Sistem pakar berbasis web menggunakan metode Naive Bayes untuk menghitung probabilitas penyakit dada berdasarkan gejala yang dilaporkan pengguna.",
+    imageSrc: "/assets/projects/1anahata.jpg",
+    imageAlt: "Anahata Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/SistemPakar-PenyakitDada",
+    technologies: [
+      {
+        name: "Golang",
+        iconSrc: "/assets/skills/golang.svg",
+        iconAlt: "Golang Logo",
+      },
+      {
+        name: "Tailwind CSS",
+        iconSrc: "/assets/skills/tailwind.svg",
+        iconAlt: "Tailwind CSS Logo",
+      },
+      {
+        name: "PostgreSQL",
+        iconSrc: "/assets/skills/postgre.svg",
+        iconAlt: "PostgreSQL Logo",
+      },
+    ],
+  },
+  {
+    title: "Sylvair",
+    period: "Sep 2024 - Okt 2024",
+    category: "Data & ML",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Aplikasi web bertenaga machine learning yang dibangun dengan Python dan Streamlit untuk menganalisis risiko penyakit paru menggunakan model XGBoost dan Random Forest.",
+    imageSrc: "/assets/projects/1sylvair.jpg",
+    imageAlt: "Sylvair Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/Sylvair",
+    technologies: [
+      {
+        name: "Python",
+        iconSrc: "/assets/skills/python.svg",
+        iconAlt: "Python Logo",
+      },
+      {
+        name: "Streamlit",
+        iconSrc: "/assets/skills/streamlit.svg",
+        iconAlt: "Streamlit Logo",
+      },
+    ],
+  },
+  {
+    title: "DemonWard",
+    period: "Mar 2024 - Mei 2024",
+    category: "Web",
+    company: "Tugas Kuliah",
+    role: "Frontend Engineer",
+    description:
+      "Ensiklopedia anime berbasis web yang menyediakan informasi komprehensif tentang karakter Demon Slayer, alur cerita, dan konten terkait melalui antarmuka yang intuitif.",
+    imageSrc: "/assets/projects/1demonWard.jpg",
+    imageAlt: "DemonWard Preview",
+    visibility: "Public",
+    githubUrl: "https://github.com/ellfataa/FE-DemonWard",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
+      },
+      {
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
+      },
+    ],
+  },
+  {
+    title: "Cloud Service Selection Decision Support",
+    period: "Mar 2024 - Jun 2024",
+    category: "Data & ML",
+    company: "Tugas Kuliah",
+    role: "Full-Stack Developer",
+    description:
+      "Ensiklopedia anime berbasis web yang menyediakan informasi komprehensif tentang karakter Demon Slayer, alur cerita, dan konten terkait melalui antarmuka yang intuitif.",
+    imageSrc: "/assets/projects/1cloudServer.jpeg",
+    imageAlt: "Cloud Service Selection Decision Support Preview",
+    visibility: "Public",
+    githubUrl: "https://drive.google.com/file/d/1S2Ks5Ni3MRMdungtd7mynVNsiWGZpxbw/view?usp=sharing",
+    technologies: [
+      {
+        name: "HTML",
+        iconSrc: "/assets/skills/html.svg",
+        iconAlt: "HTML Logo",
+      },
+      {
+        name: "CSS",
+        iconSrc: "/assets/skills/css.svg",
+        iconAlt: "CSS Logo",
+      },
+    ],
+  },
+];
+
 const categories: ProjectCategory[] = [
   "All",
   "Web",
   "Mobile",
   "Data & ML",
 ];
+
+// Map label untuk kategori berdasarkan bahasa
+const categoryLabels: Record<ProjectCategory, { en: string; id: string }> = {
+  All: { en: "All", id: "Semua" },
+  Web: { en: "Web", id: "Web" },
+  Mobile: { en: "Mobile", id: "Mobile" },
+  "Data & ML": { en: "Data & ML", id: "Data & ML" },
+};
 
 function matchesProjectCategory(
   category: Project["category"],
@@ -547,13 +962,16 @@ function DownloadIcon() {
 }
 
 export default function ProjectsPage() {
+  const { language } = useLanguage();
+  const activeProjects = language === "id" ? projectsID : projectsEN;
+
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProjects = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
 
-    return projects.filter((project) => {
+    return activeProjects.filter((project) => {
       const matchesCategory = matchesProjectCategory(project.category, activeCategory);
 
       const matchesSearch =
@@ -568,12 +986,12 @@ export default function ProjectsPage() {
 
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, activeProjects]);
 
   const getCategoryCount = (category: ProjectCategory) => {
-    if (category === "All") return projects.length;
+    if (category === "All") return activeProjects.length;
 
-    return projects.filter((project) => matchesProjectCategory(project.category, category)).length;
+    return activeProjects.filter((project) => matchesProjectCategory(project.category, category)).length;
   };
 
   return (
@@ -590,20 +1008,24 @@ export default function ProjectsPage() {
               LUTHFI.DEV
             </a>
             <span>/</span>
-            <span className="text-slate-950 dark:text-white">Projects</span>
+            <span className="text-slate-950 dark:text-white">
+              {language === "id" ? "Proyek" : "Projects"}
+            </span>
           </div>
         </header>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl">
-              Check out my latest work
+              {language === "id" ? "Karya terbaru saya" : "Check out my latest work"}
             </h1>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600 dark:text-zinc-300 sm:text-base md:text-lg">
-              From mobile applications to enterprise-scale web platforms,
-              <br />
-              discover some of the key projects I&apos;ve worked on.
+              {language === "id" ? (
+                <>Dari aplikasi seluler hingga platform web skala perusahaan,<br />temukan beberapa proyek utama yang pernah saya kerjakan.</>
+              ) : (
+                <>From mobile applications to enterprise-scale web platforms,<br />discover some of the key projects I&apos;ve worked on.</>
+              )}
             </p>
           </div>
 
@@ -624,7 +1046,7 @@ export default function ProjectsPage() {
                           : "text-slate-500 hover:bg-slate-100 hover:text-slate-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-white"
                       }`}
                     >
-                      <span>{category}</span>
+                      <span>{categoryLabels[category][language]}</span>
 
                       <span
                         className={`rounded-full px-1.5 py-0.5 text-[10px] ${
@@ -647,7 +1069,7 @@ export default function ProjectsPage() {
               <input
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="Search by project name, role, tech, or company..."
+                placeholder={language === "id" ? "Cari nama proyek, peran, tech, atau instansi..." : "Search by project name, role, tech, or company..."}
                 className="min-w-0 flex-1 bg-transparent text-sm text-slate-950 outline-none placeholder:text-slate-400 dark:text-white dark:placeholder:text-zinc-500"
               />
             </div>
@@ -694,7 +1116,7 @@ export default function ProjectsPage() {
                         ) : (
                           <ExternalLinkIcon />
                         )}
-                        Source
+                        {language === "id" ? "Kode Sumber" : "Source"}
                       </a>
                     )}
 
@@ -717,7 +1139,7 @@ export default function ProjectsPage() {
                         className="inline-flex items-center gap-1 rounded-md bg-black/75 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur transition hover:bg-black"
                       >
                         <DownloadIcon />
-                        Download
+                        {language === "id" ? "Unduh" : "Download"}
                       </a>
                     )}
                   </div>
@@ -781,7 +1203,7 @@ export default function ProjectsPage() {
           {filteredProjects.length === 0 && (
             <div className="mt-10 rounded-3xl border border-slate-200 bg-white/80 px-6 py-12 text-center shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-white/4">
               <p className="text-sm font-medium text-slate-500 dark:text-zinc-400">
-                No projects found. Try another keyword or category.
+                {language === "id" ? "Proyek tidak ditemukan. Coba kata kunci atau kategori lain." : "No projects found. Try another keyword or category."}
               </p>
             </div>
           )}
@@ -793,7 +1215,7 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md dark:border-zinc-800 dark:bg-white/8 dark:text-white dark:hover:bg-white/12"
             >
-              More on my GitHub
+              {language === "id" ? "Lainnya di GitHub saya" : "More on my GitHub"}
               <GitHubIcon />
             </a>
           </div>
