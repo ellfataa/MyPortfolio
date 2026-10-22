@@ -233,8 +233,8 @@ const projects: Project[] = [
     role: "Full-Stack Developer",
     description:
       "A web-based dormitory management system that streamlines cadet administration, resident data management, and daily operational processes.",
-    imageSrc: "/assets/projects/jpg",
-    imageAlt: "Nautica Preview",
+    imageSrc: "/assets/projects/1pdam.jpeg",
+    imageAlt: "PDAM Portal Preview",
     visibility: "Private",
     isInternal: true,
     technologies: [
